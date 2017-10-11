@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import router from './router.js'
+import router from './router.js';
+import {withRouter} from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -12,4 +13,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
