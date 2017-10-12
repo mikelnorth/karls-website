@@ -49,9 +49,9 @@ const express = require('express'),
         }));
         app.get('/auth/me', (req, res) => {
             if(!req.user) {
-                return res.status(404).send('User not found')
+                return res.status(404).send(false)
             }
-            return res.status(200).send(req.user);
+            return res.status(200).send(true);
         })
         
         
@@ -61,6 +61,7 @@ const express = require('express'),
         })
 
         app.get('/api/links/:category', controller.getLinks)
+        app.put('/api/admin/video/:id', controller.updateVideo)
         
         
         passport.serializeUser((user, done) => {

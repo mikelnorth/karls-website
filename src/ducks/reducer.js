@@ -9,22 +9,49 @@ let initialState = {
             embedded_link: '',
             category: '',
         }
-    ]
+    ],
+    user: false
 };
 
 
 const GET_LINKS = 'GET_LINKS'
+const UPDATE_VIDEO = 'UPDATE_VIDEO'
+const ADMIN = 'ADMIN'
 
 
 export function getLinks(category) {
-    const Links = axios.get(`api/links/${category}`)
+    const links = axios.get(`/api/links/${category}`)
         .then(res => {
-            console.log('reducer get links', res.data)
             return res.data
         })
     return {
-        type: GET_LINKS,
-        payload: Links
+        type: UPDATE_VIDEO,
+        payload: links
+    }
+
+}
+
+export function isAdmin() {
+    const admin = axios.get('/auth/me')
+        .then(res => {
+            console.log('ADMIN',res.data)
+            return res.data
+        })
+    return {
+        type: ADMIN,
+        payload: admin
+    }
+}
+
+export function updateVideo(title, embedded_link, category, id) {
+    const newVideo = axios.put(`/api/admin/video/${id}`, { title, embedded_link, category })
+        .then(res => {
+            console.log('update video', res.data)
+            return res.data
+        })
+    return {
+        type: UPDATE_VIDEO,
+        payload: newVideo
     }
 
 }
@@ -34,7 +61,10 @@ export default function (state = initialState, action) {
     switch (action.type) {
         case GET_LINKS + '_FULFILLED':
             return Object.assign({}, state, { video: action.payload })
-
+        case UPDATE_VIDEO + '_FULFILLED':
+            return Object.assign({}, state, { video: action.payload })
+        case ADMIN + '_FULFILLED':
+            return Object.assign({}, state, { user: action.payload })
         default:
             return state;
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './About.css';
 import Nav from '../nav/Nav.js'
+import Login from '../login/Login.js'
 
 
 export default class About extends Component {
@@ -16,6 +17,7 @@ export default class About extends Component {
             <div className='About'>
                 <Nav />
 
+                <Login />
             </div >
         )
     }
