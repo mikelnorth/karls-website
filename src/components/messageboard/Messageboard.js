@@ -10,34 +10,9 @@ class Messageboard extends Component {
         super(props)
 
     }
-
-    // componentDidMount(){
-    //     <Route  path='/messageboard' render={() => (
-    //         this.props.user ? (
-    //             <Redirect to='/'/>
-    //         ) :
-    //         (
-    //             <Redirect to='/'/>
-    //         )
-    //     )}/>
-    // }
-
-    // requireAuth(nextState, replace) {
-    //     if (!this.props.user.loggedIn()) {
-    //         replace({
-    //             pathname: '/',
-    //             state: { nextPathname: nextState.location.pathname }
-    //         })
-    //     }
-    // }
-
-    // redirect(){
-    //     !this.props.user ? <Route component={Home} exact path='/':  />
-    // }
-
     
     componentDidMount(){
-        !this.props.user ? this.props.history.push('/') : null;
+        !this.props.user ? (this.props.history.push('/'),alert('ACCESS DENIED, Admin access only')) : null;
     }
 
 
