@@ -10,14 +10,27 @@ let initialState = {
             category: '',
         }
     ],
-    user: true
+    user: true,
+    customers: []
 };
 
 
 const GET_LINKS = 'GET_LINKS';
 const UPDATE_VIDEO = 'UPDATE_VIDEO';
 const ADMIN = 'ADMIN';
+const GET_CUSTOMERS = 'GET_CUSTOMERS';
 
+export function getCustomers(){
+    const customers = axios.get('/api/get/customers')
+    .then(res => {
+        console.log('reducer',res.data)
+        res.data
+    })
+    return {
+        type: GET_CUSTOMERS,
+        payload: customers
+    }
+}
 
 
 export function getLinks(category) {
@@ -67,7 +80,9 @@ export default function (state = initialState, action) {
             return Object.assign({}, state, { video: action.payload })
         case ADMIN + '_FULFILLED':
             return Object.assign({}, state, { user: action.payload })
-            
+        case GET_CUSTOMERS + '_FULFILLED':
+            return Object.assing({}, state, {customers: action.payload})
+
         default:
             return state;
     }

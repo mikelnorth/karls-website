@@ -61,6 +61,13 @@ module.exports = {
         .catch((err) => res.status(500).send(err))
     },
 
-    
+    getCustomers: (req, res, next) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.get_all_customers([])
+        .then((customers) => {
+            res.status(200).send(customers)
+        })
+    }
 
 }

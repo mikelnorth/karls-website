@@ -4,6 +4,7 @@ import Nav from '../nav/Nav.js'
 import { connect } from 'react-redux'
 import { Route, Switch } from 'react-router-dom'
 import Login from '../login/Login.js'
+import { getCustomers } from './../../ducks/reducer.js';
 
 class Messageboard extends Component {
     constructor(props) {
@@ -15,8 +16,12 @@ class Messageboard extends Component {
 
     componentDidMount() {
         !this.props.user ? (this.props.history.push('/'), alert('ACCESS DENIED, Admin access only')) : null;
+        
+        this.props.getCustomers();
+        console.log('this should be the list of customers', this.props.customers)
     }
 
+    
 
 
     render() {
@@ -39,8 +44,9 @@ class Messageboard extends Component {
 
 function mapStatetoProps(state) {
     return {
-        user: state.user
+        user: state.user,
+        customers: state.customers
     }
 }
 
-export default (connect(mapStatetoProps, {})(Messageboard));
+export default (connect(mapStatetoProps, {getCustomers})(Messageboard));

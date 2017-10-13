@@ -64,8 +64,9 @@ const express = require('express'),
         app.put('/api/admin/video/:id', controller.updateVideo)
 
         app.post('/api/customer/insert', controller.insertCustomer)
-
         app.post('/api/wedding/insert', controller.insertWedding)
+
+        app.get('/api/get/customers', controller.getCustomers)
         
         passport.serializeUser((user, done) => {
             done(null, user);
