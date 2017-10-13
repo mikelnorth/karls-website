@@ -1,2 +1,2 @@
 insert into wedding(wedding_location, wedding_date, reception_location, reception_date, bridal_location, bridal_date, wedding_type, indoor, audio, message, customer_id)
-VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
+VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)
