@@ -55,7 +55,7 @@ class Wedding extends Component {
                 {this.props.video.map((val, i, arr) => {
                     return <div>
                         <iframe src={`https://player.vimeo.com/video/${val.embedded_link}?title=0&byline=0&portrait=0`} width="640" height="360" frameborder="0" webkitallowfullscreen='true' mozallowfullscreen='true' allowfullscreen='true'></iframe>
-                        <button style={adminView} onClick={() => this.updateState(val.title, val.embedded_link, val.category, val.id)}>yup</button>
+                        <button style={adminView} onClick={() => this.updateState(val.title, val.embedded_link, val.category, val.id)}>Edit</button>
                     </div>
                 })}
 

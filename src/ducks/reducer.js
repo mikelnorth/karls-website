@@ -10,13 +10,14 @@ let initialState = {
             category: '',
         }
     ],
-    user: false
+    user: true
 };
 
 
-const GET_LINKS = 'GET_LINKS'
-const UPDATE_VIDEO = 'UPDATE_VIDEO'
-const ADMIN = 'ADMIN'
+const GET_LINKS = 'GET_LINKS';
+const UPDATE_VIDEO = 'UPDATE_VIDEO';
+const ADMIN = 'ADMIN';
+
 
 
 export function getLinks(category) {
@@ -46,15 +47,16 @@ export function isAdmin() {
 export function updateVideo(title, embedded_link, category, id) {
     const newVideo = axios.put(`/api/admin/video/${id}`, { title, embedded_link, category })
         .then(res => {
-            console.log('update video', res.data)
             return res.data
         })
     return {
         type: UPDATE_VIDEO,
         payload: newVideo
     }
-
 }
+
+
+
 
 
 export default function (state = initialState, action) {
@@ -65,6 +67,7 @@ export default function (state = initialState, action) {
             return Object.assign({}, state, { video: action.payload })
         case ADMIN + '_FULFILLED':
             return Object.assign({}, state, { user: action.payload })
+            
         default:
             return state;
     }

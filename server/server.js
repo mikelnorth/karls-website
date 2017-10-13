@@ -62,7 +62,10 @@ const express = require('express'),
 
         app.get('/api/links/:category', controller.getLinks)
         app.put('/api/admin/video/:id', controller.updateVideo)
-        
+
+        app.post('/api/customer/insert', controller.insertCustomer)
+
+        app.post('/api/wedding/insert', controller.insertWedding)
         
         passport.serializeUser((user, done) => {
             done(null, user);

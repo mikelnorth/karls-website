@@ -11,19 +11,19 @@ class Nav extends Component {
 
         return (
             <div className='nav'>
-                <Link to='/'><p>Home</p></Link>
+                <Link className='link' to='/'><p>Home</p></Link>
 
                 <div className='dropdown'>
-                    <Link to='/events'><p>Events</p></Link>
+                    <Link className='link' to='/events'><p>Events</p></Link>
                     <div className='dropdown-content'>
-                        <Link to='/wedding'><p>Wedding Portfolio</p></Link>
-                        <Link to='/comercial'><p>comercial Portfolio</p></Link>
+                        <Link className='link' to='/wedding'><p>Wedding Portfolio</p></Link>
+                        <Link className='link' to='/comercial'><p>comercial Portfolio</p></Link>
                     </div>
                 </div>
 
-                <Link to='/contact'><p>Contact</p></Link>
-                <Link to='/about'><p>About</p></Link>
-                <Link style={adminView} to='/messageboard'><p>Messages</p></Link>
+                <Link className='link' to='/contact'><p>Contact</p></Link>
+                <Link className='link' to='/about'><p>About</p></Link>
+                <Link className='link' style={adminView} to='/messageboard'><p>Messages</p></Link>
             </div >
         )
     }

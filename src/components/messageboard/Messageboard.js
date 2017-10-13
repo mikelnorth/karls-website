@@ -9,18 +9,28 @@ class Messageboard extends Component {
     constructor(props) {
         super(props)
 
+
+
     }
-    
-    componentDidMount(){
-        !this.props.user ? (this.props.history.push('/'),alert('ACCESS DENIED, Admin access only')) : null;
+
+    componentDidMount() {
+        !this.props.user ? (this.props.history.push('/'), alert('ACCESS DENIED, Admin access only')) : null;
     }
+
 
 
     render() {
-        console.log('history', this.props.history.push)
         return (
             <div className='Messageboard'>
                 <Nav />
+
+                <div className='messages'>
+                    <h1>INBOX</h1>
+                    <h4>Customer Information</h4>
+
+                </div>
+
+
                 <Login />
             </div >
         )

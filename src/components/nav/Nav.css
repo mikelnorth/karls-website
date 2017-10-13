@@ -9,6 +9,10 @@
   width: 100%;
   color: white; }
 
+.link {
+  text-decoration: none;
+  color: white; }
+
 .dropdown {
   position: relative;
   display: inline-block; }

@@ -25,5 +25,42 @@ module.exports = {
             .catch((err) => res.status(500).send(err))
         })
         .catch((err) => res.status(500).send(err))
-    }
+    },
+
+    insertCustomer: (req, res, next) => {
+        
+        const dbInstance = req.app.get('db');
+        const{ first_name, last_name, email, phone, contact_method } = req.body;
+
+
+        dbInstance.insert_customer([first_name, last_name, email, phone, contact_method])
+        .then((newCustomer) => {
+           // return res.status(200).send(newCustomer)
+            req.app.get('db').get_customer_id()
+            .then(customerId => {
+
+                res.status(200).send(customerId[0])
+            })
+        })
+        .catch((err) => res.status(500).send(err))
+    },
+
+    insertWedding: (req, res, next) => {
+        
+        const dbInstance = req.app.get('db');
+        const{ wedding_location, wedding_date, reception_location, reception_date, bridal_location, bridal_date, wedding_type,
+             indoor,audio, message, customer_id }= req.body;
+
+
+        dbInstance.insert_wedding([wedding_location, wedding_date, reception_location, reception_date, bridal_location, bridal_date,
+             wedding_type, indoor,audio, message, customer_id])
+        .then(() => {
+             res.status(200).send()
+            
+        })
+        .catch((err) => res.status(500).send(err))
+    },
+
+    
+
 }
