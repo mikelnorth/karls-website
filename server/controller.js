@@ -64,8 +64,9 @@ module.exports = {
     getCustomers: (req, res, next) => {
         const dbInstance = req.app.get('db');
 
-        dbInstance.get_all_customers([])
-        .then((customers) => {
+        dbInstance.get_all_customers()
+        .then(customers => {
+            console.log('customers in controller', customers)
             res.status(200).send(customers)
         })
     }

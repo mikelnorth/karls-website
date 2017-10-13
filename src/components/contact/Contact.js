@@ -112,32 +112,35 @@ export default class Contact extends Component {
             <div className='Contact'>
                 <Nav />
 
-                <form>
-                    <fieldset className='customer_info' autocomplete="on" >
-                        <legend>Personal information:</legend>
-                        First name:<br />
-                        <input onChange={(e) => this.handleChange('firstName', e.target.value)}
-                            type="text" name="firstname" value={firstName} required /><br />
+                <img className='contactpic' src='http://www.simplyinspired.co.nz/extra/00--weddings054.jpg' />
 
-                        Last name:<br />
-                        <input onChange={(e) => this.handleChange('lastName', e.target.value)}
-                            type="text" name="lastname" value={lastName} required /><br />
+                <div className='form'>
+                    <form>
+                        <fieldset className='customer_info' autocomplete="on" >
+                            <legend>Personal information:</legend>
+                            First name:<br />
+                            <input onChange={(e) => this.handleChange('firstName', e.target.value)}
+                                type="text" name="firstname" value={firstName} required /><br />
 
-                        Email:<br />
-                        <input onChange={(e) => this.handleChange('email', e.target.value)}
-                            type="text" name="Email" value={email} required /><br />
+                            Last name:<br />
+                            <input onChange={(e) => this.handleChange('lastName', e.target.value)}
+                                type="text" name="lastname" value={lastName} required /><br />
 
-                        Phone:<br />
-                        <input onChange={(e) => this.handleChange('phone', e.target.value)}
-                            type="text" name="Phone" value={phone}/><br />
+                            Email:<br />
+                            <input onChange={(e) => this.handleChange('email', e.target.value)}
+                                type="text" name="Email" value={email} required /><br />
 
-                        Prefered contact method:<br />
-                        Phone<input onChange={(e) => this.handleChange('contact', e.target.value)}
-                            type="radio" name="contact method" value="Phone" value={contact}/>
-                        or Email<input onChange={(e) => this.handleChange('contact', e.target.value)}
-                            type="radio" name="contact method" value={contact} /> <br />
+                            Phone:<br />
+                            <input onChange={(e) => this.handleChange('phone', e.target.value)}
+                                type="text" name="Phone" value={phone} /><br />
 
-                        {/* <select name="cars">
+                            Prefered contact method:<br />
+                            Phone<input onChange={(e) => this.handleChange('contact', e.target.value)}
+                                type="radio" name="contact method" value="Phone" value={contact} />
+                            or Email<input onChange={(e) => this.handleChange('contact', e.target.value)}
+                                type="radio" name="contact method" value={contact} /> <br />
+
+                            {/* <select name="cars">
                             <option value="wedding">wedding</option>
                             <option value="travel">Travel</option>
                             <option value="comercial">Comercial</option>
@@ -145,75 +148,70 @@ export default class Contact extends Component {
                         </select><br/> */}
 
 
-                    </fieldset>
+                        </fieldset>
 
-                    <fieldset>
-                        Event Type:<br />
-                        <input onChange={(e) => this.handleChange('type', e.target.value)}
-                            type="text" name="wedding" value='wedding' required/><br />
+                        <fieldset>
+                            <legend>Event Information:</legend>
+                            <input onChange={(e) => this.handleChange('type', e.target.value)}
+                                type="text" name="wedding" value='wedding' required /><br />
 
-                        wedding Location:
+                            wedding Location:
                     <input onChange={(e) => this.handleChange('weddingLocation', e.target.value)}
-                            type="text" name="wedding location" value={weddingLocation} required />
+                                type="text" name="wedding location" value={weddingLocation} required />
 
-                        Wedding date:
+                            Wedding date:
                     <input onChange={(e) => this.handleChange('weddingDate', e.target.value)}
-                            type="date" name="wedding location" value={weddingDate}required /><br />
+                                type="date" name="wedding location" value={weddingDate} required /><br />
 
-                        Reception Location:
+                            Reception Location:
                     <input onChange={(e) => this.handleChange('receptionLocation', e.target.value)}
-                            type="text" name="reception location" value={receptionLocation}/>
+                                type="text" name="reception location" value={receptionLocation} />
 
-                        Reception date:
+                            Reception date:
                     <input onChange={(e) => this.handleChange('receptionDate', e.target.value)}
-                            type="date" name="reception location" value={receptionDate}/><br />
+                                type="date" name="reception location" value={receptionDate} /><br />
 
-                        Bridal Location:
+                            Bridal Location:
                     <input onChange={(e) => this.handleChange('bridalLocation', e.target.value)}
-                            type="text" name="bridal location" value={bridalLocation} />
+                                type="text" name="bridal location" value={bridalLocation} />
 
-                        Bridal date:
+                            Bridal date:
                     <input onChange={(e) => this.handleChange('bridalDate', e.target.value)}
-                            type="date" name="bridal location" value={bridalDate}/><br />
+                                type="date" name="bridal location" value={bridalDate} /><br />
 
-                        Type of Wedding:
+                            Type of Wedding:
                     <input onChange={(e) => this.handleChange('culture', e.target.value)}
-                            list="wedding type" name="culture"  value={culture}/>
-                        <datalist id="wedding type">
-                            <option value="American" />
-                            <option value="Indian" />
-                            <option value="Jewish" />
-                            <option value="Christian" />
-                            <option value="Other" />
-                        </datalist><br />
+                                list="wedding type" name="culture" value={culture} />
+                            <datalist id="wedding type">
+                                <option value="American" />
+                                <option value="Indian" />
+                                <option value="Jewish" />
+                                <option value="Christian" />
+                                <option value="Other" />
+                            </datalist><br />
 
-                        Indoor<input onChange={(e) => this.handleChange('setting', e.target.value)}
-                            type="radio" name="indoor" value="Indoor"/>
-                        or Outdoor<input onChange={(e) => this.handleChange('setting', e.target.value)}
-                            type="radio" name="indoor" value="Outdoor"/><br />
+                            Indoor<input onChange={(e) => this.handleChange('setting', e.target.value)}
+                                type="radio" name="indoor" value="Indoor" />
+                            or Outdoor<input onChange={(e) => this.handleChange('setting', e.target.value)}
+                                type="radio" name="indoor" value="Outdoor" /><br />
 
-                        Speech Audio
+                            Speech Audio
                     <input onChange={(e) => this.handleChange('audio', e.target.value)}
-                            type='radio' name='audio' value='Speech Audio' />or Strictly musical montage
+                                type='radio' name='audio' value='Speech Audio' />or Strictly musical montage
                     <input onChange={(e) => this.handleChange('audio', e.target.value)}
-                            type='radio' name='audio' value='Strictly musical montage' /><br />
+                                type='radio' name='audio' value='Strictly musical montage' /><br />
 
 
-                        Aditonal information:<br />
-                        <textarea onChange={(e) => this.handleChange('message', e.target.value)}
-                            name="message" rows="10" cols="30" value={message} placeholder='additonal information...'></textarea>
-                        <br />
-                    </fieldset>
+                            Aditonal information:<br />
+                            <textarea onChange={(e) => this.handleChange('message', e.target.value)}
+                                name="message" rows="10" cols="30" value={message} placeholder='additonal information...'></textarea>
+                            <br />
+                        </fieldset>
 
-
-
-
-                    <button onClick={(e) => this.submitCustomerInfo(e)}> submit</button>
-                    <input type='reset' value='reset' />
-
-
-
-                </form>
+                        <button onClick={(e) => this.submitCustomerInfo(e)}> submit</button>
+                        <input type='reset' value='reset' />
+                    </form>
+                </div>
 
 
                 <Login />

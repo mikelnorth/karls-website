@@ -1,0 +1,18 @@
+.contact{
+    display: flex;
+}
+
+
+.contactpic{
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.form{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+}

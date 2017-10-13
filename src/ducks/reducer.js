@@ -23,9 +23,10 @@ const GET_CUSTOMERS = 'GET_CUSTOMERS';
 export function getCustomers(){
     const customers = axios.get('/api/get/customers')
     .then(res => {
-        console.log('reducer',res.data)
-        res.data
+       return res
+       console.log('reducer', res)
     })
+    
     return {
         type: GET_CUSTOMERS,
         payload: customers
@@ -81,7 +82,7 @@ export default function (state = initialState, action) {
         case ADMIN + '_FULFILLED':
             return Object.assign({}, state, { user: action.payload })
         case GET_CUSTOMERS + '_FULFILLED':
-            return Object.assing({}, state, {customers: action.payload})
+            return Object.assign({}, state, {customers: action.payload})
 
         default:
             return state;
