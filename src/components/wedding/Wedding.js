@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import Login from '../login/Login.js'
 
 
+
 class Wedding extends Component {
     constructor(props) {
         super(props)

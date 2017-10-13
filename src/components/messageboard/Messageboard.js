@@ -17,27 +17,30 @@ class Messageboard extends Component {
     componentDidMount() {
         !this.props.user ? (this.props.history.push('/'), alert('ACCESS DENIED, Admin access only')) : null;
 
+
+        
         this.props.getCustomers();
-        console.log('this should be the list of customers', this.props.customers)
+        
+       
     }
 
 
 
 
     render() {
+        console.log('this should be the list of customers', this.props.customers.data)
         return (
             <div className='Messageboard'>
                 <Nav />
                 <h1>INBOX</h1>
-
-                {/* <div className='names'>
+                <div className='names'>
                     <h4>Customer Information</h4>
-                    {this.props.customers.map((val, i, arr) => {
+                    {this.props.customers.data.length ? this.props.customers.data.map((val, i, arr) => {
                         return <div>
-                            <p>Name:{val.firstName}</p>
+                            <p>Name:{val.first_name}</p>
                         </div>
-                    })}
-                </div> */}
+                    }) : null}
+                </div>
 
 
                 <Login />

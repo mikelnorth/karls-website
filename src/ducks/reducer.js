@@ -11,7 +11,9 @@ let initialState = {
         }
     ],
     user: true,
-    customers: []
+    customers: {
+        data: []
+    }
 };
 
 
@@ -24,7 +26,6 @@ export function getCustomers(){
     const customers = axios.get('/api/get/customers')
     .then(res => {
        return res
-       console.log('reducer', res)
     })
     
     return {

@@ -155,7 +155,7 @@ export default class Contact extends Component {
                             <input onChange={(e) => this.handleChange('type', e.target.value)}
                                 type="text" name="wedding" value='wedding' required /><br />
 
-                            wedding Location:
+                            Wedding Location:
                     <input onChange={(e) => this.handleChange('weddingLocation', e.target.value)}
                                 type="text" name="wedding location" value={weddingLocation} required />
 
