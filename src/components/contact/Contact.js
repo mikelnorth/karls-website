@@ -43,7 +43,8 @@ export default class Contact extends Component {
 
     submitCustomerInfo(e) {
         e.preventDefault()
-        const { firstName, lastName, email, phone, contact, weddingLocation, weddingDate, receptionLocation, receptionDate, bridalLocation, bridalDate,
+        const { firstName, lastName, email, phone, contact, weddingLocation, weddingDate, receptionLocation, 
+            receptionDate, bridalLocation, bridalDate,
             culture, setting, audio, message, customerId } = this.state
 
 
@@ -70,7 +71,8 @@ export default class Contact extends Component {
         }
 
 
-        axios.post('/api/customer/insert', customerData).then(res => {
+        axios.post('/api/customer/insert', customerData)
+        .then(res => {
             weddingData.customer_id = res.data.id
 
             axios.post('/api/wedding/insert', weddingData)

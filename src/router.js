@@ -19,8 +19,8 @@ export default (
       <Route component={Contact} path='/contact' />
       <Route component={About} path='/about' />
       <Route component={Events} path='/events' />
-      <Route component={Messageboard} path='/messageboard'/>
-      <Route component={Inbox} path='/messageboard/inbox' />
+      <Route component={Messageboard} path='/inbox'/>
+      <Route component={Inbox} path='/message' />
     </Switch>
   </div>
 )

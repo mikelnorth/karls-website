@@ -1,31 +1,50 @@
 import React, { Component } from 'react';
 import './Messageboard.css';
-import Nav from '../nav/Nav.js'
-import { connect } from 'react-redux'
-import { Route, Switch } from 'react-router-dom'
-import Login from '../login/Login.js'
+import Nav from '../nav/Nav.js';
+import { connect } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
+import Login from '../login/Login.js';
 import { getCustomers } from './../../ducks/reducer.js';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+
+
 
 class Messageboard extends Component {
     constructor(props) {
         super(props)
 
+        this.state = {
+            id: null
+        }
 
-
+        this.deleteMessage = this.deleteMessage.bind(this);
     }
 
     componentDidMount() {
         !this.props.user ? (this.props.history.push('/'), alert('ACCESS DENIED, Admin access only')) : null;
 
-
-        
         this.props.getCustomers();
-        
-       
     }
 
+    deleteMessage(id) {
+        this.setState({
+            id
+        })
 
+        const customerId = { id: id }
+        const weddingId = { customer_id: id }
 
+        axios.delete('/api/delete/customer', customerId)
+            .then(res => {
+                res.data
+            })
+
+        axios.delete('/api/delete/wedding', weddingId)
+            .then(res => {
+                res.data
+            })
+    }
 
     render() {
         console.log('this should be the list of customers', this.props.customers.data)
@@ -37,8 +56,17 @@ class Messageboard extends Component {
                     <h4>Customer Information</h4>
                     {this.props.customers.data.length ? this.props.customers.data.map((val, i, arr) => {
                         return <div>
-                            <p>Name:{val.first_name}</p>
+                            <Link to='/message'><div>
+                                <p>Name: {val.first_name} {val.last_name}</p>
+                            </div>
+                                <div>
+                                    <p>Message: {val.message.length >= 50 ? val.message.substring(0, 50) + '...' : val.message.length ? val.message : 'n/a'}</p>
+                                </div></Link>
+                            <button onClick={() => this.deleteMessage(val.id)}>remove</button>
                         </div>
+
+
+
                     }) : null}
                 </div>
 

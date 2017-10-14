@@ -67,6 +67,9 @@ const express = require('express'),
         app.post('/api/wedding/insert', controller.insertWedding)
 
         app.get('/api/get/customers', controller.getCustomers)
+
+        app.delete('/api/delete/customer', controller.deleteCustomer)
+        app.delete('/api/delete/wedding', controller.deleteWedding)
         
         passport.serializeUser((user, done) => {
             done(null, user);

@@ -23,7 +23,7 @@ class Nav extends Component {
 
                 <Link className='link' to='/contact'><p>Contact</p></Link>
                 <Link className='link' to='/about'><p>About</p></Link>
-                <Link className='link' style={adminView} to='/messageboard'><p>Messages</p></Link>
+                <Link className='link' style={adminView} to='/inbox'><p>Messages</p></Link>
             </div >
         )
     }
