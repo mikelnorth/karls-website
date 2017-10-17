@@ -6,7 +6,7 @@ import Comercial from './components/comercial/Comercial.js';
 import Contact from './components/contact/Contact.js';
 import About from './components/about/About.js';
 import Events from './components/events/Events.js';
-import Messageboard from './components/messageboard/Messageboard.js';
+import Message from './components/messageboard/Message.js';
 import Inbox from './components/messageboard/Inbox.js';
 
 
@@ -19,8 +19,8 @@ export default (
       <Route component={Contact} path='/contact' />
       <Route component={About} path='/about' />
       <Route component={Events} path='/events' />
-      <Route component={Messageboard} path='/inbox'/>
-      <Route component={Inbox} path='/message' />
+      <Route component={Inbox} path='/inbox'/>
+      <Route component={Message} path='/message' />
     </Switch>
   </div>
 )

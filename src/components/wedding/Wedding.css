@@ -1,0 +1,12 @@
+.Wedding {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; }
+
+.videos {
+  width: 100vw; }
+
+.video {
+  margin: 20px; }

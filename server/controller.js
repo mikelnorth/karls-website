@@ -28,14 +28,11 @@ module.exports = {
     },
 
     insertCustomer: (req, res, next) => {
-        
         const dbInstance = req.app.get('db');
         const{ first_name, last_name, email, phone, contact_method } = req.body;
 
-
         dbInstance.insert_customer([first_name, last_name, email, phone, contact_method])
         .then((newCustomer) => {
-           // return res.status(200).send(newCustomer)
             req.app.get('db').get_customer_id()
             .then(customerId => {
 
@@ -66,9 +63,23 @@ module.exports = {
 
         dbInstance.get_all_customers()
         .then(customers => {
-            console.log('customers in controller', customers)
             res.status(200).send(customers)
         })
-    }
+    },
+
+    // deleteCustomer: (req, res, next) => {
+    //     const dbInstance = req.app.get('db');
+
+    //     dbInstance.delete_customer(id)
+    //     .then((newList) => {
+    //         dbInstance.get_all_customers()
+    //         .then((customers) => {
+    //             return res.status(200).send(customers)
+    //         })
+    //         .catch((err) => res.status(500).send(err))
+    //     })
+    //     .catch((err) => res.status(500).send(err))
+    // },
+
 
 }

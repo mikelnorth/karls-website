@@ -14,11 +14,11 @@ class Nav extends Component {
                 <Link className='link' to='/'><p>Home</p></Link>
 
                 <div className='dropdown'>
-                    <Link className='link' to='/events'><p>Events</p></Link>
-                    <div className='dropdown-content'>
+                    <Link className='link' to='/wedding'><p>Portfolio</p></Link>
+                    {/* <div className='dropdown-content'>
                         <Link className='link' to='/wedding'><p>Wedding Portfolio</p></Link>
                         <Link className='link' to='/comercial'><p>comercial Portfolio</p></Link>
-                    </div>
+                    </div> */}
                 </div>
 
                 <Link className='link' to='/contact'><p>Contact</p></Link>

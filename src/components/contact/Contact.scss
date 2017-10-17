@@ -1,18 +1,31 @@
-.contact{
+
+
+.Contact{
     display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    text-align: center;
+    background: peachpuff;
 }
 
 
 .contactpic{
     width: 100vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+
 }
+
+// .customer_info{
+//     background-color: peachpuff;
+// }
+// .wedding_info{
+//     background-color: peachpuff;
+// }
 
 .form{
     width: 50vw;
-    display: flex;
-    justify-content: center;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+
 }

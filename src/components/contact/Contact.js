@@ -113,7 +113,7 @@ export default class Contact extends Component {
         return (
             <div className='Contact'>
                 <Nav />
-
+                
                 <img className='contactpic' src='http://www.simplyinspired.co.nz/extra/00--weddings054.jpg' />
 
                 <div className='form'>
@@ -152,7 +152,7 @@ export default class Contact extends Component {
 
                         </fieldset>
 
-                        <fieldset>
+                        <fieldset className='wedding_info'>
                             <legend>Event Information:</legend>
                             <input onChange={(e) => this.handleChange('type', e.target.value)}
                                 type="text" name="wedding" value='wedding' required /><br />

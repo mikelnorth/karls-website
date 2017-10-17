@@ -1,14 +1,14 @@
-.contact {
-  display: flex; }
+.Contact {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: peachpuff; }
 
 .contactpic {
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1; }
+  width: 100vw; }
 
 .form {
   width: 50vw;
-  display: flex;
-  justify-content: center; }
+  margin: auto;
+  padding: 20px;
+  text-align: center; }
