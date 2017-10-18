@@ -31,7 +31,7 @@ module.exports = {
         const dbInstance = req.app.get('db');
         const{ first_name, last_name, email, phone, contact_method } = req.body;
 
-        dbInstance.insert_customer([first_name, last_name, email, phone, contact_method])
+        dbInstance.insert_customer([first_name, last_name, email, phone, contact_method, false])
         .then((newCustomer) => {
             req.app.get('db').get_customer_id()
             .then(customerId => {

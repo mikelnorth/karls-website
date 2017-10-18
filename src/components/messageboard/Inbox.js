@@ -14,7 +14,22 @@ class Messageboard extends Component {
         super(props)
 
         this.state = {
-            id: null
+            first_name: '',
+            last_name: '',
+            email: '',
+            phone: '',
+            contact_method: '',
+            type: 'wedding',
+            wedding_location: '',
+            wedding_date: '',
+            reception_location: '',
+            reception_date: '',
+            bridal_location: '',
+            bridal_date: '',
+            wedding_type: '',
+            indoor: '',
+            audio: '',
+            message: ''
         }
 
         this.deleteMessage = this.deleteMessage.bind(this);
@@ -45,29 +60,71 @@ class Messageboard extends Component {
             })
     }
 
+    moreInfo(id, first_name, last_name, email, phone, contact_method, wedding_location, wedding_date, reception_location,
+        reception_date, bridal_location, bridal_date, wedding_type, indoor, audio, message) {
+        this.setState({
+            id,
+            first_name,
+            last_name,
+            email,
+            phone,
+            contact_method,
+            wedding_location,
+            wedding_date,
+            reception_location,
+            reception_date,
+            bridal_location,
+            bridal_date,
+            wedding_type,
+            indoor,
+            audio,
+            message
+        })
+        console.log(this.state)
+    }
+
     render() {
-        console.log('this should be the list of customers', this.props.customers.data)
+        // console.log('this should be the list of customers', this.props.customers.data)
         return (
             <div className='Messageboard'>
                 <Nav />
                 <h1>INBOX</h1>
-                <div className='names'>
+                <div className='customer'>
                     <h4>Customer Information</h4>
                     {this.props.customers.data.length ? this.props.customers.data.map((val, i, arr) => {
                         return <div>
-                            <Link to='/message'><div>
+                            <div>
                                 <p>Name: {val.first_name} {val.last_name}</p>
                             </div>
-                                <div>
-                                    <p>Message: {val.message.length >= 50 ? val.message.substring(0, 50) + '...' : val.message.length ? val.message : 'n/a'}</p>
-                                </div></Link>
+                            <div>
+                                <p>Message: {val.message.length >= 50 ? val.message.substring(0, 50) + '...' : val.message.length ? val.message : 'n/a'}</p>
+                            </div>
                             <button onClick={() => this.deleteMessage(val.id)}>remove</button>
+                            <button onClick={() => this.moreInfo(val.id, val.first_name, val.last_name, val.email, val.phone,
+                                val.contact_method, val.wedding_location, val.wedding_date, val.reception_location, val.reception_date,
+                                val.bridal_location, val.bridal_date, val.wedding_type, val.indoor, val.audio, val.message)}>More Info</button>
                         </div>
-
-
 
                     }) : null}
                 </div>
+
+                <div className='information'>
+                    <p>email: {this.state.email}</p>
+                    <p>phone: {this.state.phone}</p>
+                    <p>contact_method: {this.state.contact_method}</p>
+                    <p>wedding_location: {this.state.wedding_location}</p>
+                    <p>wedding_date: {this.state.wedding_date}</p>
+                    <p>reception_location: {this.state.reception_location}</p>
+                    <p>reception_date: {this.state.reception_date}</p>
+                    <p>bridal_location: {this.state.bridal_location}</p>
+                    <p>bridal_date: {this.state.bridal_date}</p>
+                    <p>wedding_type: {this.state.wedding_type}</p>
+                    <p>Indoor or Outdorr: {this.state.indoor}</p>
+                    <p>audio: {this.state.audio}</p>
+                    <p>message: {this.state.message}</p>
+
+                </div>
+
 
 
                 <Login />

@@ -7,7 +7,12 @@
 }
 
 .videos{
+    background: peachpuff;
     width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    justify-content: center;
 }
 
 .video{

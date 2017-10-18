@@ -1,3 +1,4 @@
-select * from customer
-FULL OUTER JOIN wedding on customer.id = wedding.customer_id
-ORDER BY customer.id desc
+SELECT * FROM customer AS c
+JOIN wedding AS w ON c.id = w.customer_id
+WHERE c.archive = 'f'
+ORDER BY c.id desc

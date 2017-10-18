@@ -41,7 +41,7 @@ class Wedding extends Component {
     }
 
     render() {
-        const adminView = this.props.user ? null: {
+        const adminView = this.props.user ? null : {
             'display': 'none'
         }
 
@@ -52,33 +52,35 @@ class Wedding extends Component {
 
 
                 </div>
-                {/* <div className='videos'> */}
-                {this.props.video.map((val, i, arr) => {
-                    return <div>
-                        <iframe className='video' src={`https://player.vimeo.com/video/${val.embedded_link}?title=0&byline=0&portrait=0`} width="320" height="180" frameborder="0" webkitallowfullscreen='true' mozallowfullscreen='true' allowfullscreen='true'></iframe>
-                        <button style={adminView} onClick={() => this.updateState(val.title, val.embedded_link, val.category, val.id)}>Edit</button>
+                <div className='videos'>
+                    {this.props.video.map((val, i, arr) => {
+                        return <div>
+                            {/* <iframe className='video' src={`https://player.vimeo.com/video/${val.embedded_link}?title=0&byline=0&portrait=0`} width="320" height="180" frameborder="0" webkitallowfullscreen='true' mozallowfullscreen='true' allowfullscreen='true'></iframe> */}
+                            <iframe width="560" height="315" src={`https://www.youtube.com/embed/${val.embedded_link}`} frameborder="0" allowfullscreen='true'></iframe>
+                            <button style={adminView} onClick={() => this.updateState(val.title, val.embedded_link, val.category, val.id)}>Edit</button>
+                        </div>
+                    })}
+
+                    <div className='input'>
+                        <input style={adminView} type='text' value={this.state.title} onChange={(e) => {
+                            this.setState({
+                                title: e.target.value
+                            })
+                        }} />
+                        <input style={adminView} type='text' value={this.state.embedded_link} onChange={(e) => {
+                            this.setState({
+                                embedded_link: e.target.value
+                            })
+                        }} />
+                        {/* <input style={adminView} type='text' value={this.state.category} onChange={(e) => {
+                            this.setState({
+                                category: e.target.value
+                            })
+                        }} /> */}
+
+                        <button style={adminView} onClick={() => this.editSelectedVideo()}>submit changes</button>
                     </div>
-                })}
-
-
-                <input style={adminView} type='text' value={this.state.title} onChange={(e) => {
-                    this.setState({
-                        title: e.target.value
-                    })
-                }} />
-                <input style={adminView} type='text' value={this.state.embedded_link} onChange={(e) => {
-                    this.setState({
-                        embedded_link: e.target.value
-                    })
-                }} />
-                <input style={adminView} type='text' value={this.state.category} onChange={(e) => {
-                    this.setState({
-                        category: e.target.value
-                    })
-                }} />
-
-                <button style={adminView} onClick={() => this.editSelectedVideo()}>submit changes</button>
-                {/* </div> */}
+                </div>
                 <Login />
             </div >
         )

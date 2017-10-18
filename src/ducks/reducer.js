@@ -10,7 +10,7 @@ let initialState = {
             category: '',
         }
     ],
-    user: false,
+    user: true,
     customers: {
         data: []
     }

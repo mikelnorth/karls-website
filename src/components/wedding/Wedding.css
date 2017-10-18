@@ -6,7 +6,12 @@
   justify-content: center; }
 
 .videos {
-  width: 100vw; }
+  background: peachpuff;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  justify-content: center; }
 
 .video {
   margin: 20px; }
