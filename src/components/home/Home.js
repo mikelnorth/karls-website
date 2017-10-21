@@ -5,7 +5,15 @@ import { getLinks, updateVideo } from './../../ducks/reducer.js';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Login from '../login/Login.js'
+import Login from '../login/Login.js';
+import intro from '../../assets/intro.mp4';
+import Typed from 'typed.js';
+import dance from '../../assets/dance.jpg';
+import karl from '../../assets/karl.jpg';
+import karl_night from '../../assets/karl_night.jpg';
+import down from '../../assets/down.png';
+// import { HashLink as Link } from 'react-router-hash-link';
+
 
 class Home extends Component {
     constructor(props) {
@@ -43,7 +51,7 @@ class Home extends Component {
 
     render() {
 
-        const adminView = this.props.user ? null: {
+        const adminView = this.props.user ? null : {
             'display': 'none'
         }
 
@@ -51,20 +59,35 @@ class Home extends Component {
             <div className='home'>
                 <Nav />
                 <div className='top'>
-                    <img className='homepic' src='http://warrenweddings.com/wp-content/uploads/2017/03/wedding-hire.jpg' />
-                    <span className='welcome_span'>this is a fantastic welcome statement</span>
-                    <Link className='wedding' to='/wedding'><button>Wedding Portfolio</button></Link>
+                    {/* <img className='homepic' src='http://warrenweddings.com/wp-content/uploads/2017/03/wedding-hire.jpg' /> */}
+                    <video className='loop' autoplay='autoplay' loop='loop' muted='true'>
+                        <source src={intro} type="video/mp4" />
+                        <source src="movie.ogg" type="video/ogg" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <img className='bounce' src={down}/>
+                    <span className='welcome_span'>some things are worth remembering</span>
+                    <Link className='button' to='/wedding'><span>Wedding Portfolio</span></Link>
                 </div>
+
+
                 <div className='middle'>
-                    <span className='bait'>Bait em, hook em, make em wanna come back for more</span>
+                    <span className='bait'>Karl North Media is not about making a film, it's about reliving and feeling every moment.
+                        catching the memories that matter most and seeing them play back to you.
+                        It's about feeling those butterflies all over again as begin a new journey.
+                        It's about trying to remember the good ol'days while we are still in them.
+                    </span>
                     {this.props.video.map((val, i, arr) => {
-                        return <div>
+                        return <div className='home_vid'>
                             {/* <iframe src={`https://player.vimeo.com/video/${val.embedded_link}?title=0&byline=0&portrait=0`} width="640" height="360" frameborder="0" webkitallowfullscreen='true' mozallowfullscreen='true' allowfullscreen='true'></iframe> */}
-                            <iframe width="560" height="315" src={`https://www.youtube.com/embed/${val.embedded_link}`} frameborder="0" allowfullscreen='true'></iframe>
+                            <iframe width="430.5" height="242" src={`https://www.youtube.com/embed/${val.embedded_link}?color=white&showinfo=0`} frameborder="0" allowfullscreen='true'></iframe>
                             <button style={adminView} onClick={() => this.updateState(val.title, val.embedded_link, val.category, val.id)}>Edit</button>
                         </div>
                     })}
+                </div>
 
+
+                <div className='admin'>
                     <input style={adminView} type='text' value={this.state.title} onChange={(e) => {
                         this.setState({
                             title: e.target.value
@@ -82,8 +105,28 @@ class Home extends Component {
                     }} /> */}
 
                     <button style={adminView} onClick={() => this.editSelectedVideo()}>submit changes</button>
-
                 </div>
+
+                <div>
+                    <img className='dance' src={dance} />
+                </div>
+
+
+                <div id='About' className='About'>
+                    <div className='why_us'><span className='why'>WHY</span> <span className='us'>US?</span></div>
+
+                    <div className='about_content'>
+                        <span className='about_message'>this is information about karl north and his awesome videos. this is going to make you want
+                        to choose him for all of your fun events that you would like to remember. blah blah blah some more awesome stuff
+                        about this rad dude!!!</span>
+                        <Link to='/contact' className='contact_btn'><span>Contact!</span></Link>
+                    </div>
+                    {<img className='karl' src={karl} />}
+                </div>
+                <div>
+                    <img className='karl_night' src={karl_night} />
+                </div>
+
                 <Login />
             </div >
         )

@@ -13,7 +13,7 @@ let initialState = {
     user: true,
     customers: {
         data: []
-    }
+    },
 };
 
 
@@ -21,13 +21,14 @@ const GET_LINKS = 'GET_LINKS';
 const UPDATE_VIDEO = 'UPDATE_VIDEO';
 const ADMIN = 'ADMIN';
 const GET_CUSTOMERS = 'GET_CUSTOMERS';
+const UPDATE_CUSTOMER = 'UPDATE_CUSTOMER';
 
-export function getCustomers(){
+export function getCustomers() {
     const customers = axios.get('/api/get/customers')
-    .then(res => {
-       return res
-    })
-    
+        .then(res => {
+            return res
+        })
+
     return {
         type: GET_CUSTOMERS,
         payload: customers
@@ -50,7 +51,7 @@ export function getLinks(category) {
 export function isAdmin() {
     const admin = axios.get('/auth/me')
         .then(res => {
-            console.log('ADMIN',res.data)
+            console.log('ADMIN', res.data)
             return res.data
         })
     return {
@@ -70,9 +71,17 @@ export function updateVideo(title, embedded_link, category, id) {
     }
 }
 
-
-
-
+export function updateCustomer(archive, id) {
+    const newCustomer = axios.put(`/api/update/customer`, { archive, id })
+        .then(res => {
+            // console.log('test', id)
+            return res
+        })
+    return {
+        type: UPDATE_CUSTOMER,
+        payload: newCustomer
+    }
+}
 
 export default function (state = initialState, action) {
     switch (action.type) {
@@ -83,7 +92,9 @@ export default function (state = initialState, action) {
         case ADMIN + '_FULFILLED':
             return Object.assign({}, state, { user: action.payload })
         case GET_CUSTOMERS + '_FULFILLED':
-            return Object.assign({}, state, {customers: action.payload})
+            return Object.assign({}, state, { customers: action.payload })
+        case UPDATE_CUSTOMER + '_FULFILLED':
+            return Object.assign({}, state, { customers: action.payload })
 
         default:
             return state;

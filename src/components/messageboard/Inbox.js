@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { getCustomers } from './../../ducks/reducer.js';
+import { getCustomers, updateCustomer } from './../../ducks/reducer.js';
 import './Inbox.css'
 import Nav from '../nav/Nav.js';
 import Login from '../login/Login.js';
@@ -29,10 +29,11 @@ class Messageboard extends Component {
             wedding_type: '',
             indoor: '',
             audio: '',
-            message: ''
+            message: '',
+            details: false
         }
 
-        this.deleteMessage = this.deleteMessage.bind(this);
+        this.archive = this.archive.bind(this);
     }
 
     componentDidMount() {
@@ -41,23 +42,14 @@ class Messageboard extends Component {
         this.props.getCustomers();
     }
 
-    deleteMessage(id) {
+    archive(id) {
         this.setState({
             id
         })
 
-        const customerId = { id: id }
-        const weddingId = { customer_id: id }
-
-        axios.delete('/api/delete/customer', customerId)
-            .then(res => {
-                res.data
-            })
-
-        axios.delete('/api/delete/wedding', weddingId)
-            .then(res => {
-                res.data
-            })
+        console.log('state',this.state)
+         this.props.updateCustomer(true, this.state.id)
+         console.log('customers',this.props.customers.data)
     }
 
     moreInfo(id, first_name, last_name, email, phone, contact_method, wedding_location, wedding_date, reception_location,
@@ -78,13 +70,17 @@ class Messageboard extends Component {
             wedding_type,
             indoor,
             audio,
-            message
+            message,
+            details: true
         })
         console.log(this.state)
     }
 
     render() {
-        // console.log('this should be the list of customers', this.props.customers.data)
+        const details = this.state.details ? null : {
+            'display': 'none'
+        }
+        
         return (
             <div className='Messageboard'>
                 <Nav />
@@ -99,7 +95,7 @@ class Messageboard extends Component {
                             <div>
                                 <p>Message: {val.message.length >= 50 ? val.message.substring(0, 50) + '...' : val.message.length ? val.message : 'n/a'}</p>
                             </div>
-                            <button onClick={() => this.deleteMessage(val.id)}>remove</button>
+                            <button onClick={() => this.archive(val.id)}>remove</button>
                             <button onClick={() => this.moreInfo(val.id, val.first_name, val.last_name, val.email, val.phone,
                                 val.contact_method, val.wedding_location, val.wedding_date, val.reception_location, val.reception_date,
                                 val.bridal_location, val.bridal_date, val.wedding_type, val.indoor, val.audio, val.message)}>More Info</button>
@@ -108,20 +104,20 @@ class Messageboard extends Component {
                     }) : null}
                 </div>
 
-                <div className='information'>
-                    <p>email: {this.state.email}</p>
-                    <p>phone: {this.state.phone}</p>
-                    <p>contact_method: {this.state.contact_method}</p>
-                    <p>wedding_location: {this.state.wedding_location}</p>
-                    <p>wedding_date: {this.state.wedding_date}</p>
-                    <p>reception_location: {this.state.reception_location}</p>
-                    <p>reception_date: {this.state.reception_date}</p>
-                    <p>bridal_location: {this.state.bridal_location}</p>
-                    <p>bridal_date: {this.state.bridal_date}</p>
-                    <p>wedding_type: {this.state.wedding_type}</p>
-                    <p>Indoor or Outdorr: {this.state.indoor}</p>
-                    <p>audio: {this.state.audio}</p>
-                    <p>message: {this.state.message}</p>
+                <div className='information' style={details}>
+                    <p>Email: {this.state.email? this.state.email : 'n/a'}</p>
+                    <p>Phone: {this.state.phone? this.state.phone : 'n/a'}</p>
+                    <p>Prefered contact method: {this.state.contact_method ? this.state.contact_method : 'n/a'}</p>
+                    <p>Wedding Location: {this.state.wedding_location ? this.state.wedding_location : 'n/a'}</p>
+                    <p>Wedding Date: {this.state.wedding_date? this.state.wedding_date : 'n/a'}</p>
+                    <p>Reception Location: {this.state.reception_location? this.state.reception_location : 'n/a'}</p>
+                    <p>Reception Date: {this.state.reception_date? this.state.reception_date : 'n/a'}</p>
+                    <p>Bridal Location: {this.state.bridal_location? this.state.bridal_location : 'n/a'}</p>
+                    <p>Bridal Date: {this.state.bridal_date? this.state.bridal_date : 'n/a'}</p>
+                    <p>Wedding Type: {this.state.wedding_type? this.state.wedding_type : 'n/a'}</p>
+                    <p>Indoor or Outdorr: {this.state.indoor? this.state.indoor : 'n/a'}</p>
+                    <p>Video Audio: {this.state.audio? this.state.audio : 'n/a'}</p>
+                    <p>Message: {this.state.message? this.state.message : 'n/a'}</p>
 
                 </div>
 
@@ -136,8 +132,9 @@ class Messageboard extends Component {
 function mapStatetoProps(state) {
     return {
         user: state.user,
-        customers: state.customers
+        customers: state.customers,
+        customer: state.customer
     }
 }
 
-export default (connect(mapStatetoProps, { getCustomers })(Messageboard));
+export default (connect(mapStatetoProps, { getCustomers, updateCustomer })(Messageboard));

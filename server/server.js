@@ -51,7 +51,7 @@ app.get('/auth/callback', passport.authenticate('auth0', {
 }));
 app.get('/auth/me', (req, res) => {
     if (!req.user) {
-        return res.status(404).send(false)
+        return res.status(200).send(false)
     }
     return res.status(200).send(true);
 })
@@ -70,8 +70,8 @@ app.post('/api/wedding/insert', controller.insertWedding)
 
 app.get('/api/get/customers', controller.getCustomers)
 
-// app.delete('/api/delete/customer', controller.deleteCustomer)
-// app.delete('/api/delete/wedding', controller.deleteWedding)
+app.put('/api/update/customer', controller.updateCustomer)
+
 
 passport.serializeUser((user, done) => {
     done(null, user);

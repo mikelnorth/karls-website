@@ -1,0 +1,29 @@
+.footer {
+  width: 100%;
+  background: gray;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.follow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 60px;
+  margin-bottom: 60px; }
+
+a {
+  margin: 20px; }
+
+.finePrint {
+  font-size: 10px; }
+
+.login_button {
+  text-decoration: none;
+  color: black;
+  padding: 0px 10px 0px 10px;
+  font-size: 10px;
+  border-style: solid;
+  border-width: .05px; }

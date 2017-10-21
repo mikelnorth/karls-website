@@ -55,8 +55,8 @@ class Wedding extends Component {
                 <div className='videos'>
                     {this.props.video.map((val, i, arr) => {
                         return <div>
-                            {/* <iframe className='video' src={`https://player.vimeo.com/video/${val.embedded_link}?title=0&byline=0&portrait=0`} width="320" height="180" frameborder="0" webkitallowfullscreen='true' mozallowfullscreen='true' allowfullscreen='true'></iframe> */}
-                            <iframe width="560" height="315" src={`https://www.youtube.com/embed/${val.embedded_link}`} frameborder="0" allowfullscreen='true'></iframe>
+                            {val.title}
+                            <iframe width="430.5" height="242" src={`https://www.youtube.com/embed/${val.embedded_link}?color=white&showinfo=0&rel=0`} frameborder="0" allowfullscreen='true'></iframe>
                             <button style={adminView} onClick={() => this.updateState(val.title, val.embedded_link, val.category, val.id)}>Edit</button>
                         </div>
                     })}
