@@ -18,10 +18,10 @@
     // width: 100vw;
     height: 56vw;
     width: 100vw;
-    perspective: 2;
-    .parallax_top{
-        transform: translateZ(1px);
-    }
+    // perspective: 2;
+    // .parallax_top{
+    //     transform: translateZ(1px);
+    // }
 }
 .welcome_span{
     position: absolute;
@@ -39,8 +39,8 @@
 
 .loop{
     width: 100vw;
-    // z-index: -1;
-    // transform: translateZ(3px) scale(2.5);
+     z-index: -1;
+
     position: fixed;
 }
 

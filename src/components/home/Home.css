@@ -11,10 +11,7 @@
   align-items: center;
   position: relative;
   height: 56vw;
-  width: 100vw;
-  perspective: 2; }
-  .top .parallax_top {
-    transform: translateZ(1px); }
+  width: 100vw; }
 
 .welcome_span {
   position: absolute;
@@ -29,6 +26,7 @@
 
 .loop {
   width: 100vw;
+  z-index: -1;
   position: fixed; }
 
 .button {
