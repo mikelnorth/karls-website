@@ -9,23 +9,76 @@
     background: peachpuff;
 }
 
+.contact_top{
+    width: 100vw;
+    position: relative;
+}
 
 .contactpic{
     width: 100vw;
-
 }
 
-// .customer_info{
-//     background-color: peachpuff;
+// .bounce_contact {
+//     position: absolute;
+//     left:50%;
+//     bottom:80px;
+//     margin-top:-25px;
+//     margin-left:-25px;
+//     height:50px;
+//     width:50px;
+//     // background-image: url('../../assets/down.png')
+//     -webkit-animation:bounce 1s infinite;
+//     -moz-animation:bounce 1s infinite;
+//     -o-animation:bounce 1s infinite;
+//     animation:bounce 1s infinite;
+    
+//   }
+  
+//   @-webkit-keyframes bounce {
+//     0%       { bottom:80px; }
+//     50%      { bottom:95px; }
+//     100%     {bottom:120;}
+//   }
+  
+//    @-moz-keyframes bounce {
+//     0%       { bottom:80px; }
+//     50%      { bottom:95px; }
+//     100%     {bottom:120;}
+//   }
+  
+//    @-o-keyframes bounce {
+//     0%       { bottom:80px; }
+//     50%      { bottom:95px; }
+//     100%     {bottom:120;}
+//   }
+  
+//    @keyframes bounce {
+//     0%       { bottom:80px; }
+//     50%      { bottom:95px; }
+//     100%     {bottom:120;}
+//   }
+
+// .hashLink{
+//     position: absolute;
+//     bottom: 0;
+//     margin-left: auto;
 // }
-// .wedding_info{
-//     background-color: peachpuff;
-// }
+
+.customer_info{
+    background-color: rgba(128, 128, 128, 0.288)
+    ;
+}
+.wedding_info{
+    background-color: rgba(128, 128, 128, 0.288);
+}
 
 .form{
     width: 50vw;
     margin: auto;
     padding: 20px;
     text-align: center;
-
 }
+
+
+
+

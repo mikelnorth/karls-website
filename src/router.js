@@ -8,6 +8,7 @@ import About from './components/about/About.js';
 import Events from './components/events/Events.js';
 import Message from './components/messageboard/Message.js';
 import Inbox from './components/messageboard/Inbox.js';
+import { HashLink } from 'react-router-hash-link';
 
 
 
@@ -23,5 +24,8 @@ export default (
       <Route component={Inbox} path='/inbox'/>
       <Route component={Message} path='/message' />
     </Switch>
+    <div id='Nav'>
+                <HashLink to='/#About' className='Nav-links'></HashLink>
+            </div>
   </div>
 )

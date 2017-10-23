@@ -8,11 +8,11 @@ import { Link } from 'react-router-dom';
 import Login from '../login/Login.js';
 import intro from '../../assets/intro.mp4';
 import Typed from 'typed.js';
-import dance from '../../assets/dance.jpg';
 import karl from '../../assets/karl.jpg';
 import karl_night from '../../assets/karl_night.jpg';
 import down from '../../assets/down.png';
-// import { HashLink as Link } from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
+
 
 
 class Home extends Component {
@@ -65,13 +65,15 @@ class Home extends Component {
                         <source src="movie.ogg" type="video/ogg" />
                         Your browser does not support the video tag.
                     </video>
-                    <img className='bounce' src={down}/>
+                    {/* <div className='parallax_top'> */}
+                    <HashLink className='hashLink' to='/#middle'><img className='bounce' src={down}/></HashLink>
                     <span className='welcome_span'>some things are worth remembering</span>
                     <Link className='button' to='/wedding'><span>Wedding Portfolio</span></Link>
+                    {/* </div> */}
                 </div>
 
 
-                <div className='middle'>
+                <div id='middle' className='middle'>
                     <span className='bait'>Karl North Media is not about making a film, it's about reliving and feeling every moment.
                         catching the memories that matter most and seeing them play back to you.
                         It's about feeling those butterflies all over again as begin a new journey.
@@ -80,7 +82,7 @@ class Home extends Component {
                     {this.props.video.map((val, i, arr) => {
                         return <div className='home_vid'>
                             {/* <iframe src={`https://player.vimeo.com/video/${val.embedded_link}?title=0&byline=0&portrait=0`} width="640" height="360" frameborder="0" webkitallowfullscreen='true' mozallowfullscreen='true' allowfullscreen='true'></iframe> */}
-                            <iframe width="430.5" height="242" src={`https://www.youtube.com/embed/${val.embedded_link}?color=white&showinfo=0`} frameborder="0" allowfullscreen='true'></iframe>
+                            <iframe src={`https://www.youtube.com/embed/${val.embedded_link}?color=white&showinfo=0`} frameborder="0" allowfullscreen='true'></iframe>
                             <button style={adminView} onClick={() => this.updateState(val.title, val.embedded_link, val.category, val.id)}>Edit</button>
                         </div>
                     })}
@@ -107,24 +109,26 @@ class Home extends Component {
                     <button style={adminView} onClick={() => this.editSelectedVideo()}>submit changes</button>
                 </div>
 
-                <div>
-                    <img className='dance' src={dance} />
+                <div className='dance'>
+                    {/* <img className='dance' src={dance} /> */}
                 </div>
 
 
                 <div id='About' className='About'>
                     <div className='why_us'><span className='why'>WHY</span> <span className='us'>US?</span></div>
+                    
+                    {<img className='karl' src={karl} />}
 
                     <div className='about_content'>
                         <span className='about_message'>this is information about karl north and his awesome videos. this is going to make you want
                         to choose him for all of your fun events that you would like to remember. blah blah blah some more awesome stuff
                         about this rad dude!!!</span>
-                        <Link to='/contact' className='contact_btn'><span>Contact!</span></Link>
+                        <Link to='/contact' className='contact_btn'><span>Contact</span></Link>
                     </div>
-                    {<img className='karl' src={karl} />}
+                    
                 </div>
                 <div>
-                    <img className='karl_night' src={karl_night} />
+                    {/* <img className='karl_night' src={karl_night} /> */}
                 </div>
 
                 <Login />

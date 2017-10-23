@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Nav.css';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
+import { HashLink } from 'react-router-hash-link'
 
 class Nav extends Component {
     render() {
@@ -22,7 +23,7 @@ class Nav extends Component {
                 </div>
 
                 <Link className='link' to='/contact'><p>Contact</p></Link>
-                <Link className='link' to='/about'><p>About</p></Link>
+                <HashLink className='link' to='/#About'><p>About</p></HashLink>
                 <Link className='link' style={adminView} to='/inbox'><p>Messages</p></Link>
             </div >
         )

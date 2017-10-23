@@ -29,6 +29,7 @@ export default class Login extends Component {
                     icons are not owned by Karl North Media and have been provided by  Freepik from www.flaticon.com
                  </span>
                 <div className='login'>
+                    <p>ADMIN LOGIN</p>
                     <a href={process.env.REACT_APP_LOGIN}><span className="login_button">Login</span></a>
                     <a href='http://localhost:3005/auth/logout'><span className="login_button">Log out</span></a>
                 </div>

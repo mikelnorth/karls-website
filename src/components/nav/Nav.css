@@ -26,3 +26,8 @@
 
 .dropdown:hover .dropdown-content {
   display: block; }
+
+@media (max-width: 450px) {
+  .nav {
+    height: 25px;
+    font-size: 15px; } }
