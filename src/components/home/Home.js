@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import Login from '../login/Login.js';
 import intro from '../../assets/intro.mp4';
 import Typed from 'typed.js';
+import dance from '../../assets/dance.jpg';
 import karl from '../../assets/karl.jpg';
 import karl_night from '../../assets/karl_night.jpg';
 import down from '../../assets/down.png';
@@ -65,11 +66,9 @@ class Home extends Component {
                         <source src="movie.ogg" type="video/ogg" />
                         Your browser does not support the video tag.
                     </video>
-                    {/* <div className='parallax_top'> */}
                     <HashLink className='hashLink' to='/#middle'><img className='bounce' src={down}/></HashLink>
                     <span className='welcome_span'>some things are worth remembering</span>
                     <Link className='button' to='/wedding'><span>Wedding Portfolio</span></Link>
-                    {/* </div> */}
                 </div>
 
 
@@ -109,8 +108,8 @@ class Home extends Component {
                     <button style={adminView} onClick={() => this.editSelectedVideo()}>submit changes</button>
                 </div>
 
-                <div className='dance'>
-                    {/* <img className='dance' src={dance} /> */}
+                <div>
+                    <img className='dance' src={dance} />
                 </div>
 
 

@@ -48,7 +48,7 @@ class Wedding extends Component {
         return (
             <div className='Wedding'>
                 <Nav />
-                <div className='top'>
+                <div className='top_wedding'>
 
 
                 </div>

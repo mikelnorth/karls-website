@@ -22,18 +22,18 @@ a {
 .finePrint {
   font-size: 10px; }
 
-.login p {
-  font-size: 10px; }
-
-.login a {
-  text-decoration: none; }
-
-.login span {
-  color: #2e2c2c;
-  padding: .5px 10px .5px 10px;
-  font-size: 10px;
-  border-style: solid;
-  border-width: .05px; }
+.login {
+  margin-bottom: 10px; }
+  .login p {
+    font-size: 10px; }
+  .login a {
+    text-decoration: none; }
+  .login span {
+    color: #2e2c2c;
+    padding: .5px 10px .5px 10px;
+    font-size: 10px;
+    border-style: solid;
+    border-width: .05px; }
 
 @media (max-width: 400px) {
   .footer img {

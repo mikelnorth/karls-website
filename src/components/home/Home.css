@@ -20,6 +20,7 @@
   color: #0c0c0c;
   width: 35%;
   background: rgba(165, 255, 213, 0.5);
+  padding: 5px 10px 5px 10px;
   font-size: 25px;
   margin-top: 35%;
   border-radius: 2px; }
@@ -144,16 +145,11 @@
   background: rgba(255, 165, 158, 0.651); }
 
 .dance {
-  height: 400px;
-  width: 100vw;
-  background-image: url("../../assets/dance.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; }
+  width: 100vw; }
 
 .About {
   width: 100vw;
-  background: rgba(241, 103, 39, 0.774);
+  background: #ff8e5a;
   height: 500px;
   position: relative;
   display: flex;
