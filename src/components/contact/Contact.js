@@ -17,8 +17,8 @@ export default class Contact extends Component {
             lastName: '',
             email: '',
             phone: '',
-            contact: '',
-            type: 'wedding',
+            contact: 'Email',
+            type: 'Wedding',
             weddingLocation: '',
             weddingDate: '',
             receptionLocation: '',
@@ -46,7 +46,7 @@ export default class Contact extends Component {
 
     submitCustomerInfo(e) {
         e.preventDefault()
-        const { firstName, lastName, email, phone, contact, weddingLocation, weddingDate, receptionLocation, 
+        const { firstName, lastName, email, phone, contact, weddingLocation, weddingDate, receptionLocation,
             receptionDate, bridalLocation, bridalDate,
             culture, setting, audio, message, customerId } = this.state
 
@@ -75,41 +75,40 @@ export default class Contact extends Component {
 
 
         axios.post('/api/customer/insert', customerData)
-        .then(res => {
-            weddingData.customer_id = res.data.id
+            .then(res => {
+                weddingData.customer_id = res.data.id
 
-            axios.post('/api/wedding/insert', weddingData)
-                .then(res => {
-                    alert('form submitted')
+                axios.post('/api/wedding/insert', weddingData)
+                    .then(res => {
+                        alert('form submitted')
 
-                    this.setState({
-                        firstName: '',
-                        lastName: '',
-                        email: '',
-                        phone: '',
-                        contact: '',
-                        type: 'wedding',
-                        weddingLocation: '',
-                        weddingDate: '',
-                        receptionLocation: '',
-                        receptionDate: '',
-                        bridalLocation: '',
-                        bridalDate: '',
-                        culture: '',
-                        setting: '',
-                        audio: '',
-                        message: '',
-                        customerId: 0
+                        this.setState({
+                            firstName: '',
+                            lastName: '',
+                            email: '',
+                            phone: '',
+                            contact: 'Email',
+                            type: 'Wedding',
+                            weddingLocation: '',
+                            weddingDate: '',
+                            receptionLocation: '',
+                            receptionDate: '',
+                            bridalLocation: '',
+                            bridalDate: '',
+                            culture: '',
+                            setting: '',
+                            audio: '',
+                            message: '',
+                            customerId: 0
 
+                        })
                     })
-                })
-        })
+            })
 
 
     }
 
     render() {
-
         const { firstName, lastName, email, phone, contact, type, weddingLocation, weddingDate, receptionLocation, receptionDate, bridalLocation, bridalDate,
             culture, setting, audio, message, customerId } = this.state
 
@@ -118,36 +117,41 @@ export default class Contact extends Component {
                 <Nav />
 
                 <div className='contact_top'>
-                <img className='contactpic' src='http://www.simplyinspired.co.nz/extra/00--weddings054.jpg' />
-                {/* <img className='bounce_contact' src={down}/> */}
+                    <img className='contactpic' src='http://www.simplyinspired.co.nz/extra/00--weddings054.jpg' />
+                    {/* <img className='bounce_contact' src={down}/> */}
                 </div>
 
                 <div className='form'>
                     <form>
-                        <fieldset className='customer_info' autocomplete="on" >
-                            <span>Personal information REQUIRED:</span><br/><br/>
-                            First name:<br />
+                        <div className='personal_info' autocomplete="on" >
+                            <h2>Personal information:</h2><br /><br />
+
                             <input onChange={(e) => this.handleChange('firstName', e.target.value)}
-                                type="text" name="firstname" value={firstName} required /><br />
+                                placeholder='First Name *' type="text" name="firstname" value={firstName} required /><br />
 
-                            Last name:<br />
                             <input onChange={(e) => this.handleChange('lastName', e.target.value)}
-                                type="text" name="lastname" value={lastName} required /><br />
+                                placeholder='Last Name *' type="text" name="lastname" value={lastName} required /><br />
 
-                            Email:<br />
                             <input onChange={(e) => this.handleChange('email', e.target.value)}
-                                type="text" name="Email" value={email} required /><br />
+                                placeholder='Email *' type="text" name="Email" value={email} required /><br />
 
-                            Phone:<br />
                             <input onChange={(e) => this.handleChange('phone', e.target.value)}
-                                type="text" name="Phone" value={phone} /><br />
+                                placeholder='Phone Number (optional)' type="text" name="Phone" value={phone} /><br />
 
-                            Prefered contact method:<br />
-                            Phone<input onChange={(e) => this.handleChange('contact', e.target.value)}
-                                type="radio" name="contact method" value="Phone" value={contact} />
-                            or Email<input onChange={(e) => this.handleChange('contact', e.target.value)}
-                                type="radio" name="contact method" value={contact} /> <br />
+                            <div className='contact_method'>
+                                Prefered contact method:
+                                <select name='contact_method' onChange={(e) => this.handleChange('contact', e.target.value)}>
+                                    <option value="Email">Email</option>
+                                    <option value="Phone">Phone</option>
+                                </select>
 
+
+                                {/* Phone<input onChange={(e) => this.handleChange('contact', e.target.value)}
+                                    type="radio" name="contact method" value="Phone" value={contact} />
+                                Email<input onChange={(e) => this.handleChange('contact', e.target.value)}
+                                    type="radio" name="contact method" value={contact} /> <br /> */}
+
+                            </div>
                             {/* <select name="cars">
                             <option value="wedding">wedding</option>
                             <option value="travel">Travel</option>
@@ -156,40 +160,42 @@ export default class Contact extends Component {
                         </select><br/> */}
 
 
-                        </fieldset>
-                        <br/>
+                        </div>
+                        <br />
 
                         <fieldset className='wedding_info'>
-                            <span>Event Information:</span><br/>
+                            <h2>Event Information:</h2><br />
+                            <div className='input_wedding'>
                             <input onChange={(e) => this.handleChange('type', e.target.value)}
-                                type="text" name="wedding" value='wedding' required /><br /><br/>
+                                type="text" name="wedding" value='wedding' /><br /><br />
 
-                            Wedding Location:
-                    <input onChange={(e) => this.handleChange('weddingLocation', e.target.value)}
-                                type="text" name="wedding location" value={weddingLocation} required />
 
-                            Wedding date:
-                    <input onChange={(e) => this.handleChange('weddingDate', e.target.value)}
-                                type="date" name="wedding location" value={weddingDate} required /><br />
+                            <input onChange={(e) => this.handleChange('weddingLocation', e.target.value)}
+                                placeholder='Wedding Location' type="text" name="wedding location" value={weddingLocation} />
 
-                            Reception Location:
-                    <input onChange={(e) => this.handleChange('receptionLocation', e.target.value)}
-                                type="text" name="reception location" value={receptionLocation} />
 
-                            Reception date:
-                    <input onChange={(e) => this.handleChange('receptionDate', e.target.value)}
+                            <input onChange={(e) => this.handleChange('weddingDate', e.target.value)}
+                                type="date" name="wedding location" value={weddingDate} /><br />
+
+
+                            <input onChange={(e) => this.handleChange('receptionLocation', e.target.value)}
+                                placeholder='Reception Location' type="text" name="reception location" value={receptionLocation} />
+
+
+                            <input onChange={(e) => this.handleChange('receptionDate', e.target.value)}
                                 type="date" name="reception location" value={receptionDate} /><br />
 
-                            Bridal Location:
-                    <input onChange={(e) => this.handleChange('bridalLocation', e.target.value)}
-                                type="text" name="bridal location" value={bridalLocation} /><br/>
 
-                            Bridal date:
-                    <input onChange={(e) => this.handleChange('bridalDate', e.target.value)}
+                            <input onChange={(e) => this.handleChange('bridalLocation', e.target.value)}
+                                placeholder='Bridal Location' type="text" name="bridal location" value={bridalLocation} />
+                            
+                            <input onChange={(e) => this.handleChange('bridalDate', e.target.value)}
                                 type="date" name="bridal location" value={bridalDate} /><br />
 
-                            Type of Wedding:<br/>
-                    <input onChange={(e) => this.handleChange('culture', e.target.value)}
+                            Type of Wedding:<br />
+                            </div>
+
+                            <input onChange={(e) => this.handleChange('culture', e.target.value)}
                                 list="wedding type" name="culture" value={culture} />
                             <datalist id="wedding type">
                                 <option value="American" />
@@ -211,9 +217,8 @@ export default class Contact extends Component {
                                 type='radio' name='audio' value='Strictly musical montage' /><br />
 
 
-                            Aditonal information:<br />
-                            <textarea onChange={(e) => this.handleChange('message', e.target.value)}
-                                name="message" rows="10" cols="40" value={message} placeholder='additonal information...'></textarea>
+                            <textarea className='textarea' onChange={(e) => this.handleChange('message', e.target.value)}
+                                placeholder='Aditional information' name="message" value={message} placeholder='additonal information...'></textarea>
                             <br />
                         </fieldset>
 

@@ -1,4 +1,10 @@
-.customer {
+.Messageboard {
+  height: 100vh;
+  width: 100%;
+  background-color: #3fa5f8;
+  padding-top: 20px; }
+
+.customers {
   background: peachpuff;
   width: 50vw;
   float: left; }

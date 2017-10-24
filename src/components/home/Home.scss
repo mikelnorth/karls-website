@@ -8,6 +8,7 @@
     width:100%;
     
     
+    
 }
 
 .top{
@@ -128,7 +129,8 @@
 
 .middle{
     width: 100vw;
-    background: #4ABDAC;
+    background: rgb(94, 233, 212);
+    // background: rgb(206, 223, 230);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -137,10 +139,10 @@
     padding-bottom: 20px;
 }
 
-.bait{
+.middle_message{
     text-align: center;
     background: rgba(223, 220, 227, 0.521);
-    // box-shadow: 0 0px 0 rgba(0, 0, 0, 0.05), 0 0px 40px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0px 0 rgba(0, 0, 0, 0.05), 0 0px 40px 0 rgba(0, 0, 0, 0.19);
     width: 350px;
     font-family: 'Arima Madurai', cursive;
     margin-right: 40px;
@@ -151,16 +153,44 @@
 
 .home_vid{
     margin-left: 40px;
+    display: flex;
+    flex-direction: column;
     iframe{
         width: 430.5px;
         height: 242px;
+    }
+    button{
+        background: white;
+        border: 1px solid black;
+        border-radius: 5px;
+        color: black;
+    }
+    button:hover{
+        background: rgba(255, 255, 255, 0.562);
+        border: 1px solid red;
+        color: red;
     }
 }
 
 .admin{
     width: 100%;
     text-align: center;
-    background: rgba(255, 165, 158, 0.651);
+    background: rgb(94, 233, 212);
+    input{
+        border-radius: 5px;
+        border: 1px solid rgb(92, 92, 92);;
+    }
+    button{
+        background: white;
+        border: 1px solid black;
+        border-radius: 5px;
+        color: black;
+    }
+    button:hover{
+        background: rgba(255, 255, 255, 0.562);
+        border: 1px solid red;
+        color: red;
+    }
 }
 
 .dance{
@@ -168,7 +198,8 @@
 }
 .About{
     width: 100vw;
-    background: rgb(255, 142, 90);
+    // background: #4ABDAC;
+    background: rgb(94, 233, 212);
     height: 500px;
     position: relative;
     display: flex;
@@ -188,7 +219,7 @@
 .about_message{
     font-size: 25px;
     padding: 20px;
-    background: #4ABDAC;
+    background: transparent;
     width: 65%;
     text-align: center;
     margin: auto; 
@@ -197,14 +228,14 @@
 }
 
 .why_us{
-    background: #4ABDAC;
+    background: transparent;
     font-size: 40px;
     position: absolute;
     top: 20px;;
     left: 650px;
 }
 .why{
-    color: rgba(241, 103, 39, 0.774);
+    color: #4ABDAC;
 }
 .us{
     color: rgb(255, 255, 255);
@@ -263,6 +294,10 @@
         width: auto;
         padding: 0 20px 0 20px;
     }
+    .bounce {
+        display: none;
+    }
+
     .About{
         height: 300px;
         }
@@ -270,7 +305,7 @@
             font-size: 30px;
             position: absolute;
             top: 15px;;
-            left: 370px;
+            left: 375px;
     }
 
     .about_message{
@@ -287,26 +322,22 @@
 
     .button{
         padding: 2px 6px 2px 6px;
-    }
-    
-      .bounce {
-        display: none;
-      }
-      
+    } 
     
     .middle{
        flex-direction: column;
     }
     
-    .bait{
+    .middle_message{
         text-align: center;
         background: rgba(223, 220, 227, 0.521);
         width: 350px;
         font-family: 'Arima Madurai', cursive;
         margin: auto;
         padding: 20px;
-        max-height: 242px;
+        max-height: 600px;
         overflow: scroll;
+        border-radius: 5px;
     }
     
     .home_vid{
@@ -315,6 +346,7 @@
             iframe{
                 width: 95vw;
                 height: 242px;
+                border-radius: 5px;
             }
     }
     .admin{
@@ -333,6 +365,7 @@
     .karl{
             height: 250px;
             margin: 20px;
+            border-radius: 5px;
     }
     .why_us{
         font-size: 30px;
@@ -385,10 +418,10 @@
         width: 95%;
         border-radius: 5px;
     }
-    .bait{
+    .middle_message{
     text-align: center;
-    width: 100vw;
-    padding: 0px;
+    width: 95vw;
+    padding: 10px;
     max-height: 400px;
     max-width: 100%;
     border-radius: 5px;

@@ -73,7 +73,8 @@ class Home extends Component {
 
 
                 <div id='middle' className='middle'>
-                    <span className='bait'>Karl North Media is not about making a film, it's about reliving and feeling every moment.
+                    <span className='middle_message'><p>KARL NORTH MEDIA</p><br/>
+                        Karl North Media is not about making a film, it's about reliving and feeling every moment.
                         catching the memories that matter most and seeing them play back to you.
                         It's about feeling those butterflies all over again as begin a new journey.
                         It's about trying to remember the good ol'days while we are still in them.

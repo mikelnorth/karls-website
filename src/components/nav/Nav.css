@@ -9,6 +9,7 @@
   background: rgba(128, 128, 128, 0.26);
   width: 100vw;
   color: white;
+  text-shadow: 1px black;
   height: 50px; }
 
 .link {
@@ -17,17 +18,25 @@
 
 .dropdown {
   position: relative;
-  display: inline-block; }
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); }
-
-.dropdown:hover .dropdown-content {
-  display: block; }
+  display: none; }
 
 @media (max-width: 450px) {
   .nav {
-    height: 25px;
-    font-size: 15px; } }
+    background: transparent; }
+    .nav .link {
+      display: none; }
+    .nav .dropdown {
+      position: absolute;
+      left: 10px;
+      display: inline-block;
+      text-decoration: none; }
+    .nav .dropdown:hover .dropdown-content {
+      display: block;
+      width: 100vw;
+      color: black; }
+    .nav .dropdown-content {
+      display: none;
+      position: absolute;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); }
+      .nav .dropdown-content p {
+        text-decoration: none; } }

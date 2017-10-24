@@ -3,82 +3,132 @@
 .Contact{
     display: flex;
     flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    text-align: center;
+    justify-content: center;
     background: peachpuff;
-}
-
-.contact_top{
-    width: 100vw;
-    position: relative;
+    // align-items: center;
 }
 
 .contactpic{
     width: 100vw;
 }
-
-// .bounce_contact {
-//     position: absolute;
-//     left:50%;
-//     bottom:80px;
-//     margin-top:-25px;
-//     margin-left:-25px;
-//     height:50px;
-//     width:50px;
-//     // background-image: url('../../assets/down.png')
-//     -webkit-animation:bounce 1s infinite;
-//     -moz-animation:bounce 1s infinite;
-//     -o-animation:bounce 1s infinite;
-//     animation:bounce 1s infinite;
+.form{
+    width: 100vw;
+    // margin: auto;
+    // padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
-//   }
-  
-//   @-webkit-keyframes bounce {
-//     0%       { bottom:80px; }
-//     50%      { bottom:95px; }
-//     100%     {bottom:120;}
-//   }
-  
-//    @-moz-keyframes bounce {
-//     0%       { bottom:80px; }
-//     50%      { bottom:95px; }
-//     100%     {bottom:120;}
-//   }
-  
-//    @-o-keyframes bounce {
-//     0%       { bottom:80px; }
-//     50%      { bottom:95px; }
-//     100%     {bottom:120;}
-//   }
-  
-//    @keyframes bounce {
-//     0%       { bottom:80px; }
-//     50%      { bottom:95px; }
-//     100%     {bottom:120;}
-//   }
-
-// .hashLink{
-//     position: absolute;
-//     bottom: 0;
-//     margin-left: auto;
-// }
-
-.customer_info{
-    background-color: rgba(128, 128, 128, 0.288)
-    ;
 }
+
+
+
+.personal_info{
+    background-color: rgba(128, 128, 128, 0.288);
+    width: 40vw;
+    input{
+        border-radius: 5px;
+        border: 1px solid #eee;
+        margin-bottom: 15px;
+        width: 60%;
+        height: 25px;
+        padding: 0px 15px;
+    }
+
+    .contact_method{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 10px;
+
+        select{
+            border:2px solid #ccc;
+            border-radius: 5px;
+            cursor:pointer;
+            display:inline-block;
+            
+        }
+
+    }
+}
+
+
 .wedding_info{
     background-color: rgba(128, 128, 128, 0.288);
+    width: 40vw;
+    .input_wedding input{
+        
+        border: 1px solid #eee;
+        margin: 5px;
+        margin-bottom: 10px;
+        width: 45%;
+        height: 25px;
+        padding: 0px 15px;
+    }
+    input{
+        border-radius: 5px;
+        margin: 5px;
+        margin-bottom: 10px;
+    }
+
+    textarea{
+        border-radius: 5px;
+        border: 1px solid #eee;
+        margin: 5px;
+        margin-bottom: 10px;
+        width: 55%;
+        height: 100px;
+        max-width: 100%;
+        padding: 0px 15px;
+    }
 }
 
-.form{
-    width: 50vw;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
+@media (max-width: 800px){
+
+    .personal_info{
+        width: 70vw;
+        border-radius: 5px;
+        h2{
+            font-size: 20px;
+        }
+        input{
+            margin-bottom: 15px;
+            width: 100%;
+            height: 25px;
+            padding: 0px 15px;
+        }
+    }
+        .wedding_info{
+            width: 70vw;
+            border-radius: 5px;
+            h2{
+                font-size: 20px;
+            }
+             .input_wedding input{
+                display: flex;
+                width: 100%;
+                text-align: center;
+                margin: 0px;
+                margin-bottom: 10px;
+                textarea{
+                    width: 90%;
+                }
+            }
+        }
 }
 
-
-
-
+@media (max-width: 450px){
+    
+        .personal_info{
+            width: 90vw;
+        }
+        .wedding_info{
+             width: 90vw;
+             font-size: 13px;
+             textarea{
+                width: 90%;
+            }
+                
+        }
+    }

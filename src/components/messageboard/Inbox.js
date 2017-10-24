@@ -78,17 +78,18 @@ class Messageboard extends Component {
 
     render() {
         const details = this.state.details ? null : {
-            'display': 'none'
+            // 'display': 'none'
         }
         
         return (
             <div className='Messageboard'>
                 <Nav />
+                <div className='inbox'>
                 <h1>INBOX</h1>
-                <div className='customer'>
+                <div className='customers'>
                     <h4>Customer Information</h4>
                     {this.props.customers.data.length ? this.props.customers.data.map((val, i, arr) => {
-                        return <div>
+                        return <div className='customer'>
                             <div>
                                 <p>Name: {val.first_name} {val.last_name}</p>
                             </div>
@@ -122,7 +123,7 @@ class Messageboard extends Component {
                 </div>
 
 
-
+                    </div>
                 <Login />
             </div >
         )

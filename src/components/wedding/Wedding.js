@@ -56,7 +56,7 @@ class Wedding extends Component {
                     {this.props.video.map((val, i, arr) => {
                         return <div className='videos_content'>
                             <div className='title'>{val.title}</div>
-                            <iframe width="430.5" height="242" src={`https://www.youtube.com/embed/${val.embedded_link}?color=white&showinfo=0&rel=0`} frameborder="0" allowfullscreen='true'></iframe>
+                            <iframe src={`https://www.youtube.com/embed/${val.embedded_link}?color=white&showinfo=0&rel=0`} frameborder="0" allowfullscreen='true'></iframe>
                             <button style={adminView} onClick={() => this.updateState(val.title, val.embedded_link, val.category, val.id)}>Edit</button>
                         </div>
                     })}
