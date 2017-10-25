@@ -110,6 +110,8 @@ export default class Contact extends Component {
                             })
                     })
 
+                    axios.post('/api/send_email',this.state)
+
             }
             else {
                 alert('Must submit valid email')
@@ -119,7 +121,6 @@ export default class Contact extends Component {
             alert('please fill out required fields')
         }
     }
-
 
 
     render() {

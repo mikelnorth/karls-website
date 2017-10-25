@@ -5,11 +5,11 @@ const express = require('express'),
     massive = require('massive'),
     passport = require('passport'),
     Auth0Strategy = require('passport-auth0'),
-    controller = require('./controller'),
-    nodemailer = require('nodemailer'),
-    exphbs = require('express-handlebars'),
-    mainCtrl = require('./mail_controllerç');
-
+    mail_controller = require('./mail_controller'),
+    controller = require('./controller');
+    // nodemailer = require('nodemailer'),
+    // exphbs = require('express-handlebars'),
+    // mail_controller = require('./mail_controller');
 
 const app = express();
 
@@ -73,7 +73,7 @@ app.get('/api/get/customers', controller.getCustomers)
 
 app.put('/api/update/customer', controller.updateCustomer)
 
-// app.post('/api/send_email', mainCtrl.sendEmail)
+app.post('/api/send_email', mail_controller.sendEmail)
 
 
 passport.serializeUser((user, done) => {

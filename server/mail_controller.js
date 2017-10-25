@@ -1,5 +1,5 @@
-const nodemailer = require('nodemailer')
-, config = require('./config');
+require('dotenv').config();
+const nodemailer = require('nodemailer');
 
 module.exports = {
     sendEmail(req, res) {
@@ -17,19 +17,19 @@ module.exports = {
 
         // setup email data with unicode symbols
         let mailOptions = {
-            from: `"J 👻" <${process.env.user_email}>`, // sender address
-            to: req.body.to, // list of receivers
-            subject: req.body.subject, // Subject line
-            text: 'Making breadsticks', // plain text body
-            html: `<b>${ req.body.body }</b>` // html body
+            from: `"Karl North Media" <${process.env.user_email}>`, // sender address
+            to: process.env.admin_email, // list of receivers
+            subject: 'New Customer', // Subject line
+            // text: 'testing one two on two', // plain text body
+            html: `<h1>${ req.body.firstName}  ${req.body.lastName}</h1> `// html body
         };
 
         // send mail with defined transport object
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
-                res.send(error)
+              return  res.status(400).send(error)
             }
-            console.log('Message %s send: %s', info.messageId, info.response);
+            console.log('Message %s send: %s', info);
             res.status(200).send(info);
         });
 
