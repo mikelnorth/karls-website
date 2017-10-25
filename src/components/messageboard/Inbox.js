@@ -37,7 +37,7 @@ class Messageboard extends Component {
     }
 
     componentDidMount() {
-        !this.props.user ? (this.props.history.push('/'), alert('ACCESS DENIED, Admin access only')) : null;
+        !this.props.user ? (this.props.history.push('/'), alert('ACCESS DENIED, please login as admin')) : null;
 
         this.props.getCustomers();
     }
@@ -47,9 +47,9 @@ class Messageboard extends Component {
             id
         })
 
-        console.log('state',this.state)
-         this.props.updateCustomer(true, this.state.id)
-         console.log('customers',this.props.customers.data)
+        console.log('state', this.state)
+        this.props.updateCustomer(true, this.state.id)
+        console.log('customers', this.props.customers.data)
     }
 
     moreInfo(id, first_name, last_name, email, phone, contact_method, wedding_location, wedding_date, reception_location,
@@ -78,52 +78,54 @@ class Messageboard extends Component {
 
     render() {
         const details = this.state.details ? null : {
-            // 'display': 'none'
+            'display': 'none'
         }
-        
+
         return (
-            <div className='Messageboard'>
+            <div className='messageboard'>
                 <Nav />
                 <div className='inbox'>
-                <h1>INBOX</h1>
-                <div className='customers'>
-                    <h4>Customer Information</h4>
-                    {this.props.customers.data.length ? this.props.customers.data.map((val, i, arr) => {
-                        return <div className='customer'>
-                            <div>
-                                <p>Name: {val.first_name} {val.last_name}</p>
+                    <h1>INBOX</h1>
+                    <div className='customers'>
+                        <h4>Customer</h4>
+                        {this.props.customers.data.length ? this.props.customers.data.map((val, i, arr) => {
+                            return <div className='customer'>
+                                <div>
+                                    <p>Name: <span>{val.first_name} {val.last_name}</span></p>
+                                </div>
+                                <div>
+                                    <p>Message: <span>{val.message.length >= 50 ? val.message.substring(0, 50) + '...' : val.message.length ? val.message : 'n/a'}</span></p>
+                                </div>
+                                <button onClick={() => this.archive(val.id)}>Remove</button>
+                                <button onClick={() => this.moreInfo(val.id, val.first_name, val.last_name, val.email, val.phone,
+                                    val.contact_method, val.wedding_location, val.wedding_date, val.reception_location, val.reception_date,
+                                    val.bridal_location, val.bridal_date, val.wedding_type, val.indoor, val.audio, val.message)}>More Info</button>
                             </div>
-                            <div>
-                                <p>Message: {val.message.length >= 50 ? val.message.substring(0, 50) + '...' : val.message.length ? val.message : 'n/a'}</p>
-                            </div>
-                            <button onClick={() => this.archive(val.id)}>remove</button>
-                            <button onClick={() => this.moreInfo(val.id, val.first_name, val.last_name, val.email, val.phone,
-                                val.contact_method, val.wedding_location, val.wedding_date, val.reception_location, val.reception_date,
-                                val.bridal_location, val.bridal_date, val.wedding_type, val.indoor, val.audio, val.message)}>More Info</button>
-                        </div>
 
-                    }) : null}
-                </div>
+                        }) : null}
+                    </div>
 
-                <div className='information' style={details}>
-                    <p>Email: {this.state.email? this.state.email : 'n/a'}</p>
-                    <p>Phone: {this.state.phone? this.state.phone : 'n/a'}</p>
-                    <p>Prefered contact method: {this.state.contact_method ? this.state.contact_method : 'n/a'}</p>
-                    <p>Wedding Location: {this.state.wedding_location ? this.state.wedding_location : 'n/a'}</p>
-                    <p>Wedding Date: {this.state.wedding_date? this.state.wedding_date : 'n/a'}</p>
-                    <p>Reception Location: {this.state.reception_location? this.state.reception_location : 'n/a'}</p>
-                    <p>Reception Date: {this.state.reception_date? this.state.reception_date : 'n/a'}</p>
-                    <p>Bridal Location: {this.state.bridal_location? this.state.bridal_location : 'n/a'}</p>
-                    <p>Bridal Date: {this.state.bridal_date? this.state.bridal_date : 'n/a'}</p>
-                    <p>Wedding Type: {this.state.wedding_type? this.state.wedding_type : 'n/a'}</p>
-                    <p>Indoor or Outdorr: {this.state.indoor? this.state.indoor : 'n/a'}</p>
-                    <p>Video Audio: {this.state.audio? this.state.audio : 'n/a'}</p>
-                    <p>Message: {this.state.message? this.state.message : 'n/a'}</p>
-
-                </div>
-
+                    <div className='information' style={details}>
+                        <h4>Information</h4>
+                        <p>Name: <span>{this.state.first_name} {this.state.last_name}</span></p>
+                        <p>Email: <span>{this.state.email ? this.state.email : 'n/a'}</span></p>
+                        <p>Phone: <span>{this.state.phone ? this.state.phone : 'n/a'}</span></p>
+                        <p>Prefered contact method: <span>{this.state.contact_method ? this.state.contact_method : 'n/a'}</span></p>
+                        {this.state.wedding_date ? <p>Wedding Location: <span>{this.state.wedding_location}</span></p> : null}
+                        {this.state.wedding_date ? <p>Wedding Date: <span>{this.state.wedding_date}</span></p> : null}
+                        {this.state.reception_location ? <p>Reception Location: <span>{this.state.reception_location}</span></p> : null}
+                        {this.state.reception_date ? <p>Reception Date: <span>{this.state.reception_date}</span></p> : null}
+                        {this.state.bridal_location ? <p>Bridal Location: <span>{this.state.bridal_location}</span></p> : null}
+                        {this.state.bridal_date ? <p>Bridal Date: <span>{this.state.bridal_date}</span></p> : null}
+                        {this.state.wedding_type ? <p>Wedding Type: <span>{this.state.wedding_type}</span></p> : null}
+                        {this.state.indoor ? <p>Indoor or Outdorr: <span>{this.state.indoor}</span></p> : null}
+                        {this.state.audio ? <p>Video Audio: <span>{this.state.audio}</span></p> : null}
+                        {this.state.message ? <p>Message: <span>{this.state.message}</span></p> : null}
 
                     </div>
+
+
+                </div>
                 <Login />
             </div >
         )

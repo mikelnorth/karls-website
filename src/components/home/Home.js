@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 import Login from '../login/Login.js';
 import intro from '../../assets/intro.mp4';
 import Typed from 'typed.js';
-import dance from '../../assets/dance.jpg';
 import karl from '../../assets/karl.jpg';
 import karl_night from '../../assets/karl_night.jpg';
 import down from '../../assets/down.png';
@@ -109,9 +108,7 @@ class Home extends Component {
                     <button style={adminView} onClick={() => this.editSelectedVideo()}>submit changes</button>
                 </div>
 
-                <div>
-                    <img className='dance' src={dance} />
-                </div>
+                <div className='dance'></div>
 
 
                 <div id='About' className='About'>

@@ -46,67 +46,81 @@ export default class Contact extends Component {
 
     submitCustomerInfo(e) {
         e.preventDefault()
-        const { firstName, lastName, email, phone, contact, weddingLocation, weddingDate, receptionLocation,
-            receptionDate, bridalLocation, bridalDate,
-            culture, setting, audio, message, customerId } = this.state
 
 
-        const customerData = {
-            first_name: firstName,
-            last_name: lastName,
-            email: email,
-            phone: phone,
-            contact_method: contact
-        }
+        if (this.state.firstName && this.state.lastName && this.state.email) {
+            if (this.state.email.includes('@')) {
 
-        const weddingData = {
-            wedding_location: weddingLocation,
-            wedding_date: weddingDate,
-            reception_location: receptionLocation,
-            reception_date: receptionDate,
-            bridal_location: bridalLocation,
-            bridal_date: bridalDate,
-            wedding_type: culture,
-            indoor: setting,
-            audio: audio,
-            message: message,
-            customer_id: customerId
-        }
+                const { firstName, lastName, email, phone, contact, weddingLocation, weddingDate, receptionLocation,
+                    receptionDate, bridalLocation, bridalDate,
+                    culture, setting, audio, message, customerId } = this.state
 
 
-        axios.post('/api/customer/insert', customerData)
-            .then(res => {
-                weddingData.customer_id = res.data.id
+                const customerData = {
+                    first_name: firstName,
+                    last_name: lastName,
+                    email: email,
+                    phone: phone,
+                    contact_method: contact
+                }
 
-                axios.post('/api/wedding/insert', weddingData)
+                const weddingData = {
+                    wedding_location: weddingLocation,
+                    wedding_date: weddingDate,
+                    reception_location: receptionLocation,
+                    reception_date: receptionDate,
+                    bridal_location: bridalLocation,
+                    bridal_date: bridalDate,
+                    wedding_type: culture,
+                    indoor: setting,
+                    audio: audio,
+                    message: message,
+                    customer_id: customerId
+                }
+
+
+                axios.post('/api/customer/insert', customerData)
                     .then(res => {
-                        alert('form submitted')
+                        weddingData.customer_id = res.data.id
 
-                        this.setState({
-                            firstName: '',
-                            lastName: '',
-                            email: '',
-                            phone: '',
-                            contact: 'Email',
-                            type: 'Wedding',
-                            weddingLocation: '',
-                            weddingDate: '',
-                            receptionLocation: '',
-                            receptionDate: '',
-                            bridalLocation: '',
-                            bridalDate: '',
-                            culture: '',
-                            setting: '',
-                            audio: '',
-                            message: '',
-                            customerId: 0
+                        axios.post('/api/wedding/insert', weddingData)
+                            .then(res => {
+                                alert('form submitted')
 
-                        })
+                                this.setState({
+                                    firstName: '',
+                                    lastName: '',
+                                    email: '',
+                                    phone: '',
+                                    contact: 'Email',
+                                    type: 'Wedding',
+                                    weddingLocation: '',
+                                    weddingDate: '',
+                                    receptionLocation: '',
+                                    receptionDate: '',
+                                    bridalLocation: '',
+                                    bridalDate: '',
+                                    culture: '',
+                                    setting: '',
+                                    audio: '',
+                                    message: '',
+                                    customerId: 0
+
+                                })
+                            })
                     })
-            })
 
-
+            }
+            else {
+                alert('Must submit valid email')
+            }
+        }
+        else {
+            alert('please fill out required fields')
+        }
     }
+
+
 
     render() {
         const { firstName, lastName, email, phone, contact, type, weddingLocation, weddingDate, receptionLocation, receptionDate, bridalLocation, bridalDate,
@@ -136,7 +150,7 @@ export default class Contact extends Component {
                                 placeholder='Email *' type="text" name="Email" value={email} required /><br />
 
                             <input onChange={(e) => this.handleChange('phone', e.target.value)}
-                                placeholder='Phone Number (optional)' type="text" name="Phone" value={phone} /><br />
+                                placeholder='Phone Number' type="text" name="Phone" value={phone} /><br />
 
                             <div className='contact_method'>
                                 Prefered contact method:
@@ -166,33 +180,33 @@ export default class Contact extends Component {
                         <fieldset className='wedding_info'>
                             <h2>Event Information:</h2><br />
                             <div className='input_wedding'>
-                            <input onChange={(e) => this.handleChange('type', e.target.value)}
-                                type="text" name="wedding" value='wedding' /><br /><br />
+                                <input onChange={(e) => this.handleChange('type', e.target.value)}
+                                    type="text" name="wedding" value='wedding' /><br /><br />
 
 
-                            <input onChange={(e) => this.handleChange('weddingLocation', e.target.value)}
-                                placeholder='Wedding Location' type="text" name="wedding location" value={weddingLocation} />
+                                <input onChange={(e) => this.handleChange('weddingLocation', e.target.value)}
+                                    placeholder='Wedding Location' type="text" name="wedding location" value={weddingLocation} />
 
 
-                            <input onChange={(e) => this.handleChange('weddingDate', e.target.value)}
-                                type="date" name="wedding location" value={weddingDate} /><br />
+                                <input onChange={(e) => this.handleChange('weddingDate', e.target.value)}
+                                    type="date" name="wedding location" value={weddingDate} /><br />
 
 
-                            <input onChange={(e) => this.handleChange('receptionLocation', e.target.value)}
-                                placeholder='Reception Location' type="text" name="reception location" value={receptionLocation} />
+                                <input onChange={(e) => this.handleChange('receptionLocation', e.target.value)}
+                                    placeholder='Reception Location' type="text" name="reception location" value={receptionLocation} />
 
 
-                            <input onChange={(e) => this.handleChange('receptionDate', e.target.value)}
-                                type="date" name="reception location" value={receptionDate} /><br />
+                                <input onChange={(e) => this.handleChange('receptionDate', e.target.value)}
+                                    type="date" name="reception location" value={receptionDate} /><br />
 
 
-                            <input onChange={(e) => this.handleChange('bridalLocation', e.target.value)}
-                                placeholder='Bridal Location' type="text" name="bridal location" value={bridalLocation} />
-                            
-                            <input onChange={(e) => this.handleChange('bridalDate', e.target.value)}
-                                type="date" name="bridal location" value={bridalDate} /><br />
+                                <input onChange={(e) => this.handleChange('bridalLocation', e.target.value)}
+                                    placeholder='Bridal Location' type="text" name="bridal location" value={bridalLocation} />
 
-                            Type of Wedding:<br />
+                                <input onChange={(e) => this.handleChange('bridalDate', e.target.value)}
+                                    type="date" name="bridal location" value={bridalDate} /><br />
+
+                                Type of Wedding:<br />
                             </div>
 
                             <input onChange={(e) => this.handleChange('culture', e.target.value)}

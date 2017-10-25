@@ -1,15 +1,62 @@
-.Messageboard {
-  height: 100vh;
+.messageboard {
+  height: 100%;
   width: 100%;
-  background-color: #3fa5f8;
-  padding-top: 20px; }
+  background: peachpuff; }
+
+.inbox h1 {
+  padding-top: 50px;
+  text-align: center;
+  font-size: 40px;
+  background: #c7beb7;
+  color: white; }
 
 .customers {
   background: peachpuff;
   width: 50vw;
+  height: 100%;
   float: left; }
+  .customers h4 {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px; }
+  .customers .customer {
+    padding-left: 20px;
+    background: #c7beb7;
+    margin-bottom: 20px;
+    word-wrap: break-word; }
+    .customers .customer div {
+      margin-bottom: 5px; }
+      .customers .customer div p {
+        font-weight: bold; }
+        .customers .customer div p span {
+          font-weight: normal; }
+    .customers .customer button {
+      margin-right: 4px;
+      border: 1px solid;
+      background: white;
+      color: black;
+      border-radius: 5px; }
+    .customers .customer button:hover {
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.555);
+      color: blue; }
 
 .information {
+  display: flex;
+  flex-direction: column;
   background: cornsilk;
   width: 50vw;
-  float: right; }
+  height: 100%;
+  word-wrap: break-word; }
+  .information h4 {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px; }
+  .information p {
+    padding-left: 20px;
+    margin-top: 20px;
+    font-weight: bold; }
+    .information p span {
+      font-weight: normal; }

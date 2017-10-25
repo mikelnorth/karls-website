@@ -25,6 +25,9 @@
     background: transparent; }
     .nav .link {
       display: none; }
+    .nav .drop_link {
+      text-decoration: none;
+      color: white; }
     .nav .dropdown {
       position: absolute;
       left: 10px;
