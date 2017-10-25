@@ -5,10 +5,27 @@ import { connect } from 'react-redux';
 import { HashLink } from 'react-router-hash-link'
 
 class Nav extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            slideNav: false
+        }
+
+        this.toggleNav = this.toggleNav.bind(this)
+    }
+
+    toggleNav(){
+        this.setState({
+            slideNav: !this.state.slideNav
+          })
+    }
+
     render() {
         const adminView = this.props.user ? null : {
             'display': 'none'
         }
+        console.log(this.state)
 
         return (
             <div className='nav'>
@@ -18,14 +35,14 @@ class Nav extends Component {
                 <HashLink className='link' to='/#About'><p>About</p></HashLink>
                 <Link className='link' style={adminView} to='/inbox'><p>Messages</p></Link>
 
-                <div class="dropdown">
-                    <div class="dropbtn">&#9776;</div>
-                    <div class="dropdown-content">
-                    <Link className='drop_link' to='/'><p>Home</p></Link>
-                    <Link className='drop_link' to='/wedding'><p>Portfolio</p></Link>
-                    <Link className='drop_link' to='/contact'><p>Contact</p></Link>
-                    <HashLink className='drop_link' to='/#About'><p>About</p></HashLink>
-                    <Link className='drop_link' style={adminView} to='/inbox'><p>Messages</p></Link>
+                <div class="slide" onClick={ this.toggleNav }>
+                    <div className="slidebtn" onClick={ this.toggleNav }>&#9776;</div>
+                    <div className={this.state.slideNav ? 'slide_content' : 'slide_content close'}>
+                    <Link className='slide_link' to='/'><p>Home</p></Link>
+                    <Link className='slide_link' to='/wedding'><p>Portfolio</p></Link>
+                    <Link className='slide_link' to='/contact'><p>Contact</p></Link>
+                    <HashLink className='slide_link' to='/#About'><p>About</p></HashLink>
+                    <Link className='slide_link' style={adminView} to='/inbox'><p>Messages</p></Link>
                     </div>
                 </div>
 

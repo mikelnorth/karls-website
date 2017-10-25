@@ -24,8 +24,5 @@ export default (
       <Route component={Inbox} path='/inbox'/>
       <Route component={Message} path='/message' />
     </Switch>
-    <div id='Nav'>
-                <HashLink to='/#About' className='Nav-links'></HashLink>
-            </div>
-  </div>
+</div>
 )

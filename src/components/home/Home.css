@@ -16,7 +16,7 @@
 .welcome_span {
   position: absolute;
   text-align: center;
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   color: #0c0c0c;
   width: 35%;
   background: rgba(165, 255, 213, 0.5);
@@ -40,7 +40,7 @@
   border-radius: 5px;
   border-style: solid;
   border-width: 2px;
-  font-family: 'Poiret One', cursive; }
+  font-family: "Poiret One", cursive; }
 
 .button span {
   cursor: pointer;
@@ -128,7 +128,7 @@
   background: rgba(223, 220, 227, 0.521);
   box-shadow: 0 0px 0 rgba(0, 0, 0, 0.05), 0 0px 40px 0 rgba(0, 0, 0, 0.19);
   width: 350px;
-  font-family: 'Arima Madurai', cursive;
+  font-family: "Arima Madurai", cursive;
   margin-right: 40px;
   padding: 20px;
   max-height: 242px;
@@ -198,7 +198,8 @@
   text-align: center;
   margin: auto;
   max-height: 350px;
-  overflow: scroll; }
+  overflow: scroll;
+  font-family: "Arima Madurai", cursive; }
 
 .why_us {
   background: transparent;
@@ -228,7 +229,7 @@
   border-radius: 5px;
   border-style: solid;
   border-width: 2px;
-  font-family: 'Poiret One', cursive;
+  font-family: "Poiret One", cursive;
   background: transparent;
   margin: auto;
   margin-top: 40px; }
@@ -300,10 +301,8 @@
       height: 242px;
       border-radius: 5px; }
   .dance {
-    background-image: url("../../assets/karl_night.jpg");
     height: 300px;
-    background-position: center;
-    background-size: cover; }
+    background-position: -100px; }
   .About {
     height: auto;
     flex-direction: column;

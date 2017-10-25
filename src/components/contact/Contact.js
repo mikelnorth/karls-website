@@ -236,8 +236,8 @@ export default class Contact extends Component {
                             <br />
                         </fieldset>
 
-                        <button onClick={(e) => this.submitCustomerInfo(e)}> submit</button>
-                        <input type='reset' value='reset' />
+                        <div className='submit' onClick={(e) => this.submitCustomerInfo(e)}>submit</div>
+                        
                     </form>
                 </div>
 

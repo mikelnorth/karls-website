@@ -1,4 +1,4 @@
-
+@import '../../variables.scss';
 
 .Contact{
     display: flex;
@@ -84,6 +84,22 @@
     }
 }
 
+.submit{
+    font-family: $thinFont;
+    font-weight: bold;
+    background: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.submit:hover{
+    background: rgba(255, 255, 255, 0.562);
+}
+
 @media (max-width: 800px){
 
     .personal_info{
@@ -94,7 +110,7 @@
         }
         input{
             margin-bottom: 15px;
-            width: 100%;
+            width: 95%;
             height: 25px;
             padding: 0px 15px;
         }
@@ -107,9 +123,9 @@
             }
              .input_wedding input{
                 display: flex;
-                width: 100%;
+                width: 95%;
                 text-align: center;
-                margin: 0px;
+                margin: auto;
                 margin-bottom: 10px;
                 textarea{
                     width: 90%;

@@ -61,6 +61,7 @@ class Wedding extends Component {
                         </div>
                     })}
 
+                </div>
                     <div className='input'>
                         <input style={adminView} type='text' value={this.state.title} onChange={(e) => {
                             this.setState({
@@ -72,15 +73,8 @@ class Wedding extends Component {
                                 embedded_link: e.target.value
                             })
                         }} />
-                        {/* <input style={adminView} type='text' value={this.state.category} onChange={(e) => {
-                            this.setState({
-                                category: e.target.value
-                            })
-                        }} /> */}
-
                         <button style={adminView} onClick={() => this.editSelectedVideo()}>submit changes</button>
                     </div>
-                </div>
                 <Login />
             </div >
         )

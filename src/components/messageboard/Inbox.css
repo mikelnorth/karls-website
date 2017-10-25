@@ -1,14 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster");
+@import url("https://fonts.googleapis.com/css?family=Poiret+One");
+@import url("https://fonts.googleapis.com/css?family=Arima+Madurai");
 .messageboard {
-  height: 100%;
-  width: 100%;
   background: peachpuff; }
 
-.inbox h1 {
+.header h1 {
   padding-top: 50px;
   text-align: center;
   font-size: 40px;
   background: #c7beb7;
   color: white; }
+
+.inbox {
+  display: flex; }
 
 .customers {
   background: peachpuff;
@@ -47,7 +51,6 @@
   flex-direction: column;
   background: cornsilk;
   width: 50vw;
-  height: 100%;
   word-wrap: break-word; }
   .information h4 {
     text-align: center;
