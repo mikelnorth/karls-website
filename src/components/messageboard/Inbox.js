@@ -86,6 +86,8 @@ class Messageboard extends Component {
             'display': 'none'
         }
 
+        console.log('cust id', this.props.customers.data)
+
         return (
             <div className='messageboard'>
                 <Nav />
@@ -102,7 +104,7 @@ class Messageboard extends Component {
                                     <div>
                                         <p>Message: <span>{val.message.length >= 50 ? val.message.substring(0, 50) + '...' : val.message.length ? val.message : 'n/a'}</span></p>
                                     </div>
-                                    <button onClick={() => this.archive(val.id)}>Remove</button>
+                                    <button onClick={() => this.archive(val.customer_id)}>Remove</button>
                                     <button onClick={() => this.moreInfo(val.id, val.first_name, val.last_name, val.email, val.phone,
                                         val.contact_method, val.wedding_location, val.wedding_date, val.reception_location, val.reception_date,
                                         val.bridal_location, val.bridal_date, val.wedding_type, val.indoor, val.audio, val.message)}>More Info</button>
