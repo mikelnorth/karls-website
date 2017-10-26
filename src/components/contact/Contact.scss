@@ -12,13 +12,11 @@
     width: 100vw;
 }
 .form{
-    width: 100vw;
-    // margin: auto;
-    // padding: 20px;
+    // width: 100vw;
     text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
     
 }
 
@@ -27,36 +25,14 @@
 .personal_info{
     background-color: rgba(128, 128, 128, 0.288);
     width: 40vw;
-    input{
-        border-radius: 5px;
-        border: 1px solid #eee;
-        margin-bottom: 15px;
-        width: 60%;
-        height: 25px;
-        padding: 0px 15px;
-    }
-
-    .contact_method{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        margin-bottom: 10px;
-
-        select{
-            border:2px solid #ccc;
-            border-radius: 5px;
-            cursor:pointer;
-            display:inline-block;
-            
-        }
-
-    }
+    border-radius: 5px;
 }
 
 
 .wedding_info{
     background-color: rgba(128, 128, 128, 0.288);
     width: 40vw;
+    border-radius: 5px;
     .input_wedding input{
         
         border: 1px solid #eee;
@@ -66,21 +42,18 @@
         height: 25px;
         padding: 0px 15px;
     }
-    input{
-        border-radius: 5px;
-        margin: 5px;
-        margin-bottom: 10px;
-    }
+
 
     textarea{
         border-radius: 5px;
         border: 1px solid #eee;
+        background: rgba(255, 255, 255, 0.438);
         margin: 5px;
         margin-bottom: 10px;
         width: 55%;
         height: 100px;
         max-width: 100%;
-        padding: 0px 15px;
+        padding: 5px 15px 0 15px;;
     }
 }
 

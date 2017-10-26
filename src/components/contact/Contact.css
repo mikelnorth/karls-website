@@ -11,36 +11,19 @@
   width: 100vw; }
 
 .form {
-  width: 100vw;
   text-align: center;
   display: flex;
-  justify-content: center;
-  align-items: center; }
+  justify-content: center; }
 
 .personal_info {
   background-color: rgba(128, 128, 128, 0.288);
-  width: 40vw; }
-  .personal_info input {
-    border-radius: 5px;
-    border: 1px solid #eee;
-    margin-bottom: 15px;
-    width: 60%;
-    height: 25px;
-    padding: 0px 15px; }
-  .personal_info .contact_method {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 10px; }
-    .personal_info .contact_method select {
-      border: 2px solid #ccc;
-      border-radius: 5px;
-      cursor: pointer;
-      display: inline-block; }
+  width: 40vw;
+  border-radius: 5px; }
 
 .wedding_info {
   background-color: rgba(128, 128, 128, 0.288);
-  width: 40vw; }
+  width: 40vw;
+  border-radius: 5px; }
   .wedding_info .input_wedding input {
     border: 1px solid #eee;
     margin: 5px;
@@ -48,19 +31,16 @@
     width: 45%;
     height: 25px;
     padding: 0px 15px; }
-  .wedding_info input {
-    border-radius: 5px;
-    margin: 5px;
-    margin-bottom: 10px; }
   .wedding_info textarea {
     border-radius: 5px;
     border: 1px solid #eee;
+    background: rgba(255, 255, 255, 0.438);
     margin: 5px;
     margin-bottom: 10px;
     width: 55%;
     height: 100px;
     max-width: 100%;
-    padding: 0px 15px; }
+    padding: 5px 15px 0 15px; }
 
 .submit {
   font-family: "Poiret One", cursive;
