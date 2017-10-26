@@ -6,6 +6,7 @@ import { getCustomers, updateCustomer } from './../../ducks/reducer.js';
 import './Inbox.css'
 import Nav from '../nav/Nav.js';
 import Login from '../login/Login.js';
+import swal from 'sweetalert';
 
 
 
@@ -37,7 +38,11 @@ class Messageboard extends Component {
     }
 
     componentDidMount() {
-        !this.props.user ? (this.props.history.push('/'), alert('ACCESS DENIED, please login as admin')) : null;
+        !this.props.user ? (this.props.history.push('/'), swal({
+            title: "ACCESS DENIED",
+            text: "this page is for admin access only",
+            icon: "error",
+          })) : null;
 
         this.props.getCustomers();
     }

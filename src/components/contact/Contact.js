@@ -5,6 +5,7 @@ import Login from '../login/Login.js';
 import axios from 'axios';
 import down from '../../assets/down.png';
 import { HashLink } from 'react-router-hash-link';
+import swal from 'sweetalert';
 
 
 
@@ -37,6 +38,13 @@ export default class Contact extends Component {
     }
 
     handleChange(prop, val) {
+
+        if(prop=='message' && val.length==500){
+            alert('hey')
+        }
+
+
+
         this.setState(
             {
                 [prop]: val
@@ -85,7 +93,12 @@ export default class Contact extends Component {
 
                         axios.post('/api/wedding/insert', weddingData)
                             .then(res => {
-                                alert('form submitted')
+                                swal({
+                                    title: "Form Submitted",
+                                    text: "Thank you for choosing Karl North Media, we will contact you soon.",
+                                    icon: "success",
+                                    button: "ok!",
+                                  });
 
                                 this.setState({
                                     firstName: '',
@@ -114,11 +127,21 @@ export default class Contact extends Component {
 
             }
             else {
-                alert('Must submit valid email')
+                swal({
+                    title: "Must submit valid emal",
+                    text: "example@example.com",
+                    icon: "warning",
+                    button: "ok!",
+                  });
             }
         }
         else {
-            alert('please fill out required fields')
+            swal({
+                title: "Please fill out required fields",
+                text: "required fields are marked by *",
+                icon: "warning",
+                button: "ok!",
+              });
         }
     }
 
@@ -232,7 +255,7 @@ export default class Contact extends Component {
                                 type='radio' name='audio' value='Strictly musical montage' /><br />
 
 
-                            <textarea className='textarea' onChange={(e) => this.handleChange('message', e.target.value)}
+                            <textarea className='textarea'maxlength="500" onChange={(e) => this.handleChange('message', e.target.value)}
                                 placeholder='Aditional information' name="message" value={message} placeholder='additonal information...'></textarea>
                             <br />
                         </fieldset>
