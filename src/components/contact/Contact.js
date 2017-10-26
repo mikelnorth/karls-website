@@ -39,11 +39,14 @@ export default class Contact extends Component {
 
     handleChange(prop, val) {
 
-        if(prop=='message' && val.length==500){
-            alert('hey')
+        if (prop == 'message' && val.length == 500) {
+            swal({
+                title: 'Message can only be 500 characters long',
+                text: '',
+                icon: "warning",
+                button: "ok!",
+            });
         }
-
-
 
         this.setState(
             {
@@ -98,7 +101,7 @@ export default class Contact extends Component {
                                     text: "Thank you for choosing Karl North Media, we will contact you soon.",
                                     icon: "success",
                                     button: "ok!",
-                                  });
+                                });
 
                                 this.setState({
                                     firstName: '',
@@ -123,7 +126,7 @@ export default class Contact extends Component {
                             })
                     })
 
-                    axios.post('/api/send_email',this.state)
+                axios.post('/api/send_email', this.state)
 
             }
             else {
@@ -132,7 +135,7 @@ export default class Contact extends Component {
                     text: "example@example.com",
                     icon: "warning",
                     button: "ok!",
-                  });
+                });
             }
         }
         else {
@@ -141,7 +144,7 @@ export default class Contact extends Component {
                 text: "required fields are marked by *",
                 icon: "warning",
                 button: "ok!",
-              });
+            });
         }
     }
 
@@ -255,13 +258,13 @@ export default class Contact extends Component {
                                 type='radio' name='audio' value='Strictly musical montage' /><br />
 
 
-                            <textarea className='textarea'maxlength="500" onChange={(e) => this.handleChange('message', e.target.value)}
+                            <textarea className='textarea' maxlength="500" onChange={(e) => this.handleChange('message', e.target.value)}
                                 placeholder='Aditional information' name="message" value={message} placeholder='additonal information...'></textarea>
                             <br />
                         </fieldset>
 
                         <div className='submit' onClick={(e) => this.submitCustomerInfo(e)}>submit</div>
-                        
+
                     </form>
                 </div>
 

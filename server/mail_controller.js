@@ -19,7 +19,7 @@ module.exports = {
         let mailOptions = {
             from: `"Karl North Media" <${process.env.user_email}>`, // sender address
             to: process.env.user_email, // list of receivers
-            subject: 'New Customer', // Subject line
+            subject: `New Customer ${req.body.firstName} ${req.body.lastName}`, // Subject line
             // text: 'testing one two on two', // plain text body
             html: `
              <h3> Name:${ req.body.firstName}  ${req.body.lastName}</h3><br><br>
