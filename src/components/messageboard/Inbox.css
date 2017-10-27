@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster");
 @import url("https://fonts.googleapis.com/css?family=Poiret+One");
 @import url("https://fonts.googleapis.com/css?family=Arima+Madurai");
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script");
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
+@import url("https://fonts.googleapis.com/css?family=Yellowtail");
 .messageboard {
   background: peachpuff; }
 
@@ -40,7 +43,8 @@
       border: 1px solid;
       background: white;
       color: black;
-      border-radius: 5px; }
+      border-radius: 5px;
+      outline: none; }
     .customers .customer button:hover {
       cursor: pointer;
       background: rgba(255, 255, 255, 0.555);

@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 @import url('https://fonts.googleapis.com/css?family=Arima+Madurai');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+@import url('https://fonts.googleapis.com/css?family=Yellowtail');
 
 
-
-
-$lightMain: rgb(94, 233, 212);
+// $lightMain: #66B9BF;
+$lightMain: rgb(150, 170, 185);
+// $secondMain: rgba(28, 173, 173, 0.603);
+$secondMain: rgb(255, 213, 0);
+$secondMain_opacity: rgba(255, 213, 0, .5);
  
 $fancyFont: 'Lobster', cursive;
 $thinFont: 'Poiret One', cursive;
 $paragraph: 'Arima Madurai', cursive;
+$nav: 'Yellowtail', cursive;
+$test: 'Amatic SC', cursive;

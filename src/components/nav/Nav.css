@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster");
 @import url("https://fonts.googleapis.com/css?family=Poiret+One");
 @import url("https://fonts.googleapis.com/css?family=Arima+Madurai");
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script");
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
+@import url("https://fonts.googleapis.com/css?family=Yellowtail");
 .nav {
   z-index: 2;
   position: absolute;
@@ -14,16 +17,19 @@
   color: white;
   text-shadow: 1px black;
   height: 50px;
-  font-size: 20px; }
+  font-size: 25px;
+  font-family: "Yellowtail", cursive; }
 
 .link {
   text-decoration: none;
   color: white; }
 
 .link:hover {
-  font-size: 22px;
   transition: .5s;
-  color: #5ee9d4; }
+  color: #ffd500; }
+
+.link:active {
+  color: #ffd500; }
 
 .slide {
   position: relative;

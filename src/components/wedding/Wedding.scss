@@ -122,6 +122,12 @@
     to {opacity: 1};
 }
 
+@media (min-width: 1700px){
+    .videos{
+        width: 90vw;
+    }
+}
+
 
 @media (max-width: 1000px){
     .Modal {

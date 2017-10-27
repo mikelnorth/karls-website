@@ -216,7 +216,7 @@ export default class Contact extends Component {
                             </div>
                             <br />
 
-                            <div className='wedding_info'>
+                            <div className='event_info'>
                                 <h2>Event Information:</h2><br />
                                 <TextField placeholder='Wedding' onChange={(e) => this.handleChange('type', e.target.value)}
                                     disabled={true} value='wedding' name='wedding'/><br /><br />
@@ -263,7 +263,7 @@ export default class Contact extends Component {
                                 </div>
                                 <AutoComplete value={culture}
                                     name='culture'
-                                    placeholder="Type of wedding"
+                                    floatingLabelText="Type of wedding"
                                     searchText={culture}
                                     onUpdateInput={this.handleUpdateInput}
                                     filter={AutoComplete.fuzzyFilter}

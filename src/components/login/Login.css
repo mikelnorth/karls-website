@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster");
+@import url("https://fonts.googleapis.com/css?family=Poiret+One");
+@import url("https://fonts.googleapis.com/css?family=Arima+Madurai");
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script");
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
+@import url("https://fonts.googleapis.com/css?family=Yellowtail");
 .footer {
   width: 100%;
   background: gray;
@@ -5,7 +11,8 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  color: #96aab9; }
   .footer h3 {
     margin-top: 15px; }
 

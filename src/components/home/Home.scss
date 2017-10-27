@@ -4,9 +4,7 @@
 .home{
     height: 100vh;
     width:100%;
-    
-    
-    
+    // overflow-x: hidden;
 }
 
 .top{
@@ -22,9 +20,9 @@
     position: absolute;
     text-align: center;
     font-family: $fancyFont;
-    color: rgb(12, 12, 12);
+    color: rgb(17, 15, 41);
     width: 35%;
-    background: rgba(165, 255, 213, 0.5);
+    background: $secondMain_opacity;
     padding: 5px 10px 5px 10px; 
     font-size: 25px;
     margin-top: 35%;
@@ -147,8 +145,9 @@
     text-align: center;
     background: rgba(223, 220, 227, 0.521);
     box-shadow: 0 0px 0 rgba(0, 0, 0, 0.05), 0 0px 40px 0 rgba(0, 0, 0, 0.19);
-    width: 350px;
+    width: 380px;
     font-family: $paragraph;
+    font-size: 20px;
     margin-right: 40px;
     padding: 20px;
     max-height: 242px;
@@ -204,6 +203,7 @@
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+    // transform: translateY(50px)scale(1.25);
 }
 .About{
     width: 100vw;
@@ -244,7 +244,7 @@
     left: 650px;
 }
 .why{
-    color: #4ABDAC;
+    color: $lightMain;
 }
 .us{
     color: rgb(255, 255, 255);

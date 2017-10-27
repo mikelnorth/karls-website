@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster");
 @import url("https://fonts.googleapis.com/css?family=Poiret+One");
 @import url("https://fonts.googleapis.com/css?family=Arima+Madurai");
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script");
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
+@import url("https://fonts.googleapis.com/css?family=Yellowtail");
 .home {
   height: 100vh;
   width: 100%; }
@@ -17,9 +20,9 @@
   position: absolute;
   text-align: center;
   font-family: "Lobster", cursive;
-  color: #0c0c0c;
+  color: #110f29;
   width: 35%;
-  background: rgba(165, 255, 213, 0.5);
+  background: rgba(255, 213, 0, 0.5);
   padding: 5px 10px 5px 10px;
   font-size: 25px;
   margin-top: 35%;
@@ -122,7 +125,7 @@
 
 .middle {
   width: 100vw;
-  background: #5ee9d4;
+  background: #96aab9;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -134,8 +137,9 @@
   text-align: center;
   background: rgba(223, 220, 227, 0.521);
   box-shadow: 0 0px 0 rgba(0, 0, 0, 0.05), 0 0px 40px 0 rgba(0, 0, 0, 0.19);
-  width: 350px;
+  width: 380px;
   font-family: "Arima Madurai", cursive;
+  font-size: 20px;
   margin-right: 40px;
   padding: 20px;
   max-height: 242px;
@@ -161,7 +165,7 @@
 .admin {
   width: 100%;
   text-align: center;
-  background: #5ee9d4; }
+  background: #96aab9; }
   .admin input {
     border-radius: 5px;
     border: 1px solid #5c5c5c; }
@@ -185,7 +189,7 @@
 
 .About {
   width: 100vw;
-  background: #5ee9d4;
+  background: #96aab9;
   height: 500px;
   position: relative;
   display: flex;
@@ -216,7 +220,7 @@
   left: 650px; }
 
 .why {
-  color: #4ABDAC; }
+  color: #96aab9; }
 
 .us {
   color: white; }

@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: peachpuff;
+    background: $lightMain;
     // align-items: center;
 }
 
@@ -12,31 +12,44 @@
     width: 100vw;
 }
 .form{
-    // width: 100vw;
+    margin-top: 20px;
     text-align: center;
     display: flex;
     justify-content: center;
-    // align-items: center;
+    h2{
+        font-weight: bold;
+        font-size: 25px;
+    }
     
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
 
 .personal_info{
-    background-color: rgba(128, 128, 128, 0.288);
+    background-color: rgba(82, 82, 82, 0.623);
     width: 40vw;
     border-radius: 5px;
+    padding: 20px;
 }
 
 
-.wedding_info{
-    background-color: rgba(128, 128, 128, 0.288);
+.event_info{
+    background-color: rgba(82, 82, 82, 0.623);
     width: 40vw;
     border-radius: 5px;
+    font-family: $paragraph;
+    padding-top: 20px;
     .wedding_top{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        margin-bottom: 10px;
+        padding: 0 20px 0 20px
     }
 
     textarea{
@@ -47,7 +60,7 @@
         margin-bottom: 10px;
         width: 55%;
         height: 100px;
-        max-width: 100%;
+        max-width: 90%;
         padding: 5px 15px 0 15px;;
     }
 }
@@ -66,46 +79,42 @@
     background: rgba(255, 255, 255, 0.562);
 }
 
+@media (min-width: 1700px){ 
+    .personal_info{
+        width: 30vw;
+    }
+    .event_info{
+        width: 30vw;
+    }
+}
+
 @media (max-width: 800px){
 
-    .personal_info{
+.personal_info{
         width: 70vw;
         border-radius: 5px;
         h2{
             font-size: 20px;
         }
-        input{
-            margin-bottom: 15px;
-            width: 95%;
-            height: 25px;
-            padding: 0px 15px;
-        }
     }
-        .wedding_info{
-            width: 70vw;
-            border-radius: 5px;
-            h2{
-                font-size: 20px;
-            }
-             .input_wedding input{
-                display: flex;
-                width: 95%;
-                text-align: center;
-                margin: auto;
-                margin-bottom: 10px;
-                textarea{
-                    width: 90%;
-                }
-            }
+    .event_info{
+    width: 70vw;
+    border-radius: 5px;
+        h2{
+            font-size: 20px;
         }
-}
+        textarea{
+            width: 90%;
+          }
+    }
+    }
 
 @media (max-width: 450px){
     
         .personal_info{
             width: 90vw;
         }
-        .wedding_info{
+        .event_info{
              width: 90vw;
              font-size: 13px;
              textarea{

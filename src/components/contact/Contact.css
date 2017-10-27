@@ -1,34 +1,51 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster");
 @import url("https://fonts.googleapis.com/css?family=Poiret+One");
 @import url("https://fonts.googleapis.com/css?family=Arima+Madurai");
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script");
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
+@import url("https://fonts.googleapis.com/css?family=Yellowtail");
 .Contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: peachpuff; }
+  background: #96aab9; }
 
 .contactpic {
   width: 100vw; }
 
 .form {
+  margin-top: 20px;
   text-align: center;
   display: flex;
   justify-content: center; }
+  .form h2 {
+    font-weight: bold;
+    font-size: 25px; }
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
 .personal_info {
-  background-color: rgba(128, 128, 128, 0.288);
+  background-color: rgba(82, 82, 82, 0.623);
   width: 40vw;
-  border-radius: 5px; }
+  border-radius: 5px;
+  padding: 20px; }
 
-.wedding_info {
-  background-color: rgba(128, 128, 128, 0.288);
+.event_info {
+  background-color: rgba(82, 82, 82, 0.623);
   width: 40vw;
-  border-radius: 5px; }
-  .wedding_info .wedding_top {
+  border-radius: 5px;
+  font-family: "Arima Madurai", cursive;
+  padding-top: 20px; }
+  .event_info .wedding_top {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; }
-  .wedding_info textarea {
+    justify-content: center;
+    margin-bottom: 10px;
+    padding: 0 20px 0 20px; }
+  .event_info textarea {
     border-radius: 5px;
     border: 1px solid #eee;
     background: rgba(255, 255, 255, 0.438);
@@ -36,7 +53,7 @@
     margin-bottom: 10px;
     width: 55%;
     height: 100px;
-    max-width: 100%;
+    max-width: 90%;
     padding: 5px 15px 0 15px; }
 
 .submit {
@@ -51,36 +68,31 @@
 .submit:hover {
   background: rgba(255, 255, 255, 0.562); }
 
+@media (min-width: 1700px) {
+  .personal_info {
+    width: 30vw; }
+  .event_info {
+    width: 30vw; } }
+
 @media (max-width: 800px) {
   .personal_info {
     width: 70vw;
     border-radius: 5px; }
     .personal_info h2 {
       font-size: 20px; }
-    .personal_info input {
-      margin-bottom: 15px;
-      width: 95%;
-      height: 25px;
-      padding: 0px 15px; }
-  .wedding_info {
+  .event_info {
     width: 70vw;
     border-radius: 5px; }
-    .wedding_info h2 {
+    .event_info h2 {
       font-size: 20px; }
-    .wedding_info .input_wedding input {
-      display: flex;
-      width: 95%;
-      text-align: center;
-      margin: auto;
-      margin-bottom: 10px; }
-      .wedding_info .input_wedding input textarea {
-        width: 90%; } }
+    .event_info textarea {
+      width: 90%; } }
 
 @media (max-width: 450px) {
   .personal_info {
     width: 90vw; }
-  .wedding_info {
+  .event_info {
     width: 90vw;
     font-size: 13px; }
-    .wedding_info textarea {
+    .event_info textarea {
       width: 90%; } }

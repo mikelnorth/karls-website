@@ -49,10 +49,7 @@ class Messageboard extends Component {
         this.setState({
             id
         })
-
-        console.log('state', this.state)
         this.props.updateCustomer(true, this.state.id)
-        console.log('customers', this.props.customers.data)
     }
 
     moreInfo(id, first_name, last_name, email, phone, contact_method, wedding_location, wedding_date, reception_location,
