@@ -7,9 +7,7 @@ import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Login from '../login/Login.js';
 import intro from '../../assets/intro.mp4';
-import Typed from 'typed.js';
 import karl from '../../assets/karl.jpg';
-import karl_night from '../../assets/karl_night.jpg';
 import down from '../../assets/down.png';
 import { HashLink } from 'react-router-hash-link';
 
@@ -65,7 +63,7 @@ class Home extends Component {
                         <source src="movie.ogg" type="video/ogg" />
                         Your browser does not support the video tag.
                     </video>
-                    <HashLink className='hashLink' to='/#middle'><img className='bounce' src={down}/></HashLink>
+                    <HashLink className='hashLink' to='/#middle'><img className='bounce' src={down} alt='#'/></HashLink>
                     <span className='welcome_span'>some things are worth remembering</span>
                     <Link className='button' to='/wedding'><span>Wedding Portfolio</span></Link>
                 </div>
@@ -80,8 +78,7 @@ class Home extends Component {
                     </span>
                     {this.props.video.map((val, i, arr) => {
                         return <div className='home_vid'>
-                            {/* <iframe src={`https://player.vimeo.com/video/${val.embedded_link}?title=0&byline=0&portrait=0`} width="640" height="360" frameborder="0" webkitallowfullscreen='true' mozallowfullscreen='true' allowfullscreen='true'></iframe> */}
-                            <iframe src={`https://www.youtube.com/embed/${val.embedded_link}?color=white&showinfo=0`} frameborder="0" allowfullscreen='true'></iframe>
+                            <iframe title={val.id} src={`https://www.youtube.com/embed/${val.embedded_link}?color=white&showinfo=0`} frameborder="0" allowfullscreen='true'></iframe>
                             <button style={adminView} onClick={() => this.updateState(val.title, val.embedded_link, val.category, val.id)}>Edit</button>
                         </div>
                     })}
@@ -114,7 +111,7 @@ class Home extends Component {
                 <div id='About' className='About'>
                     <div className='why_us'><span className='why'>WHY</span> <span className='us'>US?</span></div>
                     
-                    {<img className='karl' src={karl} />}
+                    {<img className='karl' src={karl} alt='#'/>}
 
                     <div className='about_content'>
                         <span className='about_message'>this is information about karl north and his awesome videos. this is going to make you want

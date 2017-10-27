@@ -24,13 +24,10 @@
   background-color: rgba(128, 128, 128, 0.288);
   width: 40vw;
   border-radius: 5px; }
-  .wedding_info .input_wedding input {
-    border: 1px solid #eee;
-    margin: 5px;
-    margin-bottom: 10px;
-    width: 45%;
-    height: 25px;
-    padding: 0px 15px; }
+  .wedding_info .wedding_top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
   .wedding_info textarea {
     border-radius: 5px;
     border: 1px solid #eee;
@@ -49,9 +46,7 @@
   border: 1px solid black;
   border-radius: 5px;
   color: black;
-  width: 60px;
-  display: flex;
-  justify-content: center; }
+  width: 60px; }
 
 .submit:hover {
   background: rgba(255, 255, 255, 0.562); }

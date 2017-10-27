@@ -24,9 +24,22 @@
     flex-direction: column;
     margin: auto;
 
+    .modal_btn{
+        width: 430.5px;
+        height: 242px; 
+    }
+    .catch{
+        width: 430.5px;
+        height: 242px;
+        background: transparent;
+        position: absolute;
+        z-index: 2;
+    }
     iframe{
         width: 430.5px;
         height: 242px;
+        position: absolute;
+        
     }
     button{
         background: white;
@@ -69,6 +82,37 @@
     }
 }
 
+.Modal {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    // width:50vw;
+    // height: 50vw;
+    background-color: transparent;
+    outline: none;
+    
+    iframe{
+        width: 861px;
+        height: 484px;
+        border: 3px solid rgb(46, 46, 46);
+        border-radius: 5px;
+    }
+  }
+
+  .Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.562);
+  }
+
 @media (max-width: 750px){
     .videos_content{
         iframe{
@@ -82,6 +126,17 @@
             width: 98vw;
             height: 220px;
             border-radius: 5px;
+        }
+        .modal_btn{
+            width: 98vw;
+            height: 220px; 
+        }
+        .catch{
+            width: 98vw;
+            height: 220px;
+            background: transparent;
+            position: absolute;
+            z-index: 2;
         }
     }
 }

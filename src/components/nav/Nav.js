@@ -25,8 +25,6 @@ class Nav extends Component {
         const adminView = this.props.user ? null : {
             'display': 'none'
         }
-        console.log(this.state)
-
         return (
             <div className='nav'>
                 <Link className='link' to='/'><p>Home</p></Link>
@@ -35,7 +33,7 @@ class Nav extends Component {
                 <HashLink className='link' to='/#About'><p>About</p></HashLink>
                 <Link className='link' style={adminView} to='/inbox'><p>Messages</p></Link>
 
-                <div class="slide" onClick={ this.toggleNav }>
+                <div className="slide" onClick={ this.toggleNav }>
                     {this.state.slideNav ? null : <div className="slidebtn" onClick={ this.toggleNav }>&#9776;</div>}
                     <div className={this.state.slideNav ? 'slide_content' : 'slide_content close'}>
                     <Link className='slide_link' to='/'><p>Home</p></Link>

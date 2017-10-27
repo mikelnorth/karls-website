@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
 import { getCustomers, updateCustomer } from './../../ducks/reducer.js';
 import './Inbox.css'
 import Nav from '../nav/Nav.js';

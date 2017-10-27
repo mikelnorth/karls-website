@@ -33,16 +33,11 @@
     background-color: rgba(128, 128, 128, 0.288);
     width: 40vw;
     border-radius: 5px;
-    .input_wedding input{
-        
-        border: 1px solid #eee;
-        margin: 5px;
-        margin-bottom: 10px;
-        width: 45%;
-        height: 25px;
-        padding: 0px 15px;
+    .wedding_top{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
 
     textarea{
         border-radius: 5px;
@@ -65,8 +60,6 @@
     border-radius: 5px;
     color: black;
     width: 60px;
-    display: flex;
-    justify-content: center;
 }
 
 .submit:hover{

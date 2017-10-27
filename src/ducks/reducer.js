@@ -51,7 +51,6 @@ export function getLinks(category) {
 export function isAdmin() {
     const admin = axios.get('/auth/me')
         .then(res => {
-            console.log('ADMIN', res.data)
             return res.data
         })
     return {

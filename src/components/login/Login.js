@@ -1,27 +1,20 @@
 import React, { Component } from 'react';
 import './Login.css';
-import Nav from '../nav/Nav.js'
 import instagram from '../../assets/instagram.svg';
 import youtube from '../../assets/youtube.svg';
 import facebook from '../../assets/facebook.svg';
 
 
 export default class Login extends Component {
-    constructor(props) {
-        super(props)
-
-    }
-
-
 
     render() {
         return (
             <div className='footer'>
                 <h3>follow us on social media</h3>
                 <div className='follow'>
-                    <a href='https://www.instagram.com/mr.karlnorth/?hl=en' target="_blank"><img src={instagram} height='60px' /></a>
-                    <a href='https://www.youtube.com/channel/UCV5SeFnY-ZG3lZg78mIsNFA' target="_blank"><img src={youtube} height='60px' /></a>
-                    <a href='https://www.facebook.com/karl.north' target="_blank"><img src={facebook} height='60px' /></a>
+                    <a href='https://www.instagram.com/mr.karlnorth/?hl=en' target="_blank"><img src={instagram} alt='#' height='60px' /></a>
+                    <a href='https://www.youtube.com/channel/UCV5SeFnY-ZG3lZg78mIsNFA' target="_blank"><img src={youtube} alt='#' height='60px' /></a>
+                    <a href='https://www.facebook.com/karl.north' target="_blank"><img src={facebook} alt='#' height='60px' /></a>
                 </div>
 
                 <span className='finePrint'>All video and picture media is copyright and owned by Karl North Media,<br />

@@ -3,8 +3,6 @@ import './Contact.css';
 import Nav from '../nav/Nav.js';
 import Login from '../login/Login.js';
 import axios from 'axios';
-import down from '../../assets/down.png';
-import { HashLink } from 'react-router-hash-link';
 import swal from 'sweetalert';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from 'material-ui/TextField';
@@ -45,7 +43,7 @@ export default class Contact extends Component {
 
     handleChange(prop, val) {
         console.log(prop, val)
-        if (prop == 'message' && val.length == 500) {
+        if (prop === 'message' && val.length === 500) {
             swal({
                 title: 'Message can only be 500 characters long',
                 text: '',
@@ -182,36 +180,36 @@ export default class Contact extends Component {
 
 
     render() {
-        const { firstName, lastName, email, phone, contact, type, weddingLocation, weddingDate, receptionLocation, receptionDate, bridalLocation, bridalDate,
-            culture, setting, audio, message, customerId } = this.state
+        const { firstName, lastName, email, phone, contact, weddingLocation, weddingDate, receptionLocation, receptionDate, bridalLocation, bridalDate,
+            culture, message} = this.state
 
         const weddingTypes = ['American', 'Christian', 'Jewish', 'Indian', 'Other']
-
+        
         console.log(this.state)
         return (
             <div className='Contact'>
                 <MuiThemeProvider>
                     <Nav />
-                    <img className='contactpic' src='http://www.simplyinspired.co.nz/extra/00--weddings054.jpg' />
+                    <img className='contactpic' src='http://www.simplyinspired.co.nz/extra/00--weddings054.jpg' alt='#'/>
 
                     <div className='form'>
                         <form>
-                            <div className='personal_info' autocomplete="on" >
-                                <h2>Personal information:</h2><br /><br />
+                            <div className='personal_info' autoComplete="on" >
+                                <h2>Contact Form:</h2><br /><br />
 
                                 <TextField onChange={(e) => this.handleChange('firstName', e.target.value)}
-                                    errorText="This field is required" floatingLabelText="First Name" name="firstname" value={firstName} /><br />
+                                    errorText="First name is required" floatingLabelText="First Name" name="firstname" value={firstName} /><br />
 
                                 <TextField onChange={(e) => this.handleChange('lastName', e.target.value)}
-                                    errorText="This field is required" floatingLabelText="Last Name" name="lastname" value={lastName} /><br />
+                                    errorText="Last name is required" floatingLabelText="Last Name" name="lastname" value={lastName} /><br />
 
                                 <TextField onChange={(e) => this.handleChange('email', e.target.value)}
-                                    errorText="This field is required" floatingLabelText="Email" name="Email" value={email} required /><br />
+                                    errorText="email is required" floatingLabelText="Email" name="Email" value={email} required /><br />
 
                                 <TextField onChange={(e) => this.handleChange('phone', e.target.value)}
                                     floatingLabelText='Phone Number' type="text" name="Phone" value={phone} /><br />
 
-                                <SelectField onChange={this.selectChange} value={this.state.contact} hintText="Prefered Contact Method" >
+                                <SelectField onChange={this.selectChange} value={contact} hintText="Prefered Contact Method" >
                                     <MenuItem value={'Email'} primaryText="Email" />
                                     <MenuItem value={'Phone'} primaryText="Phone" />
                                 </SelectField>
@@ -220,81 +218,84 @@ export default class Contact extends Component {
 
                             <div className='wedding_info'>
                                 <h2>Event Information:</h2><br />
-                                <div className='wedding_top'>
                                 <TextField placeholder='Wedding' onChange={(e) => this.handleChange('type', e.target.value)}
-                                disabled='true' value='wedding' /><br /><br />
+                                    disabled={true} value='wedding' name='wedding'/><br /><br />
 
+                                <div className='wedding_top'>
+                                    <TextField onChange={(e) => this.handleChange('weddingLocation', e.target.value)}
+                                        floatingLabelText='Wedding Location' name="weddingLocation" value={weddingLocation} />
 
-                                <TextField onChange={(e) => this.handleChange('weddingLocation', e.target.value)}
-                                    placeholder='Wedding Location' name="wedding location" value={weddingLocation} />
-
-                                <DatePicker
-                                    placeholder="Wedding Date"
-                                    autoOk='true'
-                                    value={this.state.weddingDate}
-                                    onChange={this.handleWeddingDate}
-                                />
-                                {/* <input onChange={(e) => this.handleChange('weddingDate', e.target.value)}
+                                    <DatePicker
+                                        name='weddingDate'
+                                        floatingLabelText="Wedding Date"
+                                        autoOk={true}
+                                        value={weddingDate}
+                                        onChange={this.handleWeddingDate}
+                                    />
+                                    {/* <input onChange={(e) => this.handleChange('weddingDate', e.target.value)}
                                         type="date" name="wedding location" value={weddingDate} /><br /> */}
 
 
-                                <TextField onChange={(e) => this.handleChange('receptionLocation', e.target.value)}
-                                    placeholder='Reception Location' value={receptionLocation} />
+                                    <TextField onChange={(e) => this.handleChange('receptionLocation', e.target.value)}
+                                    floatingLabelText='Reception Location' value={receptionLocation} name='receptionLocation' />
 
-                                <DatePicker
-                                    placeholder="Reception Date"
-                                    autoOk='true'
-                                    value={this.state.receptionDate}
-                                    onChange={this.handleReceptionDate}
-                                />
-                                {/* <input onChange={(e) => this.handleChange('receptionDate', e.target.value)}
+                                    <DatePicker
+                                        name='receptionDate'
+                                        floatingLabelText="Reception Date"
+                                        autoOk={true}
+                                        value={receptionDate}
+                                        onChange={this.handleReceptionDate}
+                                    />
+                                    {/* <input onChange={(e) => this.handleChange('receptionDate', e.target.value)}
                                         type="date" name="reception location" value={receptionDate} /><br /> */}
 
 
-                                <TextField onChange={(e) => this.handleChange('bridalLocation', e.target.value)}
-                                    placeholder='Bridal Location' value={bridalLocation} />
+                                    <TextField onChange={(e) => this.handleChange('bridalLocation', e.target.value)}
+                                    floatingLabelText='Bridal Location' name='birdalLocation' value={bridalLocation} />
 
-                                <DatePicker
-                                    placeholder="Bridal Date"
-                                    autoOk='true'
-                                    value={this.state.bridalDate}
-                                    onChange={this.handleBridalDate}
-                                />
-
+                                    <DatePicker
+                                    name='bridalDate'
+                                    floatingLabelText="Bridal Date"
+                                        autoOk={true}
+                                        value={bridalDate}
+                                        onChange={this.handleBridalDate}
+                                    />
+                                </div>
                                 <AutoComplete value={culture}
+                                    name='culture'
                                     placeholder="Type of wedding"
-                                    searchText={this.state.culture}
+                                    searchText={culture}
                                     onUpdateInput={this.handleUpdateInput}
                                     filter={AutoComplete.fuzzyFilter}
                                     dataSource={weddingTypes}
                                     maxSearchResults={5}
                                 /><br /><br />
-                            </div>
-                            Indoor <input onChange={(e) => this.handleChange('setting', e.target.value)}
-                                type="radio" name="indoor" value="Indoor" />
-                            or Outdoor <input onChange={(e) => this.handleChange('setting', e.target.value)}
-                                type="radio" name="indoor" value="Outdoor" /><br />
+
+                                Indoor <input onChange={(e) => this.handleChange('setting', e.target.value)}
+                                    type="radio" name="indoor" value="Indoor" />
+                                or Outdoor <input onChange={(e) => this.handleChange('setting', e.target.value)}
+                                    type="radio" name="indoor" value="Outdoor" /><br />
 
 
-                            Speech Audio
+                                Speech Audio
                     <input onChange={(e) => this.handleChange('audio', e.target.value)}
-                                type='radio' name='audio' value='Speech Audio' />or Strictly musical montage
+                                    type='radio' name='audio' value='Speech Audio' />or Strictly musical montage
                     <input onChange={(e) => this.handleChange('audio', e.target.value)}
-                                type='radio' name='audio' value='Strictly musical montage' /><br />
+                                    type='radio' name='audio' value='Strictly musical montage' /><br />
 
 
-                            <textarea className='textarea' maxlength="500" onChange={(e) => this.handleChange('message', e.target.value)}
-                                name="message" value={message} placeholder='additonal information...'></textarea>
-                            <br />
+                                <textarea className='textarea' maxLength="5" onChange={(e) => this.handleChange('message', e.target.value)}
+                                    name="message" value={message} placeholder='additonal information...'></textarea>
+                                <br />
                             </div>
 
-                        <div className='submit' onClick={(e) => this.submitCustomerInfo(e)}>submit</div>
+                            <div className='submit' onClick={(e) => this.submitCustomerInfo(e)}>submit</div>
 
                         </form>
                     </div>
 
 
-                <Login />
+                    <Login />
                 </MuiThemeProvider>
             </div >
         )
