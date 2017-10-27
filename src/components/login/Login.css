@@ -12,9 +12,17 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: #96aab9; }
+  color: #96aab9;
+  font-family: "Amatic SC", cursive; }
   .footer h3 {
-    margin-top: 15px; }
+    margin-top: 15px;
+    font-size: 40px;
+    font-weight: bold; }
+  .footer h4 {
+    font-weight: bold;
+    font-size: 25px; }
+  .footer span {
+    font-size: 15px; }
 
 .follow {
   display: flex;

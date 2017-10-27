@@ -9,8 +9,18 @@
     align-items: center;
     flex-direction: column;
     color: $lightMain;
+    font-family: $test;
     h3{
         margin-top: 15px;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    h4{
+        font-weight: bold;
+        font-size: 25px;
+    }
+    span{
+        font-size: 15px;
     }
 }
 
