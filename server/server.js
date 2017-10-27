@@ -12,6 +12,7 @@ const express = require('express'),
     // mail_controller = require('./mail_controller');
 
 const app = express();
+app.use( express.static( `${__dirname}/../build` ) );
 
 app.use(bodyParser.json());
 app.use(session({
@@ -74,6 +75,11 @@ app.get('/api/get/customers', controller.getCustomers)
 app.put('/api/update/customer', controller.updateCustomer)
 
 app.post('/api/send_email', mail_controller.sendEmail)
+
+const path = require('path')
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 
 passport.serializeUser((user, done) => {
