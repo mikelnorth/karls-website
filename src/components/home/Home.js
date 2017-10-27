@@ -58,7 +58,7 @@ class Home extends Component {
                 <Nav />
                 <div className='top'>
                     {/* <img className='homepic' src='http://warrenweddings.com/wp-content/uploads/2017/03/wedding-hire.jpg' /> */}
-                    <video className='loop' autoplay='autoplay' loop='loop' muted='true' controls='false' webkit-playsinline>
+                    <video className='loop' autoplay='autoplay' loop='loop' muted='true' controls='false' webkit-playsinline fullscreen='false'>
                         <source src={intro} type="video/mp4" />
                         <source src="movie.ogg" type="video/ogg" />
                         Your browser does not support the video tag.
