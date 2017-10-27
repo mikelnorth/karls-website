@@ -28,6 +28,10 @@
         width: 430.5px;
         height: 242px; 
     }
+    .catch:hover{
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.144);
+    }
     .catch{
         width: 430.5px;
         height: 242px;
@@ -111,7 +115,22 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.562);
+    animation: fadeIn .5s;
   }
+  @keyframes fadeIn{
+    from {opacity: 0};
+    to {opacity: 1};
+}
+
+
+@media (max-width: 1000px){
+    .Modal {
+        iframe{
+            width: 711px;
+            height: 400px;
+        }
+      }
+}
 
 @media (max-width: 750px){
     .videos_content{
@@ -119,6 +138,9 @@
             border-radius: 5px;
         }
     }
+    .catch {
+       display: none;
+      }
 }
 @media (max-width: 450px){
     .videos_content{

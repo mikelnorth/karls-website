@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .nav{
     z-index: 2;
     position: absolute;
@@ -6,16 +8,23 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background: rgba(128, 128, 128, 0.26);
+    background: rgba(0, 0, 0, 0.445);
     width: 100vw;
     color: white;
     text-shadow: 1px black;
     height: 50px;
+    font-size: 20px;
     
 }
 .link{
     text-decoration: none;
     color: white
+}
+
+.link:hover{
+    font-size: 22px;
+    transition: .5s;
+    color: $lightMain;
 }
 
 .slide{

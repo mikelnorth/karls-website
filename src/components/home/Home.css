@@ -23,7 +23,14 @@
   padding: 5px 10px 5px 10px;
   font-size: 25px;
   margin-top: 35%;
-  border-radius: 2px; }
+  border-radius: 2px;
+  animation: fadeIn 5s; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 .loop {
   width: 100vw;
@@ -32,7 +39,7 @@
 
 .button {
   position: absolute;
-  margin-top: 45%;
+  margin-top: 43%;
   margin-left: auto;
   padding: 6px 10px 6px 10px;
   text-decoration: none;
@@ -78,7 +85,7 @@
 
 @-webkit-keyframes bounce {
   0% {
-    bottom: 0px; }
+    bottom: 0; }
   50% {
     bottom: 15px; }
   100% {
@@ -86,7 +93,7 @@
 
 @-moz-keyframes bounce {
   0% {
-    bottom: 0px; }
+    bottom: 0; }
   50% {
     bottom: 15px; }
   100% {
@@ -94,7 +101,7 @@
 
 @-o-keyframes bounce {
   0% {
-    bottom: 0px; }
+    bottom: 0; }
   50% {
     bottom: 15px; }
   100% {
@@ -102,7 +109,7 @@
 
 @keyframes bounce {
   0% {
-    bottom: 0px; }
+    bottom: 0; }
   50% {
     bottom: 15px; }
   100% {
@@ -258,7 +265,10 @@
 @media (max-width: 1050px) {
   .welcome_span {
     width: auto;
-    padding: 0 20px 0 20px; }
+    padding: 0 20px 0 20px;
+    margin-top: 35%; }
+  .button {
+    margin-top: 45%; }
   .bounce {
     display: none; }
   .dance {
@@ -275,6 +285,34 @@
   .about_message {
     font-size: 20px;
     max-height: 200px; } }
+
+@media (min-width: 1700px) {
+  .button {
+    margin-top: 38%; }
+  .welcome_span {
+    margin-top: 30%; }
+  .bounce {
+    bottom: 150px; }
+  @-webkit-keyframes bounce {
+    0% {
+      bottom: 150px; }
+    50% {
+      bottom: 165px; } }
+  @-moz-keyframes bounce {
+    0% {
+      bottom: 150px; }
+    50% {
+      bottom: 165px; } }
+  @-o-keyframes bounce {
+    0% {
+      bottom: 150px; }
+    50% {
+      bottom: 165px; } }
+  @keyframes bounce {
+    0% {
+      bottom: 150px; }
+    50% {
+      bottom: 165px; } } }
 
 @media (max-width: 730px) {
   .welcome_span {

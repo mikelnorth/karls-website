@@ -29,6 +29,11 @@
     font-size: 25px;
     margin-top: 35%;
     border-radius: 2px;
+    animation: fadeIn 5s;
+}
+@keyframes fadeIn{
+    from {opacity: 0};
+    to {opacity: 1};
 }
 
 .loop{
@@ -39,7 +44,7 @@
 
 .button{
     position: absolute;
-    margin-top: 45%;
+    margin-top: 43%;
     margin-left: auto;
     padding: 6px 10px 6px 10px;
     text-decoration: none;
@@ -94,29 +99,30 @@
     
   }
   
-  @-webkit-keyframes bounce {
-    0%       { bottom:0px; }
+   @-webkit-keyframes bounce {
+    0%       { bottom:0; }
     50%      { bottom:15px; }
     100%     {bottom:30;}
   }
   
    @-moz-keyframes bounce {
-    0%       { bottom:0px; }
+    0%       { bottom:0; }
     50%      { bottom:15px; }
     100%     {bottom:30;}
   }
   
    @-o-keyframes bounce {
-    0%       { bottom:0px; }
+    0%       { bottom:0; }
     50%      { bottom:15px; }
     100%     {bottom:30;}
   }
   
    @keyframes bounce {
-    0%       { bottom:0px; }
+    0%       { bottom:0; }
     50%      { bottom:15px; }
     100%     {bottom:30;}
   }
+  
 
 .hashLink{
     position: absolute;
@@ -250,6 +256,7 @@
 }
 
 .contact_btn {
+
     text-align: center;
     font-size: 20px;
     transition: all 0.5s;
@@ -292,10 +299,17 @@
   }
 
 
-@media (max-width: 1050px){
+
+
+
+  @media (max-width: 1050px){
     .welcome_span{
         width: auto;
         padding: 0 20px 0 20px;
+        margin-top: 35%
+    }
+    .button{
+        margin-top: 45%;
     }
     .bounce {
         display: none;
@@ -321,6 +335,44 @@
         max-height: 200px;
     }
 
+}
+
+
+@media (min-width: 1700px){ 
+    .button{
+        margin-top: 38%
+    } 
+    
+    .welcome_span{
+        margin-top: 30%;
+    }
+    .bounce {
+        bottom:150px;
+      }
+      
+       @-webkit-keyframes bounce {
+        0%       { bottom:150px; }
+        50%      { bottom:165px; }
+        // 100%     {bottom:180;}
+      }
+      
+       @-moz-keyframes bounce {
+        0%       { bottom:150px; }
+        50%      { bottom:165px; }
+        // 100%     {bottom:180;}
+      }
+      
+       @-o-keyframes bounce {
+        0%       { bottom:150px; }
+        50%      { bottom:165px; }
+        // 100%     {bottom:180;}
+      }
+      
+       @keyframes bounce {
+        0%       { bottom:150px; }
+        50%      { bottom:165px; }
+        // 100%     {bottom:180;}
+      }
 }
 
 @media (max-width: 730px){ 
