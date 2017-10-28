@@ -242,7 +242,7 @@
   font-family: "Poiret One", cursive;
   background: transparent;
   margin: auto;
-  margin-top: 40px; }
+  margin-top: 10px; }
 
 .contact_btn span {
   cursor: pointer;
@@ -322,7 +322,8 @@
   .welcome_span {
     font-size: 20px; }
   .button {
-    padding: 2px 6px 2px 6px; }
+    padding: 2px 6px 2px 6px;
+    font-weight: bold; }
   .middle {
     flex-direction: column; }
   .middle_message {
@@ -348,7 +349,9 @@
     height: auto;
     flex-direction: column;
     align-items: center;
-    margin-top: -5px; }
+    margin-top: -5px;
+    max-height: none;
+    padding-bottom: 10px; }
   .karl {
     height: 250px;
     margin: 20px;
@@ -369,7 +372,10 @@
     color: white; }
   .about_message {
     font-size: 20px;
-    width: 75%; }
+    width: 75%;
+    max-height: none;
+    overflow: none;
+    overflow: initial; }
   .contact_btn {
     margin: auto;
     margin-top: 10px;
@@ -381,7 +387,7 @@
     font-size: 18px; }
   .button {
     padding: 2px 6px 2px 6px;
-    font-size: 12px; }
+    font-size: 15px; }
   .karl {
     height: auto;
     width: 95%;
