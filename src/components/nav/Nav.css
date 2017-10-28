@@ -35,6 +35,9 @@
   position: relative;
   display: none; }
 
+.closebtn {
+  margin-right: 10px; }
+
 @media (max-width: 450px) {
   .nav {
     background: transparent; }
@@ -52,9 +55,10 @@
       position: absolute;
       left: -20px;
       top: -20px;
+      padding-top: 60px;
       background: rgba(0, 0, 0, 0.658);
       height: 100vh;
-      width: 100px;
+      width: 130px;
       transition: .8s;
       display: flex;
       flex-direction: column;
