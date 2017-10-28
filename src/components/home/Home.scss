@@ -150,8 +150,6 @@
     font-size: 20px;
     margin-right: 40px;
     padding: 20px;
-    max-height: 242px;
-    overflow: scroll;
 }
 
 .home_vid{
@@ -224,18 +222,6 @@
    height: 100%;
 }
 
-.about_message{
-    font-size: 25px;
-    padding: 20px;
-    background: transparent;
-    width: 65%;
-    text-align: center;
-    margin: auto; 
-    max-height: 350px;
-    overflow: scroll;
-    font-family: $paragraph;
-}
-
 .why_us{
     background: transparent;
     font-size: 40px;
@@ -253,7 +239,20 @@
 .about_content{
     display: flex;
     flex-direction: column;
+    max-height: 500px;
 }
+.about_message{
+    font-size: 25px;
+    padding: 20px;
+    background: transparent;
+    width: 65%;
+    text-align: center;
+    margin: auto; 
+    font-family: $paragraph;
+    overflow: scroll;
+    max-height: 360px;
+}
+
 
 .contact_btn {
 
@@ -302,7 +301,7 @@
 
 
 
-  @media (max-width: 1050px){
+  @media (max-width: 1200px){
     .welcome_span{
         width: auto;
         padding: 0 20px 0 20px;
@@ -321,7 +320,7 @@
     }
 
     .About{
-        height: 300px;
+        max-height: 300px;
         }
     .why_us{
             font-size: 30px;
@@ -332,7 +331,8 @@
 
     .about_message{
         font-size: 20px;
-        max-height: 200px;
+        max-height: 220px;
+        overflow: scroll;
     }
 
 }
@@ -395,7 +395,6 @@
         font-family: 'Arima Madurai', cursive;
         margin: auto;
         padding: 20px;
-        max-height: 600px;
         overflow: scroll;
         border-radius: 5px;
     }
@@ -447,7 +446,6 @@
     .about_message{
         font-size: 20px;
         // padding: 0px;
-        max-height: 200px;
         width: 75%;
     }
 
@@ -488,7 +486,6 @@
     text-align: center;
     width: 95vw;
     padding: 10px;
-    max-height: 400px;
     max-width: 100%;
     border-radius: 5px;
     }

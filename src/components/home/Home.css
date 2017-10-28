@@ -141,9 +141,7 @@
   font-family: "Arima Madurai", cursive;
   font-size: 20px;
   margin-right: 40px;
-  padding: 20px;
-  max-height: 242px;
-  overflow: scroll; }
+  padding: 20px; }
 
 .home_vid {
   margin-left: 40px;
@@ -201,17 +199,6 @@
 .karl {
   height: 100%; }
 
-.about_message {
-  font-size: 25px;
-  padding: 20px;
-  background: transparent;
-  width: 65%;
-  text-align: center;
-  margin: auto;
-  max-height: 350px;
-  overflow: scroll;
-  font-family: "Arima Madurai", cursive; }
-
 .why_us {
   background: transparent;
   font-size: 40px;
@@ -227,7 +214,19 @@
 
 .about_content {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  max-height: 500px; }
+
+.about_message {
+  font-size: 25px;
+  padding: 20px;
+  background: transparent;
+  width: 65%;
+  text-align: center;
+  margin: auto;
+  font-family: "Arima Madurai", cursive;
+  overflow: scroll;
+  max-height: 360px; }
 
 .contact_btn {
   text-align: center;
@@ -266,7 +265,7 @@
   opacity: 1;
   right: 0; }
 
-@media (max-width: 1050px) {
+@media (max-width: 1200px) {
   .welcome_span {
     width: auto;
     padding: 0 20px 0 20px;
@@ -280,7 +279,7 @@
     background-position: -30px;
     background-size: cover; }
   .About {
-    height: 300px; }
+    max-height: 300px; }
   .why_us {
     font-size: 30px;
     position: absolute;
@@ -288,7 +287,8 @@
     left: 375px; }
   .about_message {
     font-size: 20px;
-    max-height: 200px; } }
+    max-height: 220px;
+    overflow: scroll; } }
 
 @media (min-width: 1700px) {
   .button {
@@ -332,7 +332,6 @@
     font-family: 'Arima Madurai', cursive;
     margin: auto;
     padding: 20px;
-    max-height: 600px;
     overflow: scroll;
     border-radius: 5px; }
   .home_vid {
@@ -370,7 +369,6 @@
     color: white; }
   .about_message {
     font-size: 20px;
-    max-height: 200px;
     width: 75%; }
   .contact_btn {
     margin: auto;
@@ -392,7 +390,6 @@
     text-align: center;
     width: 95vw;
     padding: 10px;
-    max-height: 400px;
     max-width: 100%;
     border-radius: 5px; }
   .about_message {

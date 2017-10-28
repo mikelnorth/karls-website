@@ -71,10 +71,11 @@ class Home extends Component {
 
                 <div id='middle' className='middle'>
                     <span className='middle_message'><p>KARL NORTH MEDIA</p><br/>
-                        Karl North Media is not about making a film, it's about reliving and feeling every moment.
-                        catching the memories that matter most and seeing them play back to you.
-                        It's about feeling those butterflies all over again as begin a new journey.
-                        It's about trying to remember the good ol'days while we are still in them.
+                        Karl North Media is not just about making films, it's about being able to relive and feel every moment.
+                        catching the memories that matter most and experiencing them all over again.
+                        It's about feeling those butterflies when he looks at you!
+                        laughing as you see cake smeared all over your face.
+                        It's about remembering the good ol'days while we are still in them.
                     </span>
                     {this.props.video.map((val, i, arr) => {
                         return <div className='home_vid'>
@@ -114,9 +115,14 @@ class Home extends Component {
                     {<img className='karl' src={karl} alt='#'/>}
 
                     <div className='about_content'>
-                        <span className='about_message'>this is information about karl north and his awesome videos. this is going to make you want
-                        to choose him for all of your fun events that you would like to remember. blah blah blah some more awesome stuff
-                        about this rad dude!!!</span>
+                        <span className='about_message'>
+                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                         Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                          sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+                         Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, 
+                         commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, 
+                         sagittis tempus lacus enim ac dui
+                        </span>
                         <Link to='/contact' className='contact_btn'><span>Contact</span></Link>
                     </div>
                     
