@@ -30,7 +30,7 @@ module.exports = {
              ${ req.body.weddingDate ? `<span> Wedding Date:  ${req.body.weddingDate}</span><br><br>` : ''}
              ${ req.body.bridalLocation ? `<span> Bridal Location:  ${req.body.bridalLocation}</span><br><br>` : ''}
              ${ req.body.bridalDate ? `<span> Bridal Date:  ${req.body.bridalDate}</span><br><br>` : ''}
-             ${ req.body.receptionLocation ? `<span> Reception Locatoin:  ${req.body.receptionLocation}</span><br><br>` : ''}
+             ${ req.body.receptionLocation ? `<span> Reception Location:  ${req.body.receptionLocation}</span><br><br>` : ''}
              ${ req.body.receptionDate ? `<span> Reception Date:  ${req.body.receptionDate}</span><br><br>` : ''}
              ${ req.body.culture ? `<span> Wedding Culture:  ${req.body.culture}</span><br><br>` : ''}
              ${ req.body.setting ? `<span> Setting:  ${req.body.setting}</span><br><br>` : ''}
