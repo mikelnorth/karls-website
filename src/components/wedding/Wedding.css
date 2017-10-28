@@ -16,13 +16,23 @@
   display: flex;
   flex-direction: column;
   align-items: center; }
-  .top_wedding iframe {
+  .top_wedding .featured_title {
+    font-family: "Lobster", cursive;
+    font-size: 35px;
+    color: white;
+    text-shadow: 1px 1px black; }
+  .top_wedding .top_content {
     margin-top: 100px;
-    margin-bottom: 20px;
-    width: 861px;
-    height: 484px; }
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .top_wedding .top_content iframe {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      width: 900px;
+      height: 484px; }
   .top_wedding p {
-    width: 50%;
+    max-width: 650px;
     text-align: center;
     font-family: "Arima Madurai", cursive;
     padding: 10px; }
@@ -125,6 +135,14 @@
     width: 90vw; } }
 
 @media (max-width: 1000px) {
+  .top_wedding p {
+    max-width: none;
+    width: 70%; }
+  .top_wedding .top_content iframe {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100vw;
+    height: 60vw; }
   .Modal iframe {
     width: 711px;
     height: 400px; } }

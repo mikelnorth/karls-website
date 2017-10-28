@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Wedding.css';
 import Nav from '../nav/Nav.js'
-import { getLinks, updateVideo } from './../../ducks/reducer.js';
+import { getLinks, updateVideo, getFeatured } from './../../ducks/reducer.js';
 import { connect } from 'react-redux';
 import Login from '../login/Login.js'
 import ReactModal from 'react-modal';
@@ -18,7 +18,7 @@ class Wedding extends Component {
             id: null,
             showModal: false,
             hideModal: false,
-            link: 'B5i-5kr68iw'
+            link: ''
         }
 
         this.updateState = this.updateState.bind(this);
@@ -43,6 +43,7 @@ class Wedding extends Component {
 
     componentDidMount() {
         this.props.getLinks('wedding');
+        this.props.getFeatured('featured');
     }
 
     handleOpenModal(link) {
@@ -66,12 +67,19 @@ class Wedding extends Component {
         }
 
         const hideModal = this.state.hideModal ? { 'display': 'none' } : null
-        console.log(this.props.video)
+        console.log('this.props.video', this.props.video)
+        console.log('this.props.featured', this.props.featured)
         return (
             <div className='Wedding'>
                 <Nav />
                 <div className='top_wedding'>
-                    <iframe src={`https://www.youtube.com/embed/${this.props.video[0].embedded_link}?color=white&showinfo=0&rel=0`} frameborder="0" allowfullscreen='true'></iframe>
+                    {this.props.featured.map((val, i, arr) => {
+                        return <div className='top_content'>
+                            <div className='featured_title'>{val.title}</div>
+                            <iframe title={val.id} src={`https://www.youtube.com/embed/${val.embedded_link}?color=white&showinfo=0&rel=0`} frameborder="0" allowfullscreen='true'></iframe>
+                            <button style={adminView} onClick={() => this.updateState(val.title, val.embedded_link, val.category, val.id)}>Edit</button>
+                        </div>
+                    })}
                     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                          Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
                           sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
@@ -126,8 +134,9 @@ class Wedding extends Component {
 function mapStatetoProps(state) {
     return {
         video: state.video,
-        user: state.user
+        user: state.user,
+        featured: state.featured
     }
 }
 
-export default (connect(mapStatetoProps, { getLinks, updateVideo })(Wedding));
+export default (connect(mapStatetoProps, { getLinks, updateVideo, getFeatured })(Wedding));

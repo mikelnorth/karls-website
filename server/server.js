@@ -65,6 +65,7 @@ app.get('/auth/logout', (req, res) => {
 })
 
 app.get('/api/links/:category', controller.getLinks)
+app.get('/api/featured/:category', controller.getFeatured)
 app.put('/api/admin/video/:id', controller.updateVideo)
 
 app.post('/api/customer/insert', controller.insertCustomer)

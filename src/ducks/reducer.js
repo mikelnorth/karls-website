@@ -10,6 +10,14 @@ let initialState = {
             category: '',
         }
     ],
+    featured: [
+        {
+            id: 0,
+            title: '',
+            embedded_link: '',
+            category: '',
+        }
+    ],
     user: true,
     customers: {
         data: []
@@ -18,6 +26,7 @@ let initialState = {
 
 
 const GET_LINKS = 'GET_LINKS';
+const GET_FEATURED = 'GET-FEATURED';
 const UPDATE_VIDEO = 'UPDATE_VIDEO';
 const ADMIN = 'ADMIN';
 const GET_CUSTOMERS = 'GET_CUSTOMERS';
@@ -42,7 +51,19 @@ export function getLinks(category) {
             return res.data
         })
     return {
-        type: UPDATE_VIDEO,
+        type: GET_LINKS,
+        payload: links
+    }
+
+}
+
+export function getFeatured(category) {
+    const links = axios.get(`/api/featured/${category}`)
+        .then(res => {
+            return res.data
+        })
+    return {
+        type: GET_FEATURED,
         payload: links
     }
 
@@ -73,7 +94,6 @@ export function updateVideo(title, embedded_link, category, id) {
 export function updateCustomer(archive, id) {
     const newCustomer = axios.put(`/api/update/customer`, { archive, id })
         .then(res => {
-            // console.log('test', id)
             return res
         })
     return {
@@ -86,6 +106,8 @@ export default function (state = initialState, action) {
     switch (action.type) {
         case GET_LINKS + '_FULFILLED':
             return Object.assign({}, state, { video: action.payload })
+        case GET_FEATURED + '_FULFILLED':
+            return Object.assign({}, state, { featured: action.payload })
         case UPDATE_VIDEO + '_FULFILLED':
             return Object.assign({}, state, { video: action.payload })
         case ADMIN + '_FULFILLED':
