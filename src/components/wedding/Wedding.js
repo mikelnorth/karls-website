@@ -46,15 +46,15 @@ class Wedding extends Component {
     }
 
     handleOpenModal(link) {
-        this.setState({ 
-            showModal: true, 
+        this.setState({
+            showModal: true,
             hideModal: !this.state.hideModal,
             link
         });
     }
 
     handleCloseModal() {
-        this.setState({ 
+        this.setState({
             showModal: false,
             hideModal: !this.state.hideModal
         });
@@ -65,15 +65,19 @@ class Wedding extends Component {
             'display': 'none'
         }
 
-        const hideModal = this.state.hideModal ? {'display': 'none'} : null
-
+        const hideModal = this.state.hideModal ? { 'display': 'none' } : null
+        console.log(this.props.video)
         return (
             <div className='Wedding'>
                 <Nav />
                 <div className='top_wedding'>
-
-
+                    <iframe src={`https://www.youtube.com/embed/${this.props.video[0].embedded_link}?color=white&showinfo=0&rel=0`} frameborder="0" allowfullscreen='true'></iframe>
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                         Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                          sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+                         Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, </p>
                 </div>
+
                 <div className='videos'>
                     {this.props.video.map((val, i, arr) => {
                         return <div className='videos_content'>

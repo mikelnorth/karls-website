@@ -20,9 +20,9 @@ export default class Login extends Component {
                 <h4>Email: karlnorthfilms@gmail.com</h4>
                 <br/>
 
-                <span className='finePrint'>All video and picture media is copyright and owned by Karl North Media,<br />
-                    Website developed and designed by Mikel North.<br />
-                    icons are not owned by Karl North Media and have been provided by  Freepik from www.flaticon.com
+                <span className='finePrint'>All video and picture media is copyright and owned by Karl North Media © 2017,<br />
+                    Website developed and designed by<a href={'https://www.linkedin.com/in/mikel-north-8a1823a9/'} target="_blank">Mikel North.</a><br />
+                    icons are not owned by Karl North Media and have been provided by  Freepik from www.flaticon.com<br/>
                  </span>
                 <div className='login'>
                     <p>ADMIN LOGIN</p>

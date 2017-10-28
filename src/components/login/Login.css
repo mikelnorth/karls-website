@@ -23,6 +23,9 @@
     font-size: 25px; }
   .footer span {
     font-size: 15px; }
+  .footer a {
+    text-decoration: none;
+    color: #96aab9; }
 
 .follow {
   display: flex;
