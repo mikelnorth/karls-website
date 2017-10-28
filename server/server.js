@@ -61,7 +61,7 @@ app.get('/auth/me', (req, res) => {
 
 app.get('/auth/logout', (req, res) => {
     req.logOut();
-    res.redirect(302, 'http://localhost:3000/')
+    res.redirect(302, process.env.REDIRECT)
 })
 
 app.get('/api/links/:category', controller.getLinks)
