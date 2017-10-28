@@ -40,7 +40,8 @@
 
 @media (max-width: 450px) {
   .nav {
-    background: transparent; }
+    background: transparent;
+    position: fixed; }
     .nav .link {
       display: none; }
     .nav .slide_link {
