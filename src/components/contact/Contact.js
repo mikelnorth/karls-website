@@ -52,6 +52,16 @@ export default class Contact extends Component {
             });
         }
 
+        if ((prop === 'firstName' || prop === 'lastName' || prop === 'email' || prop === 'phone' ||
+            'contact' || prop === 'receptionLoation' || prop === 'bridalLocation') && val.length === 100) {
+            swal({
+                title: 'Message can only be 100 characters long',
+                text: '',
+                icon: "warning",
+                button: "ok!",
+            });
+        }
+
         this.setState(
             {
                 [prop]: val
@@ -83,6 +93,14 @@ export default class Contact extends Component {
         this.setState({
             culture
         });
+        if (culture.length === 100) {
+            swal({
+                title: 'Message can only be 100 characters long',
+                text: '',
+                icon: "warning",
+                button: "ok!",
+            });
+        }
     };
 
     submitCustomerInfo(e) {
@@ -128,7 +146,7 @@ export default class Contact extends Component {
                             .then(res => {
                                 swal({
                                     title: "Form Submitted",
-                                    text: "Thank you for choosing Karl North Media, we will contact you soon.",
+                                    text: "Thank you for choosing Karl North Media, we will contact you.",
                                     icon: "success",
                                     button: "ok!",
                                 });
@@ -181,16 +199,15 @@ export default class Contact extends Component {
 
     render() {
         const { firstName, lastName, email, phone, contact, weddingLocation, weddingDate, receptionLocation, receptionDate, bridalLocation, bridalDate,
-            culture, message} = this.state
+            culture, message } = this.state
 
         const weddingTypes = ['American', 'Christian', 'Jewish', 'Indian', 'Other']
         
-        console.log(this.state)
         return (
             <div className='Contact'>
                 <MuiThemeProvider>
                     <Nav />
-                    <img className='contactpic' src='http://www.simplyinspired.co.nz/extra/00--weddings054.jpg' alt='#'/>
+                    <img className='contactpic' src='http://www.simplyinspired.co.nz/extra/00--weddings054.jpg' alt='#' />
 
                     <div className='form'>
                         <form>
@@ -198,16 +215,16 @@ export default class Contact extends Component {
                                 <h2>Contact Form:</h2><br /><br />
 
                                 <TextField onChange={(e) => this.handleChange('firstName', e.target.value)}
-                                    errorText="First name is required" floatingLabelText="First Name" name="firstname" value={firstName} /><br />
+                                    maxLength='100' errorText="First name is required" floatingLabelText="First Name" name="firstname" value={firstName} /><br />
 
                                 <TextField onChange={(e) => this.handleChange('lastName', e.target.value)}
-                                    errorText="Last name is required" floatingLabelText="Last Name" name="lastname" value={lastName} /><br />
+                                    errorText="Last name is required" floatingLabelText="Last Name" name="lastname" maxLength='100' value={lastName} /><br />
 
                                 <TextField onChange={(e) => this.handleChange('email', e.target.value)}
-                                    errorText="email is required" floatingLabelText="Email" name="Email" value={email} required /><br />
+                                    errorText="email is required" floatingLabelText="Email" name="Email" maxLength='100' value={email} required /><br />
 
                                 <TextField onChange={(e) => this.handleChange('phone', e.target.value)}
-                                    floatingLabelText='Phone Number' type="text" name="Phone" value={phone} /><br />
+                                    floatingLabelText='Phone Number' type="text" name="Phone" maxLength='100' value={phone} /><br />
 
                                 <SelectField onChange={this.selectChange} value={contact} hintText="Prefered Contact Method" >
                                     <MenuItem value={'Email'} primaryText="Email" />
@@ -219,11 +236,11 @@ export default class Contact extends Component {
                             <div className='event_info'>
                                 <h2>Event Information:</h2><br />
                                 <TextField placeholder='Wedding' onChange={(e) => this.handleChange('type', e.target.value)}
-                                    disabled={true} value='wedding' name='wedding'/><br /><br />
+                                    disabled={true} value='wedding' name='wedding' /><br /><br />
 
                                 <div className='wedding_top'>
                                     <TextField onChange={(e) => this.handleChange('weddingLocation', e.target.value)}
-                                        floatingLabelText='Wedding Location' name="weddingLocation" value={weddingLocation} />
+                                        floatingLabelText='Wedding Location' maxLength='100' name="weddingLocation" value={weddingLocation} />
 
                                     <DatePicker
                                         name='weddingDate'
@@ -237,7 +254,7 @@ export default class Contact extends Component {
 
 
                                     <TextField onChange={(e) => this.handleChange('receptionLocation', e.target.value)}
-                                    floatingLabelText='Reception Location' value={receptionLocation} name='receptionLocation' />
+                                        floatingLabelText='Reception Location' maxLength='100' value={receptionLocation} name='receptionLocation' />
 
                                     <DatePicker
                                         name='receptionDate'
@@ -251,11 +268,11 @@ export default class Contact extends Component {
 
 
                                     <TextField onChange={(e) => this.handleChange('bridalLocation', e.target.value)}
-                                    floatingLabelText='Bridal Location' name='birdalLocation' value={bridalLocation} />
+                                        floatingLabelText='Bridal Location' name='birdalLocation' maxLength='100' value={bridalLocation} />
 
                                     <DatePicker
-                                    name='bridalDate'
-                                    floatingLabelText="Bridal Date"
+                                        name='bridalDate'
+                                        floatingLabelText="Bridal Date"
                                         autoOk={true}
                                         value={bridalDate}
                                         onChange={this.handleBridalDate}
@@ -269,6 +286,7 @@ export default class Contact extends Component {
                                     filter={AutoComplete.fuzzyFilter}
                                     dataSource={weddingTypes}
                                     maxSearchResults={5}
+                                    maxLength='100'
                                 /><br /><br />
 
                                 Indoor <input onChange={(e) => this.handleChange('setting', e.target.value)}
@@ -284,7 +302,7 @@ export default class Contact extends Component {
                                     type='radio' name='audio' value='Strictly musical montage' /><br />
 
 
-                                <textarea className='textarea' maxLength="5" onChange={(e) => this.handleChange('message', e.target.value)}
+                                <textarea className='textarea' maxLength="500" onChange={(e) => this.handleChange('message', e.target.value)}
                                     name="message" value={message} placeholder='additonal information...'></textarea>
                                 <br />
                             </div>
