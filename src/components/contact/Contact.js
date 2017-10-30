@@ -56,7 +56,7 @@ export default class Contact extends Component {
             });
         }
 
-        if ((prop === 'firstName' || prop === 'lastName' || prop === 'email' || prop === 'phone' ||
+        else if ((prop === 'firstName' || prop === 'lastName' || prop === 'email' || prop === 'phone' ||
             'contact' || prop === 'receptionLoation' || prop === 'bridalLocation') && val.length === 100) {
             swal({
                 title: 'Message can only be 100 characters long',
