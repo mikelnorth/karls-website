@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './Wedding.css';
 import Nav from '../nav/Nav.js'
-import { getLinks, updateVideo, getFeatured } from './../../ducks/reducer.js';
+import { getLinks, updateVideo, getFeatured} from './../../ducks/reducer.js';
 import { connect } from 'react-redux';
 import Login from '../login/Login.js'
 import ReactModal from 'react-modal';
+import axios from 'axios'
+import swal from 'sweetalert'
 
 
 class Wedding extends Component {
@@ -30,6 +32,31 @@ class Wedding extends Component {
 
     editSelectedVideo() {
         this.props.updateVideo(this.state.title, this.state.embedded_link, this.state.category, this.state.id)
+    }
+
+    addNewVideo(){
+        axios.post('api/new/video', this.state)
+    }
+
+    deleteVideo(){
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this video",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+                axios.delete(`api/delete/video/${this.state.id}`)
+              swal("Video has been deleted", {
+                icon: "success",
+              });
+            } else {
+              swal("Your video is safe");
+            }
+          });
+        
     }
 
     updateState(title, embedded_link, category, id) {
@@ -71,6 +98,7 @@ class Wedding extends Component {
         const hideModal = this.state.hideModal ? { 'display': 'none' } : null
         console.log('this.props.video', this.props.video)
         console.log('this.props.featured', this.props.featured)
+        console.log('state', this.state)
         return (
             <div className='Wedding'>
                 <Nav />
@@ -102,18 +130,38 @@ class Wedding extends Component {
                     })}
 
                 </div>
+
                 <div className='input'>
-                    <input style={adminView} type='text' value={this.state.title} onChange={(e) => {
+                <div className='edit'>
+                    <input style={adminView} type='text' placeholder='Change title' value={this.state.title} onChange={(e) => {
                         this.setState({
                             title: e.target.value
                         })
                     }} />
-                    <input style={adminView} type='text' value={this.state.embedded_link} onChange={(e) => {
+                    <input style={adminView} type='text' placeholder='Edig link ID' value={this.state.embedded_link} onChange={(e) => {
                         this.setState({
                             embedded_link: e.target.value
                         })
                     }} />
                     <button style={adminView} onClick={() => this.editSelectedVideo()}>submit changes</button>
+                    <button style={adminView} onClick={() => this.deleteVideo()}>Delete Video</button>
+
+                </div>
+
+
+                <div className='add'>
+                    <input style={adminView} type='text' placeholder='Add title' onChange={(e) => {
+                        this.setState({
+                            title: e.target.value                            
+                        })
+                    }} />
+                    <input style={adminView} type='text' placeholder='New link ID' onChange={(e) => {
+                        this.setState({
+                            embedded_link: e.target.value                            
+                        })
+                    }} />
+                    <button style={adminView} onClick={() => this.addNewVideo()}>Add New Video</button>
+                </div>
                 </div>
 
                 <div>

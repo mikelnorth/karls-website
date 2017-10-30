@@ -18,7 +18,7 @@ let initialState = {
             category: '',
         }
     ],
-    user: true,
+    user: false,
     customers: {
         data: []
     },
@@ -31,6 +31,7 @@ const UPDATE_VIDEO = 'UPDATE_VIDEO';
 const ADMIN = 'ADMIN';
 const GET_CUSTOMERS = 'GET_CUSTOMERS';
 const UPDATE_CUSTOMER = 'UPDATE_CUSTOMER';
+// const ADD_VIDEO = 'ADD_VIDEO';
 
 export function getCustomers() {
     const customers = axios.get('/api/get/customers')
@@ -90,6 +91,17 @@ export function updateVideo(title, embedded_link, category, id) {
         payload: newVideo
     }
 }
+
+// export function addVideo(title, embedded_link){
+//     const addedVideo = axios.post('api/add/video', {title, embedded_link})
+//     .then(res => {
+//         return res.data
+//     })
+//     return {
+//         type: ADD_VIDEO,
+//         payload: addedVideo
+//     }
+// }
 
 export function updateCustomer(archive, id) {
     const newCustomer = axios.put(`/api/update/customer`, { archive, id })

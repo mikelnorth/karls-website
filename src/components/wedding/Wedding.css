@@ -12,6 +12,17 @@
   justify-content: center;
   background: #96aab9; }
 
+button {
+  background: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black; }
+
+button:hover {
+  background: rgba(255, 255, 255, 0.562);
+  border: 1px solid red;
+  color: red; }
+
 .top_wedding {
   display: flex;
   flex-direction: column;
@@ -26,15 +37,6 @@
     display: flex;
     flex-direction: column;
     align-items: center; }
-    .top_wedding .top_content button {
-      background: white;
-      border: 1px solid black;
-      border-radius: 5px;
-      color: black; }
-    .top_wedding .top_content button:hover {
-      background: rgba(255, 255, 255, 0.562);
-      border: 1px solid red;
-      color: red; }
     .top_wedding .top_content iframe {
       margin-top: 20px;
       margin-bottom: 20px;
@@ -74,15 +76,6 @@
     width: 430.5px;
     height: 242px;
     position: absolute; }
-  .videos_content button {
-    background: white;
-    border: 1px solid black;
-    border-radius: 5px;
-    color: black; }
-  .videos_content button:hover {
-    background: rgba(255, 255, 255, 0.562);
-    border: 1px solid red;
-    color: red; }
 
 .title {
   text-align: center;
@@ -92,20 +85,28 @@
   font-family: "Lobster", cursive;
   text-shadow: 1px 1px black; }
 
-.input input {
+input {
   border-radius: 5px;
   border: 1px solid #5c5c5c; }
 
-.input button {
+button {
   background: white;
   border: 1px solid black;
   border-radius: 5px;
   color: black; }
 
-.input button:hover {
+button:hover {
   background: rgba(255, 255, 255, 0.562);
   border: 1px solid red;
   color: red; }
+
+.input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .input .add {
+    margin-top: 20px; }
 
 .Modal {
   position: relative;

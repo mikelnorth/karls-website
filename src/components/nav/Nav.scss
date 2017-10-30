@@ -15,6 +15,7 @@
     height: 50px;
     font-size: 25px;
     font-family: $nav;
+    border-bottom: 2px solid white;
     
 }
 .link{
@@ -47,6 +48,7 @@
     .nav{
         background: transparent;
         position: fixed;
+        border-bottom: none;
 
         .link{
             display: none;

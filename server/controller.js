@@ -91,6 +91,26 @@ module.exports = {
                     })
             })
             .catch((err) => res.status(500).send(err))
+    },
+
+    addVideo: (req, res, next) => {
+        const dbInstance = req.app.get('db');
+        const { title, embedded_link } = req.body;
+        dbInstance.add_video([title, embedded_link])
+            .then((addedVideo) => {
+                res.status(200).send(addedVideo)
+            })
+            .catch((err) => res.status(500).send(err))
+    },
+
+    deleteVideo: (req, res, next) => {
+        const dbInstance = req.app.get('db');
+        const { id } = req.params;
+        console.log('params', id)
+        dbInstance.delete_video([id])
+            .then((removed) => {
+            })
+            .catch((err) => res.status(500).send(err))
     }
 
 
