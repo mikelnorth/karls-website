@@ -27,12 +27,24 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        button{
+            background: white;
+            border: 1px solid black;
+            border-radius: 5px;
+            color: black;
+        }
+        button:hover{
+            background: rgba(255, 255, 255, 0.562);
+            border: 1px solid red;
+            color: red;
+        }
         iframe{
              margin-top: 20px;
             margin-bottom: 20px;
             width: 900px;
             height: 484px;
         }
+        
     }
     p{
         // width: 50%;
@@ -42,7 +54,9 @@
         padding: 10px;
         // background: rgba(255, 255, 255, 0.164)
     }
+    
 }
+
 
 .videos{
     

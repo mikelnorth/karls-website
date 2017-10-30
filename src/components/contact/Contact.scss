@@ -42,6 +42,7 @@ form{
 .event_info{
     background-color: tan;
     width: 40vw;
+    max-Width: 40v;
     border-radius: 5px;
     font-family: $paragraph;
     padding-top: 20px;
@@ -62,7 +63,8 @@ form{
         width: 55%;
         height: 100px;
         max-width: 55%;
-        padding: 5px 15px 0 15px;;
+        padding: 5px 15px 0 15px;
+        resize:vertical;
     }
 }
 
@@ -103,6 +105,7 @@ form{
     .event_info{
     width: 70vw;
     border-radius: 5px;
+    max-width: none;
         h2{
             font-size: 20px;
         }

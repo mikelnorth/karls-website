@@ -305,7 +305,7 @@ export default class Contact extends Component {
 
 
                                 <textarea className='textarea' maxLength="500" onChange={(e) => this.handleChange('message', e.target.value)}
-                                    name="message" value={message} placeholder='additonal information...'></textarea>
+                                    name="message" value={message} cols='50' placeholder='additonal information...'></textarea>
                                 <br />
                             </div>
 
