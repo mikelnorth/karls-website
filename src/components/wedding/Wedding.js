@@ -42,6 +42,8 @@ class Wedding extends Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
+        
         this.props.getLinks('wedding');
         this.props.getFeatured('featured');
     }

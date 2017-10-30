@@ -41,6 +41,10 @@ export default class Contact extends Component {
 
     }
 
+    componentDidMount(){
+        window.scrollTo(0, 0);
+    }
+
     handleChange(prop, val) {
         console.log(prop, val)
         if (prop === 'message' && val.length === 500) {

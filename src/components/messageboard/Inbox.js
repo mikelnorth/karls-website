@@ -36,6 +36,9 @@ class Messageboard extends Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
+        
+
         !this.props.user ? (this.props.history.push('/'), swal({
             title: "ACCESS DENIED",
             text: "this page is for admin access only",

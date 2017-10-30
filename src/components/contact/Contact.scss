@@ -31,7 +31,7 @@ form{
 
 
 .personal_info{
-    background-color: rgba(82, 82, 82, 0.623);
+    background-color: tan;
     width: 40vw;
     border-radius: 5px;
     padding: 20px;
@@ -40,7 +40,7 @@ form{
 
 
 .event_info{
-    background-color: rgba(82, 82, 82, 0.623);
+    background-color: tan;
     width: 40vw;
     border-radius: 5px;
     font-family: $paragraph;
@@ -78,6 +78,8 @@ form{
 
 .submit:hover{
     background: rgba(255, 255, 255, 0.562);
+    cursor:pointer;
+    
 }
 
 @media (min-width: 1700px){ 

@@ -28,13 +28,13 @@ form {
   align-items: center; }
 
 .personal_info {
-  background-color: rgba(82, 82, 82, 0.623);
+  background-color: tan;
   width: 40vw;
   border-radius: 5px;
   padding: 20px; }
 
 .event_info {
-  background-color: rgba(82, 82, 82, 0.623);
+  background-color: tan;
   width: 40vw;
   border-radius: 5px;
   font-family: "Arima Madurai", cursive;
@@ -66,7 +66,8 @@ form {
   width: 60px; }
 
 .submit:hover {
-  background: rgba(255, 255, 255, 0.562); }
+  background: rgba(255, 255, 255, 0.562);
+  cursor: pointer; }
 
 @media (min-width: 1700px) {
   .personal_info {
