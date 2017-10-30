@@ -10,15 +10,15 @@ module.exports = {
         let transporter = nodemailer.createTransport({
             service: process.env.service,
             auth: {
-                user: process.env.user_email,
-                pass: process.env.user_pass
+                user: process.env.website_email,
+                pass: process.env.website_pass
             }
         });
 
         // setup email data with unicode symbols
         let mailOptions = {
-            from: `"Karl North Media" <${process.env.user_email}>`, // sender address
-            to: process.env.user_email, // list of receivers
+            from: `"Karl North Media" <${process.env.website_email}>`, // sender address
+            to: process.env.admin_email, // list of receivers
             subject: `New Customer ${req.body.firstName} ${req.body.lastName}`, // Subject line
             // text: 'testing one two on two', // plain text body
             html: `
