@@ -32,6 +32,7 @@ class Home extends Component {
 
     componentDidMount() {
         this.props.getLinks('home');
+        
     }
 
     editSelectedVideo() {
@@ -53,12 +54,18 @@ class Home extends Component {
             'display': 'none'
         }
 
+        // var video = document.querySelector('video');
+        // enableInlineVideo(video);
+
+        // setTimeout(function () { video.play(); }, 1000); 
+        
+
         return (
             <div className='home'>
                 <Nav />
                 <div className='top'>
                     {/* <img className='homepic' src='http://warrenweddings.com/wp-content/uploads/2017/03/wedding-hire.jpg' /> */}
-                    <video className='loop' autoplay='autoplay' loop='loop' muted='true' playsinline allowsInlineMediaPlayback='yes' fullscreen='false'>
+                    <video className='loop' autoplay='autoplay' loop='loop' muted='true' playsinline fullscreen='false'>
                         <source src={intro} type="video/mp4" />
                         <source src="movie.ogg" type="video/ogg" />
                         Your browser does not support the video tag.

@@ -12,6 +12,7 @@
     "express": "^4.16.1",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
+    "iphone-inline-video": "^2.2.2",
     "massive": "^4.3.0",
     "material-ui": "^0.19.4",
     "node-sass-chokidar": "0.0.3",
