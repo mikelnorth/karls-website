@@ -150,16 +150,6 @@ class Wedding extends Component {
 
 
                 <div className='add'>
-                    <input style={adminView} type='text' placeholder='Add title' onChange={(e) => {
-                        this.setState({
-                            title: e.target.value                            
-                        })
-                    }} />
-                    <input style={adminView} type='text' placeholder='New link ID' onChange={(e) => {
-                        this.setState({
-                            embedded_link: e.target.value                            
-                        })
-                    }} />
                     <button style={adminView} onClick={() => this.addNewVideo()}>Add New Video</button>
                 </div>
                 </div>
