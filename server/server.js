@@ -72,7 +72,7 @@ app.post('/api/customer/insert', controller.insertCustomer)
 app.post('/api/wedding/insert', controller.insertWedding)
 app.post('/api/new/video', controller.addVideo)
 
-app.delete('/api/delete/video/:id', controller.deleteVideo)
+app.delete('/api/delete/video/:id/:category', controller.deleteVideo)
 
 app.get('/api/get/customers', controller.getCustomers)
 

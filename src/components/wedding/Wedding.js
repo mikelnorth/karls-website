@@ -35,7 +35,7 @@ class Wedding extends Component {
     }
 
     addNewVideo(){
-        axios.post('api/new/video', this.state)
+        axios.post('api/new/video', this.state).then(res => this.props.getLinks('wedding'))
     }
 
     deleteVideo(){
@@ -48,7 +48,7 @@ class Wedding extends Component {
           })
           .then((willDelete) => {
             if (willDelete) {
-                axios.delete(`api/delete/video/${this.state.id}`)
+                axios.delete(`/api/delete/video/${this.state.id}/${this.state.category}`).then(res => this.props.getLinks('wedding'))
               swal("Video has been deleted", {
                 icon: "success",
               });
@@ -138,7 +138,7 @@ class Wedding extends Component {
                             title: e.target.value
                         })
                     }} />
-                    <input style={adminView} type='text' placeholder='Edig link ID' value={this.state.embedded_link} onChange={(e) => {
+                    <input style={adminView} type='text' placeholder='Edit link ID' value={this.state.embedded_link} onChange={(e) => {
                         this.setState({
                             embedded_link: e.target.value
                         })
