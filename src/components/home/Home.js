@@ -10,6 +10,8 @@ import intro from '../../assets/intro.mp4';
 import karl from '../../assets/karl.jpg';
 import down from '../../assets/down.png';
 import { HashLink } from 'react-router-hash-link';
+import MediaQuery from 'react-responsive';
+
 
 
 
@@ -32,7 +34,7 @@ class Home extends Component {
 
     componentDidMount() {
         this.props.getLinks('home');
-        
+
     }
 
     editSelectedVideo() {
@@ -58,26 +60,32 @@ class Home extends Component {
         // enableInlineVideo(video);
 
         // setTimeout(function () { video.play(); }, 1000); 
-        
+
 
         return (
             <div className='home'>
                 <Nav />
                 <div className='top'>
                     {/* <img className='homepic' src='http://warrenweddings.com/wp-content/uploads/2017/03/wedding-hire.jpg' /> */}
-                    <video className='loop' autoplay='autoplay' loop='loop' muted='true' playsinline fullscreen='false'>
-                        <source src={intro} type="video/mp4" />
-                        <source src="movie.ogg" type="video/ogg" />
-                        Your browser does not support the video tag.
-                    </video>
-                    <HashLink className='hashLink' to='/#middle'><img className='bounce' src={down} alt='#'/></HashLink>
+                    <MediaQuery query="(min-width: 750px)">
+                        <video className='loop' autoplay='autoplay' loop='loop' muted='true' playsinline fullscreen='false'>
+                            <source src={intro} type="video/mp4" />
+                            <source src="movie.ogg" type="video/ogg" />
+                            Your browser does not support the video tag.
+                     </video>
+                    </MediaQuery>
+                    <MediaQuery query="(max-width: 750px)">
+                        <div className='mobile_home'></div>
+                    </MediaQuery>
+
+                    <HashLink className='hashLink' to='/#middle'><img className='bounce' src={down} alt='#' /></HashLink>
                     <span className='welcome_span'>some things are worth remembering</span>
                     <Link className='button' to='/wedding'><span>Wedding Portfolio</span></Link>
                 </div>
 
 
                 <div id='middle' className='middle'>
-                    <span className='middle_message'><p>KARL NORTH MEDIA</p><br/>
+                    <span className='middle_message'><p>KARL NORTH MEDIA</p><br />
                         Karl North Media is not just about making films, it's about being able to relive and feel every moment.
                         catching the memories that matter most and experiencing them all over again.
                         It's about feeling those butterflies when he looks at you!
@@ -118,21 +126,21 @@ class Home extends Component {
 
                 <div id='About' className='About'>
                     <div className='why_us'><span className='why'>WHY</span> <span className='us'>US?</span></div>
-                    
-                    {<img className='karl' src={karl} alt='#'/>}
+
+                    {<img className='karl' src={karl} alt='#' />}
 
                     <div className='about_content'>
                         <span className='about_message'>
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                          Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
                           sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
-                         Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, 
-                         commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, 
+                         Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed,
+                         commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
                          sagittis tempus lacus enim ac dui
                         </span>
                         <Link to='/contact' className='contact_btn'><span>Contact</span></Link>
                     </div>
-                    
+
                 </div>
                 <div>
                     {/* <img className='karl_night' src={karl_night} /> */}

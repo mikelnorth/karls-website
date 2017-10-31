@@ -1,12 +1,5 @@
 @import '../../variables.scss';
 
-.IIV::-webkit-media-controls-play-button,
-video::-webkit-media-controls-start-playback-button {
-    opacity: 0;
-    pointer-events: none;
-    width: 5px;
-}
-
 .home{
     height: 100vh;
     width:100%;
@@ -44,6 +37,16 @@ video::-webkit-media-controls-start-playback-button {
     width: 100vw;
     z-index: -1;
     position: fixed;
+}
+
+.mobile_home{
+    background-image: url('../../assets/mobile_home.jpg');
+    background-repeat: no-repeat; 
+    // background-attachment: fixed;
+    // background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
 }
 
 .button{
@@ -382,16 +385,7 @@ video::-webkit-media-controls-start-playback-button {
 }
 
 @media (max-width: 730px){ 
-    .top{
-        height: 65vw;
-        video{
-            display: none;
-        }
-            background-image: url('../../assets/mobile_home.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center; 
-    }
+
     .welcome_span{
         font-size: 20px;
     }

@@ -4,12 +4,6 @@
 @import url("https://fonts.googleapis.com/css?family=Dancing+Script");
 @import url("https://fonts.googleapis.com/css?family=Amatic+SC");
 @import url("https://fonts.googleapis.com/css?family=Yellowtail");
-.IIV::-webkit-media-controls-play-button,
-video::-webkit-media-controls-start-playback-button {
-  opacity: 0;
-  pointer-events: none;
-  width: 5px; }
-
 .home {
   height: 100vh;
   width: 100%; }
@@ -45,6 +39,13 @@ video::-webkit-media-controls-start-playback-button {
   width: 100vw;
   z-index: -1;
   position: fixed; }
+
+.mobile_home {
+  background-image: url("../../assets/mobile_home.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%; }
 
 .button {
   position: absolute;
@@ -325,14 +326,6 @@ video::-webkit-media-controls-start-playback-button {
       bottom: 165px; } } }
 
 @media (max-width: 730px) {
-  .top {
-    height: 65vw;
-    background-image: url("../../assets/mobile_home.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; }
-    .top video {
-      display: none; }
   .welcome_span {
     font-size: 20px; }
   .button {
