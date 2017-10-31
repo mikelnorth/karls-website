@@ -382,6 +382,16 @@ video::-webkit-media-controls-start-playback-button {
 }
 
 @media (max-width: 730px){ 
+    .top{
+        height: 65vw;
+        video{
+            display: none;
+        }
+            background-image: url('../../assets/mobile_home.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center; 
+    }
     .welcome_span{
         font-size: 20px;
     }
@@ -414,10 +424,13 @@ video::-webkit-media-controls-start-playback-button {
                 height: 242px;
                 border-radius: 5px;
             }
+        display: none;
     }
     .dance{
         height: 300px;
-        background-position: -100px;
+        background-attachment: scroll;
+        background-position: -75px;
+        // background-size: 100%;
     }
     
     .About{

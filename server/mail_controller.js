@@ -18,7 +18,7 @@ module.exports = {
         // setup email data with unicode symbols
         let mailOptions = {
             from: `"Karl North Media" <${process.env.website_email}>`, // sender address
-            to: process.env.admin_email, // list of receivers
+            to: process.env.website_email, // list of receivers
             subject: `New Customer ${req.body.firstName} ${req.body.lastName}`, // Subject line
             // text: 'testing one two on two', // plain text body
             html: `
