@@ -344,8 +344,7 @@
     border-radius: 5px; }
   .home_vid {
     margin: auto;
-    margin-top: 20px;
-    display: none; }
+    margin-top: 20px; }
     .home_vid iframe {
       width: 95vw;
       height: 242px;
