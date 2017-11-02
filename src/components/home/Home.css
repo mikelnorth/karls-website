@@ -272,31 +272,6 @@
   opacity: 1;
   right: 0; }
 
-@media (max-width: 1200px) {
-  .welcome_span {
-    width: auto;
-    padding: 0 20px 0 20px;
-    margin-top: 35%; }
-  .button {
-    margin-top: 45%; }
-  .bounce {
-    display: none; }
-  .dance {
-    height: 400px;
-    background-position: -30px;
-    background-size: cover; }
-  .About {
-    max-height: 300px; }
-  .why_us {
-    font-size: 30px;
-    position: absolute;
-    top: 15px;
-    left: 375px; }
-  .about_message {
-    font-size: 20px;
-    max-height: 220px;
-    overflow: scroll; } }
-
 @media (min-width: 1700px) {
   .button {
     margin-top: 38%; }
@@ -324,6 +299,31 @@
       bottom: 150px; }
     50% {
       bottom: 165px; } } }
+
+@media (max-width: 1200px) {
+  .welcome_span {
+    width: auto;
+    padding: 0 20px 0 20px;
+    margin-top: 35%; }
+  .button {
+    margin-top: 45%; }
+  .bounce {
+    display: none; }
+  .dance {
+    height: 400px;
+    background-position: -30px;
+    background-size: cover; }
+  .About {
+    max-height: 300px; }
+  .why_us {
+    font-size: 30px;
+    position: absolute;
+    top: 15px;
+    left: 375px; }
+  .about_message {
+    font-size: 20px;
+    max-height: 220px;
+    overflow: scroll; } }
 
 @media (max-width: 730px) {
   .welcome_span {
