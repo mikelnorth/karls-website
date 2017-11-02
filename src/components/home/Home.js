@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import Login from '../login/Login.js';
 import intro from '../../assets/intro.mp4';
 import intro2 from '../../assets/intro2.webm';
+import mobile_home from '../../assets/mobile_home.jpg';
 import karl from '../../assets/karl.jpg';
 import down from '../../assets/down.png';
 import { HashLink } from 'react-router-hash-link';
