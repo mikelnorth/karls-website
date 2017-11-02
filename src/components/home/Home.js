@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import Login from '../login/Login.js';
 import intro from '../../assets/intro.mp4';
 import intro2 from '../../assets/intro2.webm';
-import mobile_home from '../../assets/mobile_home.jpg';
+import backup from '../../assets/backup.jpg';
 import karl from '../../assets/karl.jpg';
 import down from '../../assets/down.png';
 import { HashLink } from 'react-router-hash-link';
@@ -70,7 +70,7 @@ class Home extends Component {
                 <div className='top'>
                     {/* <img className='homepic' src='http://warrenweddings.com/wp-content/uploads/2017/03/wedding-hire.jpg' /> */}
                     <MediaQuery query="(min-width: 750px)">
-                        <video className='loop' autoplay='autoplay' loop='loop' muted='true' playsinline fullscreen='false' poster="http://euonthemove.eu/wp-content/uploads/2017/05/no-video.jpg"> controls>
+                        <video className='loop' autoplay='autoplay' loop='loop' muted='true' playsinline fullscreen='false' poster={backup}> controls>
                             {<source src={intro} type="video/mp4" />}
                             {<source src={intro2} type="video/webm" />}
                             Your browser does not support the video tag.
