@@ -70,7 +70,7 @@ class Home extends Component {
                 <div className='top'>
                     {/* <img className='homepic' src='http://warrenweddings.com/wp-content/uploads/2017/03/wedding-hire.jpg' /> */}
                     <MediaQuery query="(min-width: 750px)">
-                        <video className='loop' autoplay='autoplay' loop='loop' muted='true' playsinline fullscreen='false' poster={backup}> controls>
+                        <video className='loop' autoPlay='autoplay' loop='loop' muted='true'  fullscreen='false' poster={backup}> controls>
                             {<source src={intro} type="video/mp4" />}
                             {<source src={intro2} type="video/webm" />}
                             Your browser does not support the video tag.
@@ -95,8 +95,8 @@ class Home extends Component {
                         It's about remembering the good ol'days while we are still in them.
                     </span>
                     {this.props.video.map((val, i, arr) => {
-                        return <div className='home_vid'>
-                            <iframe title={val.id} src={`https://www.youtube.com/embed/${val.embedded_link}?color=white&showinfo=0`} frameborder="0" allowfullscreen='true'></iframe>
+                        return <div className='home_vid' key={val.id}>
+                            <iframe title={val.id} src={`https://www.youtube.com/embed/${val.embedded_link}?color=white&showinfo=0`} frameBorder="0" allowFullScreen='true'></iframe>
                             <button style={adminView} onClick={() => this.updateState(val.title, val.embedded_link, val.category, val.id)}>Edit</button>
                         </div>
                     })}

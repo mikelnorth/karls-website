@@ -106,7 +106,7 @@ class Wedding extends Component {
                     {this.props.featured.map((val, i, arr) => {
                         return <div className='top_content'>
                             <div className='featured_title'>{val.title}</div>
-                            <iframe title={val.id} src={`https://www.youtube.com/embed/${val.embedded_link}?color=white&showinfo=0&rel=0`} frameborder="0" allowfullscreen='true'></iframe>
+                            <iframe title={val.id} src={`https://www.youtube.com/embed/${val.embedded_link}?color=white&showinfo=0&rel=0`} frameBorder="0" allowFullScreen='true'></iframe>
                             <button style={adminView} onClick={() => this.updateState(val.title, val.embedded_link, val.category, val.id)}>Edit</button>
                         </div>
                     })}
@@ -122,7 +122,7 @@ class Wedding extends Component {
                             <div className='title'>{val.title}</div>
                             <div className='modal_btn'>
                                 <div className='catch' style={hideModal} onClick={() => this.handleOpenModal(val.embedded_link)} ></div>
-                                <iframe title={val.id} src={`https://www.youtube.com/embed/${val.embedded_link}?color=white&showinfo=0&rel=0`} frameborder="0" allowfullscreen='true'></iframe>
+                                <iframe title={val.id} src={`https://www.youtube.com/embed/${val.embedded_link}?color=white&showinfo=0&rel=0`} frameBorder="0" allowFullScreen='true'></iframe>
 
                             </div>
                             <button style={adminView} onClick={() => this.updateState(val.title, val.embedded_link, val.category, val.id)}>Edit</button>
@@ -161,7 +161,7 @@ class Wedding extends Component {
                         onRequestClose={this.handleCloseModal}
                         className="Modal"
                         overlayClassName="Overlay">
-                        <iframe src={`https://www.youtube.com/embed/${this.state.link}?color=white&showinfo=0&rel=0`} frameborder="0" allowfullscreen='true'></iframe>
+                        <iframe src={`https://www.youtube.com/embed/${this.state.link}?color=white&showinfo=0&rel=0`} frameBorder="0" allowfullscreen='true'></iframe>
                         {/* <button onClick={this.handleCloseModal}>Close</button> */}
                     </ReactModal>
                 </div>
