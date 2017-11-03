@@ -12,9 +12,9 @@ export default class Login extends Component {
             <div className='footer'>
                 <h3>follow us on social media</h3>
                 <div className='follow'>
-                    <a href='https://www.instagram.com/mr.karlnorth/?hl=en' target="_blank"><img src={instagram} alt='#' height='60px' /></a>
-                    <a href='https://www.youtube.com/channel/UCV5SeFnY-ZG3lZg78mIsNFA' target="_blank"><img src={youtube} alt='#' height='60px' /></a>
-                    <a href='https://www.facebook.com/karl.north' target="_blank"><img src={facebook} alt='#' height='60px' /></a>
+                    <a href='https://www.instagram.com/mr.karlnorth/?hl=en' target="_blank" rel='noreferrer noopener'><img src={instagram} alt='#' height='60px' /></a>
+                    <a href='https://www.youtube.com/channel/UCV5SeFnY-ZG3lZg78mIsNFA' target="_blank" rel='noreferrer noopener'><img src={youtube} alt='#' height='60px' /></a>
+                    <a href='https://www.facebook.com/karl.north' target="_blank" rel='noreferrer noopener'><img src={facebook} alt='#' height='60px' /></a>
                 </div>
                 <h4>Phone: 801-222-3232</h4>
                 <h4>Email: karlnorthfilms@gmail.com</h4>
