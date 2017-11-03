@@ -96,9 +96,9 @@ class Wedding extends Component {
         }
 
         const hideModal = this.state.hideModal ? { 'display': 'none' } : null
-        console.log('this.props.video', this.props.video)
-        console.log('this.props.featured', this.props.featured)
-        console.log('state', this.state)
+        // console.log('this.props.video', this.props.video)
+        // console.log('this.props.featured', this.props.featured)
+        // console.log('state', this.state)
         return (
             <div className='Wedding'>
                 <Nav />

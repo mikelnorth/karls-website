@@ -76,7 +76,7 @@ class Messageboard extends Component {
             message,
             details: true
         })
-        console.log(this.state)
+        // console.log(this.state)
     }
 
     render() {
@@ -84,7 +84,7 @@ class Messageboard extends Component {
             'display': 'none'
         }
 
-        console.log('cust id', this.props.customers.data)
+        // console.log('cust id', this.props.customers.data)
 
         return (
             <div className='messageboard'>

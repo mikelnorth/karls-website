@@ -46,7 +46,7 @@ export default class Contact extends Component {
     }
 
     handleChange(prop, val) {
-        console.log(prop, val)
+        // console.log(prop, val)
         if (prop === 'message' && val.length === 500) {
             swal({
                 title: 'Message can only be 500 characters long',

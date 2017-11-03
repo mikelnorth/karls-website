@@ -106,7 +106,6 @@ module.exports = {
     deleteVideo: (req, res, next) => {
         const dbInstance = req.app.get('db');
         const { id, category } = req.params;
-        console.log('params',  +id, category)
         dbInstance.delete_video([+id, category])
         .then( response => res.status(200).send(response))
 

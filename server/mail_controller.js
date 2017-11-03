@@ -3,8 +3,6 @@ const nodemailer = require('nodemailer');
 
 module.exports = {
     sendEmail(req, res) {
-        console.log('req.body', req.body)
-
 
         // create reusable transporter object using the default SMTP transport
         let transporter = nodemailer.createTransport({
@@ -45,7 +43,7 @@ module.exports = {
             if (error) {
                 return res.status(400).send(error)
             }
-            console.log('Message %s send: %s', info);
+            // console.log('Message %s send: %s', info);
             res.status(200).send(info);
         });
 

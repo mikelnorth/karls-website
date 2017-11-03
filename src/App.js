@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   render() {
-    console.log('IS ADMIN',this.props.user)
+    // console.log('IS ADMIN',this.props.user)
     return (
       <div className="App">
         {router}
