@@ -104,7 +104,7 @@ class Wedding extends Component {
                 <Nav />
                 <div className='top_wedding'>
                     {this.props.featured.map((val, i, arr) => {
-                        return <div className='top_content'>
+                        return <div className='top_content' key={i}>
                             <div className='featured_title'>{val.title}</div>
                             <iframe title={val.id} src={`https://www.youtube.com/embed/${val.embedded_link}?color=white&showinfo=0&rel=0`} frameBorder="0" allowFullScreen='true'></iframe>
                             <button style={adminView} onClick={() => this.updateState(val.title, val.embedded_link, val.category, val.id)}>Edit</button>
@@ -118,7 +118,7 @@ class Wedding extends Component {
 
                 <div className='videos'>
                     {this.props.video.map((val, i, arr) => {
-                        return <div className='videos_content'>
+                        return <div className='videos_content' key={i}>
                             <div className='title'>{val.title}</div>
                             <div className='modal_btn'>
                                 <div className='catch' style={hideModal} onClick={() => this.handleOpenModal(val.embedded_link)} ></div>

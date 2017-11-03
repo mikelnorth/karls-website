@@ -20,6 +20,10 @@
   font-size: 25px;
   font-family: "Yellowtail", cursive;
   border-bottom: 2px solid white; }
+  p{
+    padding-left: 2px;
+    padding-right: 2px
+  }
 
 .link {
   text-decoration: none;

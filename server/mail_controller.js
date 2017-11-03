@@ -8,11 +8,11 @@ module.exports = {
         let transporter = nodemailer.createTransport({
             service: process.env.service,
             auth: {
-                user: process.env.website_email, 
+                user: process.env.website_email,
                 pass: process.env.website_pass
             }
         });
-
+        console.log("req.body",req.body)
         // setup email data with unicode symbols
         let mailOptions = {
             from: `"Karl North Media" <${process.env.website_email}>`, // sender address
@@ -41,7 +41,7 @@ module.exports = {
         // send mail with defined transport object
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
-                return res.status(400).send(error)
+                console.log(error)
             }
             // console.log('Message %s send: %s', info);
             res.status(200).send(info);

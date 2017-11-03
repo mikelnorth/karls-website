@@ -39,11 +39,14 @@ class Messageboard extends Component {
         window.scrollTo(0, 0);
         
 
-        !this.props.user ? (this.props.history.push('/'), swal({
-            title: "ACCESS DENIED",
-            text: "this page is for admin access only",
-            icon: "error",
-          })) : null;
+        if(!this.props.user){
+            this.props.history.push('/') 
+            swal({
+                title: "ACCESS DENIED",
+                text: "this page is for admin access only",
+                icon: "error"
+              })
+        }
 
         this.props.getCustomers();
     }
@@ -95,7 +98,7 @@ class Messageboard extends Component {
                         <div className='customers'>
                             <h4>Customer</h4>
                             {this.props.customers.data.length ? this.props.customers.data.map((val, i, arr) => {
-                                return <div className='customer'>
+                                return <div className='customer' key={i}>
                                     <div>
                                         <p>Name: <span>{val.first_name} {val.last_name}</span></p>
                                     </div>

@@ -95,7 +95,7 @@ class Home extends Component {
                         It's about remembering the good ol'days while we are still in them.
                     </span>
                     {this.props.video.map((val, i, arr) => {
-                        return <div className='home_vid' key={val.id}>
+                        return <div className='home_vid' key={i}>
                             <iframe title={val.id} src={`https://www.youtube.com/embed/${val.embedded_link}?color=white&showinfo=0`} frameBorder="0" allowFullScreen='true'></iframe>
                             <button style={adminView} onClick={() => this.updateState(val.title, val.embedded_link, val.category, val.id)}>Edit</button>
                         </div>
