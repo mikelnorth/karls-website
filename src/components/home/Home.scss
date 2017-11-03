@@ -306,13 +306,18 @@
     right: 0;
   }
 
+
 @media (min-width: 1700px){ 
     .button{
-        margin-top: 38%
+        // margin-top: 38%
+        top: 65%;
+        margin: 0px;
     } 
     
     .welcome_span{
-        margin-top: 30%;
+        // margin-top: 30%;
+        top: 50%;
+        margin: 0px;
     }
     .bounce {
         bottom:150px;

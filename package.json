@@ -26,7 +26,6 @@
     "react-responsive": "^3.0.0",
     "react-router-dom": "^4.2.2",
     "react-router-hash-link": "^1.1.1",
-    "react-router-hash-scroll": "^0.2.7",
     "react-scripts": "1.0.14",
     "redux": "^3.7.2",
     "redux-promise-middleware": "^4.4.1",
