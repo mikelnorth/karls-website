@@ -72,8 +72,8 @@ class Home extends Component {
                     <MediaQuery query="(min-width: 750px)">
                         <video className='loop' autoPlay='autoplay' loop='loop' muted='true'  fullscreen='false' poster={mobile2
                     }> controls>
-                            {/* {<source src={intro} type="video/mp4" />}
-                            {<source src={intro2} type="video/webm" />} */}
+                            {<source src={intro} type="video/mp4" />}
+                            {<source src={intro2} type="video/webm" />}
                             Your browser does not support the video tag.
                      </video>
                     </MediaQuery>
