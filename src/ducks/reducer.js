@@ -92,17 +92,6 @@ export function updateVideo(title, embedded_link, category, id) {
     }
 }
 
-// export function addVideo(title, embedded_link){
-//     const addedVideo = axios.post('api/add/video', {title, embedded_link})
-//     .then(res => {
-//         return res.data
-//     })
-//     return {
-//         type: ADD_VIDEO,
-//         payload: addedVideo
-//     }
-// }
-
 export function updateCustomer(archive, id) {
     const newCustomer = axios.put(`/api/update/customer`, { archive, id })
         .then(res => {

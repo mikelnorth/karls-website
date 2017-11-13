@@ -175,7 +175,7 @@ export default class Contact extends Component {
                                 })
                             })
                     })
-                    console.log(this.state)
+                    // console.log(this.state)
                 axios.post('/api/send_email', this.state)
 
             }

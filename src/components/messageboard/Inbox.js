@@ -55,7 +55,25 @@ class Messageboard extends Component {
         this.setState({
             id
         })
-        this.props.updateCustomer(true, this.state.id)
+
+        swal({
+            title: "Are you sure?",
+            text: "Archived customers are only acessible through the database.",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          }).then((willDelete) => {
+            if (willDelete) {
+                this.props.updateCustomer(true, this.state.id)
+              swal("Customer has been Archived", {
+                icon: "success",
+              });
+            } else {
+              swal("Customer information is safe");
+            }
+          });
+
+        
     }
 
     moreInfo(id, first_name, last_name, email, phone, contact_method, wedding_location, wedding_date, reception_location,
