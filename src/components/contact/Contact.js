@@ -55,7 +55,7 @@ export default class Contact extends Component {
                 button: "ok!",
             });
         }else if ((prop === 'firstName' || prop === 'lastName' || prop === 'email' || prop === 'phone' || prop ==='weddingLocation' || 
-        prop === 'receptionLoation' || prop === 'bridalLocation') && val.length === 100) {
+        prop === 'receptionLocation' || prop === 'bridalLocation') && val.length === 100) {
             swal({
                 title: 'Message can only be 100 characters long',
                 text: '',
@@ -107,10 +107,11 @@ export default class Contact extends Component {
 
     submitCustomerInfo(e) {
         e.preventDefault()
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
 
 
         if (this.state.firstName && this.state.lastName && this.state.email) {
-            if (this.state.email.includes('@')) {
+            if (this.state.email.match(mailformat)) {
 
                 const { firstName, lastName, email, phone, contact, weddingLocation, weddingDate, receptionLocation,
                     receptionDate, bridalLocation, bridalDate,

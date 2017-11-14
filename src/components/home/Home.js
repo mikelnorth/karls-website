@@ -90,9 +90,9 @@ class Home extends Component {
                 <div id='middle' className='middle'>
                     <span className='middle_message'><p>KARL NORTH MEDIA</p><br />
                         Karl North Media is not just about making films, it's about being able to relive and feel every moment.
-                        catching the memories that matter most and experiencing them all over again.
+                        Catching the memories that matter most and experiencing them all over again.
                         It's about feeling those butterflies when he looks at you!
-                        laughing as you see cake smeared all over your face.
+                        Laughing as you see cake smeared all over your face.
                         It's about remembering the good ol'days while we are still in them.
                     </span>
                     {this.props.video.map((val, i, arr) => {
