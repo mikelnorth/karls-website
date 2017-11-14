@@ -81,6 +81,8 @@ class Wedding extends Component {
             hideModal: !this.state.hideModal,
             link
         });
+
+        
     }
 
     handleCloseModal() {

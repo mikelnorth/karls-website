@@ -199,8 +199,14 @@ export default class Contact extends Component {
         }
     }
 
-
     render() {
+        function disablePrevDates(startDate) {
+            const startSeconds = Date.parse(startDate);
+            return (date) => {
+              return Date.parse(date) < startSeconds;
+            }
+          }
+
         const { firstName, lastName, email, phone, contact, weddingLocation, weddingDate, receptionLocation, receptionDate, bridalLocation, bridalDate,
             culture, message } = this.state
 
@@ -251,6 +257,7 @@ export default class Contact extends Component {
                                         autoOk={true}
                                         value={weddingDate}
                                         onChange={this.handleWeddingDate}
+                                        shouldDisableDate={disablePrevDates(new Date())}
                                     />
                                     {/* <input onChange={(e) => this.handleChange('weddingDate', e.target.value)}
                                         type="date" name="wedding location" value={weddingDate} /><br /> */}
@@ -265,6 +272,7 @@ export default class Contact extends Component {
                                         autoOk={true}
                                         value={receptionDate}
                                         onChange={this.handleReceptionDate}
+                                        shouldDisableDate={disablePrevDates(new Date())}
                                     />
                                     {/* <input onChange={(e) => this.handleChange('receptionDate', e.target.value)}
                                         type="date" name="reception location" value={receptionDate} /><br /> */}
@@ -279,6 +287,7 @@ export default class Contact extends Component {
                                         autoOk={true}
                                         value={bridalDate}
                                         onChange={this.handleBridalDate}
+                                        shouldDisableDate={disablePrevDates(new Date())}
                                     />
                                 </div>
                                 <AutoComplete value={culture}
