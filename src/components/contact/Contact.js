@@ -41,7 +41,7 @@ export default class Contact extends Component {
 
     }
 
-    componentDidMount(){
+    componentDidMount() {
         window.scrollTo(0, 0);
     }
 
@@ -54,8 +54,8 @@ export default class Contact extends Component {
                 icon: "warning",
                 button: "ok!",
             });
-        }else if ((prop === 'firstName' || prop === 'lastName' || prop === 'email' || prop === 'phone' || prop ==='weddingLocation' || 
-        prop === 'receptionLocation' || prop === 'bridalLocation') && val.length === 100) {
+        } else if ((prop === 'firstName' || prop === 'lastName' || prop === 'email' || prop === 'phone' || prop === 'weddingLocation' ||
+            prop === 'receptionLocation' || prop === 'bridalLocation') && val.length === 100) {
             swal({
                 title: 'Message can only be 100 characters long',
                 text: '',
@@ -107,8 +107,7 @@ export default class Contact extends Component {
 
     submitCustomerInfo(e) {
         e.preventDefault()
-        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
-
+        let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
         if (this.state.firstName && this.state.lastName && this.state.email) {
             if (this.state.email.match(mailformat)) {
@@ -140,7 +139,7 @@ export default class Contact extends Component {
                     customer_id: customerId
                 }
 
-
+                if (!this.state.phone.match((/[^\d,]+/g))) {
                 axios.post('/api/customer/insert', customerData)
                     .then(res => {
                         weddingData.customer_id = res.data.id
@@ -176,8 +175,17 @@ export default class Contact extends Component {
                                 })
                             })
                     })
-                    // console.log(this.state)
+                
                 axios.post('/api/send_email', this.state)
+                }
+                else{
+                    swal({
+                        title: "Phone number must contain only numbers",
+                        text: "example 8883334242 , (phone number is optional)",
+                        icon: "warning",
+                        button: "ok!",
+                    });
+                }
 
             }
             else {
@@ -187,6 +195,7 @@ export default class Contact extends Component {
                     icon: "warning",
                     button: "ok!",
                 });
+
             }
         }
         else {
@@ -203,15 +212,15 @@ export default class Contact extends Component {
         function disablePrevDates(startDate) {
             const startSeconds = Date.parse(startDate);
             return (date) => {
-              return Date.parse(date) < startSeconds;
+                return Date.parse(date) < startSeconds;
             }
-          }
+        }
 
         const { firstName, lastName, email, phone, contact, weddingLocation, weddingDate, receptionLocation, receptionDate, bridalLocation, bridalDate,
             culture, message } = this.state
 
         const weddingTypes = ['American', 'Christian', 'Jewish', 'Indian', 'Other']
-        
+
         return (
             <div className='Contact'>
                 <MuiThemeProvider>
