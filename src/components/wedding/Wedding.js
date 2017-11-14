@@ -163,7 +163,7 @@ class Wedding extends Component {
                         onRequestClose={this.handleCloseModal}
                         className="Modal"
                         overlayClassName="Overlay">
-                        <iframe title={this.state.id} src={`https://www.youtube.com/embed/${this.state.link}?color=white&showinfo=0&rel=0`} frameBorder="0" allowfullscreen='true'></iframe>
+                        <iframe title={this.state.id} src={`https://www.youtube.com/embed/${this.state.link}?color=white&showinfo=0&rel=0`} frameBorder="0" allowFullScreen='true'></iframe>
                         {/* <button onClick={this.handleCloseModal}>Close</button> */}
                     </ReactModal>
                 </div>
