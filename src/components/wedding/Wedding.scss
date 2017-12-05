@@ -46,6 +46,7 @@ button:hover{
             margin-bottom: 20px;
             width: 900px;
             height: 484px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
         }
         
@@ -65,13 +66,13 @@ button:hover{
 
 
 .videos{
-    
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
     padding: 50px;
     justify-content: center;
     color: white;
+    
 }
 
 .videos_content{
@@ -98,6 +99,7 @@ button:hover{
         width: 430.5px;
         height: 242px;
         position: absolute;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         
     }
 }
