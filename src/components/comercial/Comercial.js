@@ -1,22 +1,13 @@
-// import React, { Component } from 'react';
-// import './Comercial.css';
-// import Nav from '../nav/Nav.js'
+import React, { Component } from 'react';
+import './Comercial.css';
 
 
-// export default class Comercial extends Component {
-//     constructor(props){
-//         super(props)
-
-//     }
-
-
-
-//     render() {
-//         return (
-//             <div className='Comercial'>
-//                 <Nav />
-
-//             </div >
-//         )
-//     }
-// }
+export default class Comercial extends Component {
+    render() {
+        return (
+            <div className='Comercial'>
+            
+            </div >
+        )
+    }
+}

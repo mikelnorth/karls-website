@@ -58,17 +58,10 @@ class Home extends Component {
             'display': 'none'
         }
 
-        // var video = document.querySelector('video');
-        // enableInlineVideo(video);
-
-        // setTimeout(function () { video.play(); }, 1000); 
-
-
         return (
             <div className='home'>
                 <Nav />
                 <div className='top'>
-                    {/* <img className='homepic' src='http://warrenweddings.com/wp-content/uploads/2017/03/wedding-hire.jpg' /> */}
                     <MediaQuery query="(min-width: 750px)">
                         <video className='loop' autoPlay='autoplay' loop='loop' muted='true'  fullscreen='false' poster={mobile2
                     }> controls>
