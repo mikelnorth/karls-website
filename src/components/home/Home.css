@@ -236,6 +236,9 @@
   overflow: scroll;
   max-height: 360px; }
 
+::-webkit-scrollbar {
+  display: none; }
+
 .contact_btn {
   text-align: center;
   font-size: 20px;
